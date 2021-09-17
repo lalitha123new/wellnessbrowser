@@ -1,0 +1,39 @@
+<html ng-app="wellness">
+<head>
+<title>Wellness signup</title>
+<!-- css files -->
+<link href="css/signup.css" rel='stylesheet' type='text/css' media="all" />
+<link rel="stylesheet" href="../inc/bootstrap/css/bootstrap.min.css">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--angular js-->
+<script src="../angular/angular.min.js"></script>
+<script src="../angular/angular-cookies.js"></script>
+
+<!--angular toaster -->
+<script src="../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../angular/toaster/toaster.css">
+
+<!-- controllers -->
+<script src="js/signCtrl.js"></script>
+<script src="../config/config.js"></script>
+</head>
+<body style="background-color:#9e6d6f;" ng-controller="signController">
+<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+<div class = "container">
+	<div class="wrapper">
+		<form name="Login_Form" class="form-signin">       
+		    <h3 class="form-signin-heading">Sign-up</h3>
+			  <hr class="colorgraph"><br>
+			  <input type="text" class="form-control" name="Username" ng-model="email" ng-disabled="true" /><br>
+			  <input type="text" class="form-control" name="Username" ng-model="username" placeholder="Create username" required=""  /><br>
+			  <input type="password" class="form-control" name="Password" ng-model="password" placeholder="Create password" required="" onfocus="this.placeholder = ''"/>
+			  <input type="password" class="form-control" name="cpassword" ng-model="cpassword" placeholder="Confirm password" required="" onfocus="this.placeholder = ''"/>     		  			   	 
+			  <button class="btn btn-lg btn-primary btn-block" ng-disabled="(!cpassword) || (!email) || (!username) || (!password)" ng-click="signup()" name="Submit" value="Login" type="Submit">Submit</button>  			
+		</form>			
+	</div>
+</div>
+</body>
+</html>

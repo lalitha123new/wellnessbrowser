@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en" ng-app="wellness">
+<head>
+<title>Wellness-Registration</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="../inc/bootstrap/css/bootstrap.min.css">
+<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">-->
+<link href="EXTERNAL/open-sans.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- /font files -->
+<!-- css files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+
+<!-- Latest compiled and minified CSS -->
+
+<!--Javscript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="../inc/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!--angular toaster css-->
+<link rel="stylesheet" href="../angular/toaster/toaster.css">
+
+
+<!--angular js-->
+<script src="../angular/angular.min.js"></script>
+<script src="../angular/angular-cookies.js"></script>
+
+<!--angular toaster js-->
+<script src="../angular/toaster/toaster.js"></script>
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../angular/loading/loader.js"></script>
+<link rel='stylesheet' href='../angular/loading/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='../angular/loading/loading-bar.min.js'></script>
+
+<!--Controller-->
+<script src="../js/logincontroller.js"></script>
+<script src="../config/config.js"></script>
+
+
+
+<style type="text/css">
+html {
+	background-color: #9e6d6f;
+}
+
+.label.header {
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+.grid-w3layouts1 ul li, .grid-w3layouts2 ul li {
+	color: #000;
+}
+
+label.rating, label.header {
+	color: #000;
+	text-transform: none;
+	font-weight: bold;
+}
+
+ul li label {
+	padding: 12px 0px 0px 50px;
+}
+
+ul li .check {
+	border: 3px solid #000;
+}
+
+.content-top {
+	background-color: #FFE0B2;
+}
+
+.placeholdercss::-webkit-input-placeholder {
+	color: black !important;
+}
+
+input#name, input#email, input#orgn, textarea#message {
+	background-color: #FFFDB9 !important;
+	color: black !important;
+}
+
+ul li label {
+	text-transform: none;
+}
+
+.input {
+	background-color: #FFFDB9 !important;
+	color: black !important;
+}
+
+.blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+
+.radio {
+	margin: 0.5rem;
+}
+
+.radio input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+}
+
+.radio input[type="radio"]+.radio-label:before {
+	content: '';
+	background: #f4f4f4;
+	border-radius: 100%;
+	border: 1px solid #b4b4b4;
+	display: inline-block;
+	width: 1.4em;
+	height: 1.4em;
+	position: relative;
+	top: -0.2em;
+	margin-right: 1em;
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
+	transition: all 250ms ease;
+}
+
+.radio input[type="radio"]:checked+.radio-label:before {
+	background-color: #3197EE;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type="radio"]:focus+.radio-label:before {
+	outline: none;
+	border-color: #3197EE;
+}
+
+.radio input[type="radio"]:disabled+.radio-label:before {
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+	border-color: #b4b4b4;
+	background: #b4b4b4;
+}
+
+.radio input[type="radio"]+.radio-label:empty:before {
+	margin-right: 0;
+}
+
+.radio-pad {
+	padding-top: 2%;
+}
+
+.label-css {
+	font-weight: bold;
+}
+
+.terms-modal-dialog {
+	overflow-y: initial !important
+}
+
+.terms-modal-body {
+	height: 400px;
+	overflow-y: auto;
+}
+
+.modal-header, h4, .close {
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-size: 30px;
+}
+
+p {
+	font-size: 14px;
+	color: black;
+	margin: 0px 0 0px;
+}
+
+h5 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.fa-2x {
+    font-size: 26px;
+   }
+   
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    font-weight: bold;
+    }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.termli {
+	padding-left: 36px;
+	list-style:circle;
+	font-size: 15px;
+}
+.liststyle{
+list-style:square;
+font-size: 15px;
+}
+
+	#loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 389px;
+    left: 50%;
+   }
+</style>
+
+</head>
+<body ng-controller="loginController" oncontextmenu="return false;">
+	<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+	<form name="registerForm" novalidate>
+		<!-- <div data-vide-bg="video/patient"> -->
+		<div class="center-container">
+			<h1 class="header-w3ls">Registration</h1>
+			<center>
+				<p ng-if="flag==1" class="blink">Please complete registration
+					before login for this user</p>
+			</center>
+			<div class="content-top">
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Name</label> <span>*</span> <input ng-model="name"
+							type="text" class="form-control input" alt="Enter name" ng-required="true">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="label-css">Age</label> <span>*</span> <input
+							ng-model="age" type="number" id="num1" 
+							onKeyUp="if(this.value.length==2){return false;}else if(this.value.length>2){this.value='';}"
+							class="form-control input" alt="Enter age" ng-required="true">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="label-css">Phone number</label> <input type="number"
+							id="num2" 
+							onKeyUp="if(this.value.length==10){return false;}else if(this.value.length>10){this.value='';}"
+							ng-model="phone" class="form-control input" alt="Enter phone">
+						(Please provide your phone number, if you wish to receive reminder
+						messages for re-visiting to calculate your positivity ratio)
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="label-css">Name of the City I live in</label> <span>*</span>
+						<input type="text" class="form-control input" ng-model="city"
+							alt="Enter city name" ng-required="true">
+					</div>
+				</div>
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">What kind of work I do?</label> <span>*</span>
+						<input type="text" ng-model="work" class="form-control input" alt="work" ng-required="true">
+					</div>
+				</div>
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Gender</label> <span>*</span>
+						<div class="radio">
+							<input id="radio-1" name="radio" type="radio" value="male" ng-model="gender" ng-required="true"><label
+								for="radio-1" class="radio-label">Male</label><input
+								id="radio-2" name="radio" type="radio" value="female" ng-model="gender" ng-required="true"><label
+								for="radio-2" class="radio-label">Female</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Highest level of education I have
+							completed <span>*</span></label> 
+						<div class="radio">
+							<input id="radio-3" name="radio1" type="radio" ng-model="education" value="1" ng-required="true"><label
+								for="radio-3" class="radio-label">High school</label><input
+								id="radio-4" name="radio1" type="radio" ng-model="education" value="2" ng-required="true"><label
+								for="radio-4" class="radio-label radio-pad">Pre-university
+							</label> <input id="radio-5" name="radio1" type="radio" ng-model="education" value="3" ng-required="true"><label
+								for="radio-5" class="radio-label radio-pad">Under-graduation
+							</label> <input id="radio-0" name="radio1" type="radio" ng-model="education" value="4" ng-required="true"><label
+								for="radio-0" class="radio-label radio-pad">Post
+								graduation </label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Which of the following describes
+							me the best currently? <span>*</span></label>
+						<div class="radio">
+							<input id="radio-6" name="radio3" type="radio" ng-model="current" value="1" ng-required="true"><label
+								for="radio-6" class="radio-label">Working</label><br> <input
+								id="radio-7" name="radio3" type="radio" ng-model="current" value="2" ng-required="true"><label
+								for="radio-7" class="radio-label radio-pad">Studying</label><br>
+							<input id="radio-8" name="radio3" type="radio" ng-model="current" value="3" ng-required="true"><label
+								for="radio-8" class="radio-label radio-pad">Being a
+								homemaker</label><br> <input id="radio-9" name="radio3"
+								type="radio" ng-model="current" value="4" ng-required="true"><label for="radio-9"
+								class="radio-label radio-pad">Searching for a job</label><br>
+							<input id="radio-10" name="radio3" type="radio" ng-model="current" value="5" ng-required="true"><label
+								for="radio-10" class="radio-label radio-pad">Retired</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Marital status </label> <span>*</span>
+						<div class="radio">
+							<input id="radio-11" name="radio4" type="radio" value="married" ng-model="status" ng-required="true"><label
+								for="radio-11" class="radio-label">Married</label><br> <input
+								id="radio-12" name="radio4" type="radio" value="single" ng-model="status" ng-required="true"><label
+								for="radio-12" class="radio-label radio-pad">Single</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Have you sought help from a
+							mental health professional any time in your life? <span>*</span></label> 
+						<div class="radio">
+							<input id="radio-20" name="radio5" type="radio" value="yes" ng-model="life" ng-required="true"><label
+								for="radio-20" class="radio-label">Yes</label><br> <input
+								id="radio-13" name="radio5" type="radio" value="no" ng-model="life" ng-required="true"><label
+								for="radio-13" class="radio-label radio-pad">No</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Do you think you are currently
+							dealing with a mental health problem? <span>*</span></label> 
+						<div class="radio">
+							<input id="radio-19" name="radio6" type="radio" value="yes" ng-model="mental" ng-required="true"><label
+								for="radio-19" class="radio-label">Yes</label><br> <input
+								id="radio-14" name="radio6" type="radio" value="no" ng-model="mental" ng-required="true"><label
+								for="radio-14" class="radio-label radio-pad">No</label> <br>
+							<input id="radio-15" name="radio6" type="radio" value="not sure" ng-model="mental" ng-required="true"><label
+								for="radio-15" class="radio-label radio-pad">Not sure</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">Are you currently seeking help
+							from a professional for a mental health problem? <span>*</span></label>  
+						<div class="radio">
+							<input id="seek1" name="seek1" type="radio" ng-model="seek1" value="1"  ng-click="uncheck2()"><label
+								for="seek1" class="radio-label">Yes, I am on
+								medication for mental health issues</label><br> <input
+								id="seek2" name="seek2" type="radio" ng-model="seek2" value="2"  ng-click="uncheck2()"><label
+								for="seek2" class="radio-label radio-pad">Yes, I am
+								meeting a counselor </label><br> <input id="seek3" name="seek3"
+								type="radio" ng-model="seek3" value="3" ng-click="uncheck1()"><label for="seek3"
+								class="radio-label radio-pad">No</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+				
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">How comfortable you are currently with the idea of seeking 
+						professional help for managing your distress or 
+						enhancing your well being? <span>*</span></label> 
+						<div class="radio">
+							<input id="radio-25" name="radio8" type="radio" value="1" ng-model="distress" ng-required="true"><label
+								for="radio-25" class="radio-label">Very uncomfortable</label><br> <input
+								id="radio-21" name="radio8" type="radio" value="2" ng-model="distress" ng-required="true"><label
+								for="radio-21" class="radio-label radio-pad">Uncomfortable</label> <br>
+							<input id="radio-22" name="radio8" type="radio" value="3" ng-model="distress" ng-required="true"><label
+								for="radio-22" class="radio-label radio-pad">Neither uncomfortable nor comfortable</label><br> <input
+								id="radio-23" name="radio8" type="radio" value="4" ng-model="distress" ng-required="true"><label
+								for="radio-23" class="radio-label radio-pad">Comfortable</label> <br>
+							<input id="radio-24" name="radio8" type="radio" value="5" ng-model="distress" ng-required="true"><label
+								for="radio-24" class="radio-label radio-pad">Very comfortable</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">How likely it is that you may consult a professional
+						 in the next 3 months for managing your distress/for your mental health concerns/for personal growth?<span>*</span></label>  
+						<div class="radio">
+							<input id="radio-26" name="radio9" type="radio" value="1" ng-model="consult" ng-required="true"><label
+								for="radio-26" class="radio-label">Extremely Unlikely</label><br> <input
+								id="radio-27" name="radio9" type="radio" value="2" ng-model="consult" ng-required="true"><label
+								for="radio-27" class="radio-label radio-pad">Unlikely</label> <br>
+							<input id="radio-28" name="radio9" type="radio" value="3" ng-model="consult" ng-required="true"><label
+								for="radio-28" class="radio-label radio-pad">Unsure</label><br> <input
+								id="radio-29" name="radio9" type="radio" value="4" ng-model="consult" ng-required="true"><label
+								for="radio-29" class="radio-label radio-pad">Likely</label> <br>
+							<input id="radio-30" name="radio9" type="radio" value="5" ng-model="consult" ng-required="true"><label
+								for="radio-30" class="radio-label radio-pad">Extremely Likely</label>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+				
+			<!-- 	<div class="col-md-6">
+
+					<div class="form-group">
+						<label class="label-css">How likely it is that you may consult a professional
+						 in the next 3 months for personal growth and enhancing
+						  your well being?  <span>*</span></label>  
+						<div class="radio">
+							<input id="radio-31" name="radio10" type="radio" value="1" ng-model="personal" ng-required="true"><label
+								for="radio-31" class="radio-label">Extremely Unlikely</label><br> <input
+								id="radio-32" name="radio10" type="radio" value="2" ng-model="personal" ng-required="true"><label
+								for="radio-32" class="radio-label radio-pad">Unlikely</label> <br>
+							<input id="radio-33" name="radio10" type="radio" value="3" ng-model="personal" ng-required="true"><label
+								for="radio-33" class="radio-label radio-pad">Unsure</label><br> <input
+								id="radio-34" name="radio10" type="radio" value="4" ng-model="personal" ng-required="true"><label
+								for="radio-34" class="radio-label radio-pad">Likely</label> <br>
+							<input id="radio-35" name="radio10" type="radio" value="5" ng-model="personal" ng-required="true"><label
+								for="radio-35" class="radio-label radio-pad">Extremely Likely</label>
+						</div>
+					</div>
+
+				</div>-->
+				<input type="hidden" ng-model="personal" value="1"/>
+				<div class="clear"></div>
+
+				<div class="col-md-12">
+					<span ng-click="isHidden1 = !isHidden1;"><span style="color: blue;"
+						class="glyphicon"
+						ng-class="isHidden1 ? 'fa fa-check-square-o fa-2x' : 'fa fa-square-o fa-2x'"></span></span>&nbsp;<span
+						style="color: black; font-size: 15px;">I have read the
+						terms and conditions of participating in wellness - check <br>
+						and give my consent with full awareness
+					</span>
+				</div>
+				<div class="col-md-12" style="text-align: center; margin-top: 20px;">
+					<a data-toggle="modal" href="#term">To read the terms and
+						condition please click here</a>
+				</div>
+				<div class="col-md-12" style="text-align: center; margin-top: 20px;">
+					<button type="button" ng-disabled="!isHidden1"
+						class="btn btn-success" ng-click="usersinfo()">Submit</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="footer">
+						<div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+							<p class="copyright">Copyright &copy; 2017 - NIMHANS</p>
+						</div>
+					</div>
+
+			<div class="modal fade" id="term" role="dialog">
+				<div class="modal-dialog modal-lg terms-modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">TERMS OF USE</h4>
+						</div>
+						<div class="modal-body terms-modal-body"
+							style="text-align: justify;">
+
+						<p>
+						<h5>The delimited scope and purpose of the Wellness Check</h5>
+						</p>
+						<p>
+							The Information contained in, or accessed through, this website
+							is for your general information and Self-development use only and
+							is not intended to be used as medical advice and should not be
+							used to diagnose, treat, cure or prevent any medical condition.<br>
+							The diagnosis and treatment of any mental illness requires a
+							detailed evaluation by a medical practitioner or qualified mental
+							health practitioner. People seeking a diagnosis or treatment of
+							depression, anxiety or other mental health disorders should
+							consult a medical practitioner or mental health professional.<br>
+							This website is not designed to diagnose or treat common mental
+							health disorders. It is merely designed to help people to become
+							more self-aware about various aspects of their mental well-being
+							and general levels of psychological distress so that they feel
+							motivated to and can choose to take appropriate actions to
+							enhance their well-being or reduce their distress by using
+							appropriate methods including utilization of appropriate help and
+							services Although some information on maintaining well-being is
+							provided and people are likely to find the information on
+							self-care to be useful; however this is NOT a substitute for
+							seeking professional consultation and advice. There is no claim
+							made that the material contained on this website is likely to be
+							of help for everyone who uses this website.<br> If you have
+							a mental health condition or if you are likely to have a
+							diagnosis of mental health condition, you should seek
+							professional consultation from a trained mental health
+							professional or a medical consultant.<br> If at the time of
+							registering for program or at any point of time after registering
+							for this self-care program, you notice that you are getting
+							thoughts about harming yourself or harming another person, you
+							should seek urgent medical advice. If your patterns of responses
+							suggest that you are experiencing significant distress, you will
+							be strongly suggested to immediately seek medical help through a
+							direct/face-to face contact with any trained professional of your
+							choice. If you so desire, the wellness check team will try its
+							best to provide you some information regarding the availability
+							of centers/trained mental health professional in your region , if
+							such information is available to the team.<br> We strongly
+							recommend that you always seek the advice of a medical
+							practitioner or qualified mental health practitioner for any
+							questions regarding personal health or medical conditions. We
+							strongly recommend that you never disregard, avoid or delay in
+							obtaining medical advice from your medical practitioner or
+							qualified mental health practitioner because of something you
+							have read on this website.<br> If you think you may have a
+							medical emergency, call a local help-line/reach out to an
+							emergency service.<br> NIMHANS does not recommend or endorse
+							any specific tests, providers (including, but not limited to,
+							hospitals and physicians), products, procedures, or other
+							information that may be mentioned on the website. Any opinions
+							expressed on the website are the opinions of the individual
+							authors, not of NIMHANS.<br> The few questionnaires
+							available on this Website are intended solely for the purpose of
+							giving you a rough /broad idea of a particular issue and are not
+							designed to provide a diagnosis.<br> You represent and
+							warrant that you are at least 18 years of age or older. Persons
+							under age 18 with depressive symptoms are advised to talk with
+							their parents/guardians about getting direct help from a
+							qualified mental health professional/medical professional.<br>
+							By accessing and using the website, or any portion of the
+							website, you agree to be bound by each of the Terms of Use and
+							all applicable laws and regulations governing the website. If you
+							do not agree with any of the Terms of Use, you are not authorized
+							to access or use the website for any purpose. We reserve the
+							right to modify these Terms of Use at any time. Your use of the
+							website following any such modification constitutes your
+							agreement to follow and be bound by the Terms of Use as modified.
+						</p>
+						<br>
+						<p>
+						<h5>Fees, charges and cancellation</h5>
+						</p>
+						<p>
+							There is no fee or charge for you to register with Wellness
+							Check. However, if you access the Program through the use of a
+							mobile phone or the Internet, your normal phone/Internet charges
+							will apply.<br>There is no minimum contract associated with
+							the use of Wellness Check. You may choose to stop using the
+							Program at any time.
+						</p>
+						<br>
+						<p>
+						<h5>License to Use</h5>
+						</p>
+						<p>The information and materials on the website unless
+							otherwise stated, are copyrighted by the National Institute for
+							Mental Health and Neuro Sciences (NIMHANS), and may be used by
+							registered users solely for their own personal use. We grant you
+							a limited, personal, non-exclusive, non-transferable license to
+							use our content for your own personal, non-commercial use. Except
+							as otherwise provided, you acknowledge and agree that you have no
+							right to modify, edit, copy, reproduce, create derivative works
+							of, reverse engineer, alter, enhance or in any way exploit any of
+							the content in any manner, except for modifications in filling
+							out the forms for your authorized use. You shall not remove any
+							copyright notice from any page/form.</p>
+						<br>
+						<p>
+						<h5>Disclaimer of Warranties</h5>
+						</p>
+						<p>You agree to assume total responsibility and risk for your
+							use of the website, the service and the content. We make no
+							express or implied warranties, representations or endorsements
+							whatsoever with respect to the website, the service or the
+							content. We expressly disclaim all warranties, including, but not
+							limited to, implied warranties of merchantability, fitness for a
+							particular purpose, title and non-infringement with regard to the
+							website, the service, and the content. We do not warrant that the
+							functions performed by the website or the service will be
+							uninterrupted, timely, secure or error-free, free of viruses or
+							other malicious code, or that defects in the website/server or
+							the service will be corrected. We do not warrant the accuracy,
+							currency, or completeness of the content, or that any errors in
+							the content will be corrected. We reserve the right to correct
+							any errors, inaccuracies or omissions and to change or update
+							information at any time without prior notice. We do not, however,
+							guarantee that any errors, inaccuracies or omissions will be
+							corrected. The site, the service and the content are provided on
+							an 'as is' and 'as available' basis. The foregoing does not
+							affect any warranties which cannot be excluded or limited under
+							applicable law.</p>
+						<br>
+						<p>
+						<h5>Disclaimer of liability</h5>
+						</p>
+						<p>You understand and agree that under no circumstances we
+							will be liable for any damages whatsoever, including, but not
+							limited to direct, indirect, incidental, consequential, or
+							punitive damages arising out of the use of or inability to use
+							the website, the service, or the content. If you are dissatisfied
+							with the website, the service, the content, or the terms of use,
+							your sole and exclusive remedy is to discontinue using the
+							website. You acknowledge, by your use of the website, that your
+							use of the website is at your sole risk. We are not liable to any
+							user or person for any decision made or action taken in reliance
+							upon information or content displayed or provided in this
+							website. It is your responsibility to make your own decisions
+							about the currency, completeness, accuracy, reliability and
+							suitability of information, services, programs and communities of
+							interest contained in (or accessible from) linked websites.</p>
+						<br>
+						<p>
+						<h5>Security, viruses, errors and availability</h5>
+						</p>
+						<p>The internet is an insecure public network which means
+							there are risks that information sent to or from this website may
+							be intercepted, corrupted or modified by third parties. In
+							addition, files obtained from or through this website may contain
+							computer viruses, disabling codes, worms or other devices or
+							defects. You bear the risks and responsibility for any loss or
+							damage caused, directly or indirectly, by these risks and we
+							accept no liability for any interference with, or damage to, your
+							computer system, software or data occurring in connection with
+							this Website.</p>
+						<br>
+						<p>
+						<h5>Use of cookies</h5>
+						</p>
+						<p>
+							The website uses transient or session cookies. Cookies are pieces
+							of information that a website transfers to your computer's hard
+							disk when you open the program pages. Cookies by themselves do
+							not identify you or any user but they do identify your browser.
+							Because this website uses 'transient' cookies, your computer does
+							not retain the information delivered in the cookie once you leave
+							the website. When you log out, the transient cookie set up by the
+							website is destroyed, and no personal information is retained
+							which could identify you or your browser next time you log on to
+							the website. Most web browsers are set up to accept cookies, and
+							while you can set your browser to not accept cookies you will not
+							be able to use this website if you do this.<br>The website
+							may impose limits on the size of files uploaded by the users into
+							their workbook. We may also filter, remove or refuse to post
+							files which interfere with the technical operations of the
+							program, including files which threaten to overload or crash a
+							system.
+						</p>
+						<br>
+						<p>
+						<h5>Privacy</h5>
+						</p>
+						<p>
+							This statement sets out the National Institute for Mental Health
+							and Neuro Sciences policy relating to the collection and use of
+							your personal information in the Wellness Check program. This
+							Notice is in addition to the Terms of Use. Your registration as a
+							Wellness check user constitutes your agreement to terms of the
+							Privacy Notice and the Terms of Use.<br> Please note that
+							this Privacy Notice applies only to the Wellness Check site and
+							not to any other sites that are linked to the Wellness Check site
+							or mentioned on the website.
+						</p>
+						<br>
+						<p>
+						<h5>Your personal information is important to us</h5>
+						</p>
+						<p>NIMHANS recognizes that your privacy is very important to
+							you and that we are under a legal and ethical obligation to
+							protect the integrity of your personal information. When you
+							register with Wellness Check you will be asked to enter your
+							username. We suggest that you use a pseudonym or a made-up
+							username.</p>
+						<br>
+						<p>
+						<h5>Why the program collects personal information from you</h5>
+						</p>
+						<p>
+							When you enter the Wellness Check Program you will be asked to
+							complete a number of tests and enter some information, which you
+							may consider to be sensitive, about yourself. The program asks
+							for this information in order to provide you with tailored and
+							specifically relevant feedback. The information is stored in your
+							workbook in the Wellness Check database along with information
+							about the date and time you complete each exercise. Information
+							is also collected in summary form about most frequently visited
+							pages. This is intended to help the designers understand how
+							visitors use the Program. All the information gathered is stored
+							on the NIMHANS server and is subject to stringent security
+							measures.<br>We will not use or disclose any information
+							about you without your consent unless we are required to do so by
+							law.<br>We will never use your personal information to send
+							you unsolicited information or "spam".<br>Like most Internet
+							sites, this website is accessible worldwide. However, not all
+							products or Services are available to all persons or in all
+							geographic locations. Wellness Check reserves the right to limit
+							the provision of its products and Services to any person,
+							geographic area, or jurisdiction. This website is not intended
+							for use outside India and its content may not be most appropriate
+							for those residing outside the country. You agree to comply with
+							all applicable laws and local rules or restrictions relating to
+							this website.
+						</p>
+						<br>
+						<p>
+						<h5>Risks and benefits</h5>
+						</p>
+						<p>Wellness Check offers a set of tools which aim to benefit
+							users by;</p>
+						<p>A user can repeatedly respond to questionnaires and obtain
+							summaries of his/her scores over time, as compared to other
+							Indian users of similar age group for whom the normative data are
+							available.</p>
+						<ul class="termli">
+							<br>
+							<li class="liststyle">Helping them to become self-aware
+								about various aspects of their mental well being such as
+								frequency of experience of positive and negative emotions, sense
+								of mastery and sense of personal growth etc. in addition to
+								capturing their level of mental distress at a given point of
+								time.</li>
+							<br>
+							<li class="liststyle">Providing general suggestions for
+								maintaining/enhancing one’s state of well-being.</li>
+						</ul>
+						<br>
+						<p>A user can repeatedly respond to questionnaires and obtain
+							summaries of his/her scores over time, as compared to other
+							Indian users of similar age group for whom the normative data are
+							available.</p>
+						<p>
+							<b>Wellness Check does not ‘diagnose’ you or ‘treat’ you, or
+								replace standard assessment, psychological testing or
+								psychiatric evaluation and treatment provided by a health and/or
+								mental health professional.</b>
+						</p>
+						<p>Therefore, there are risks associated with its use,
+							including;</p>
+						<ul class="termli">
+							<br>
+							<li class="liststyle">The possibility that you may have a
+								major mental health condition but Wellness Check does not
+								produce any finding to indicate that you have low well-being.</li>
+							<br>
+							<li class="liststyle">The possibility that you miss seeking
+								professional help when it is actually needed, due to
+								inappropriately relying on Wellness Check feedback.</li>
+							<br>
+							<li class="liststyle">The possibility that your symptoms
+								persist /worsen while using the Program.</li>
+							<br>
+							<li class="liststyle">The possibility that new symptoms or
+								health conditions develop while using the Program.</li>
+							<br>
+							<li class="liststyle">The possibility that the feedback
+								generated by Wellness Check is not suitable or appropriate
+								specifically for you at a particular point in time.</li>
+						</ul>
+						<br>
+						<h5>External links</h5>
+						<br>
+						<p>Links to external websites on the Program are provided for
+							easy access to various sources of information for your
+							convenience only. Such links do not constitute or imply an
+							endorsement, sponsorship, or recommendation by NIMHANS of the
+							third party, the third-party website, or the information
+							contained therein. You acknowledge and agree that the NIMHANS or
+							Wellness Check Team is not responsible for the availability of
+							any such site and that it does not endorse or warrant, and is not
+							responsible or liable for, any such website, its content, its
+							privacy policy or practices, or the acts or omissions of its
+							operators. Wellness Check makes no warranty and accepts no
+							responsibility or liability in relation to any information,
+							products, services or advice provided by these external links and
+							any views or recommendations provided in linked websites do not
+							necessarily represent those of Wellness Check. You acknowledge
+							that you enter any third party websites at your own risk.</p>
+						<br>
+						<h5>Copyright</h5>
+						<br>
+						<p>NIMHANS and the Wellness Check team respect the
+							intellectual property rights of others. If you believe that your
+							work has been copied in a way that constitutes copyright
+							infringement, please provide the following information in writing
+							to us.</p>
+						<p>A physical or electronic signature of a person authorized
+							to act on behalf of the owner of the copyright.</p>
+						<p>
+							A description of the copyrighted work that you claim has been
+							infringed.<br>A description of the material that you claim
+							to be infringing or to be the subject of infringing activity and
+							that is to be removed or access to which is to be disabled, and
+							information sufficient to permit us to locate the material.
+							Information so that we can contact you, such as address,
+							telephone number and e-mail address.
+						</p>
+						<p>A statement that you have a good faith belief that use of
+							the material in the manner complained of is not authorized by the
+							copyright owner, its agent, or the law.</p>
+						<p>A statement that the information in the notification is
+							accurate that you are the copyright owner or are authorized to
+							act on behalf of the owner of a copyright that is allegedly
+							infringed.</p>
+						<p>Upon the receipt of a proper notice of claimed
+							infringement, we shall respond at the earliest to resolve the
+							claim between the notifying party and the alleged infringer who
+							provided the content in issue, including, where applicable,
+							removing, or disabling access to content claimed to be infringing
+							or by removing or disabling access to links to such content.</p>
+						<br>
+						<h5>Your obligations</h5>
+						<br>
+						<p>You are solely responsible for any content or material
+							which you post or upload on the Program, or which is posted by
+							another person using your user name or password. Wellness Check
+							excludes all liability (to the extent permitted by law) for any
+							loss, damage or expenses suffered by you or claims made against
+							you arising from content or material which you post or upload on
+							the Program, or which is posted by another person (whether using
+							your username or password or otherwise).</p>
+						<br>
+						<h5>Use of the website</h5>
+						<br>
+						<p>You agree not to use the website for unlawful purposes, and
+							you agree to comply with all applicable laws, rules and
+							regulations while using the website.<br> You agree not to use the
+							website for any commercial purposes, including any advertisement,
+							commercial solicitation, or promotion of any specific goods or
+							services.</p>
+						<p>You agree not to collect or use any information or other
+							data available via the website inappropriately.</p>
+						<p>You may not distribute, modify, copy (except as set forth
+							in these Terms of Use), transmit, display, reuse, reproduce,
+							publish, license, create derivative works from, transfer,
+							translate, sell, reverse engineer, decompile or disassemble, or
+							otherwise use the website or the Content (as defined herein),
+							except as specifically authorized in the Terms of Use, without
+							written permission from NIMHANS.</p>
+						<p>You agree not to use the website to post or transmit any
+							threatening, harmful, false, misleading, abusive, harassing,
+							libelous, defamatory, vulgar, obscene, scandalous, inflammatory,
+							pornographic, or profane material or any material that could
+							constitute or encourage conduct that would be considered a
+							criminal offense, give rise to civil liability, or otherwise
+							violate any law.</p>
+						<p>You agree not to use the website to advertise or perform
+							any commercial solicitation, or otherwise exploiting for any
+							commercial purposes any portion of, use of or access to the
+							website.</p>
+						<p>You agree not to incorporate any code into the code of the
+							website or to use the website to post or transmit any virus,
+							worm, Trojan Horse, time bomb, spyware, bot, tracking device,
+							screen scraping software or other computer code, file or program
+							that is harmful or invasive or is intended to damage or hijack
+							the operation of, or to monitor the use or operation of the Site
+							or any user of the website.</p>
+						<p>You agree not to use the website in conjunction with any
+							screen scraping software.</p>
+						<p>You agree not to restrict or inhibit any other person from
+							use of the website.<br> You agree not to interfere with or disrupt
+							the operation of the website or the servers or networks used to
+							make the website available, or violate any requirements,
+							procedures, policies or regulations of such networks.</p>
+						<p>You agree not to use the website to harvest or collect
+							personally identifiable information about users of the Site.</p>
+						<p>You agree not to use the website to disrespect the privacy
+							or views of others.<br> You agree not to use the website to
+							impersonate another person or supply false information about
+							yourself or another person.</p>
+						<p>You agree not to post material on the website that
+							infringes on the copyright or other intellectual property rights
+							of others, or the privacy, publicity, or other personal rights of
+							others.</p>
+						<br>
+						<h5>Your Suggestions</h5>
+						<br>
+						<p>We appreciate your feedback or other suggestions about the
+							website, the Service and the Content, but you understand that we
+							may use your feedback or other suggestions without any obligation
+							to compensate you for them. For any queries or suggestions or
+							complaints, you may contact:</p>
+						<br>
+						<h5>wellbeing.flourish.nimhans@gmail.com</h5>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</form>
+</body>
+</html>

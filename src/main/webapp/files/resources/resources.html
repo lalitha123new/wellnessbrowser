@@ -1,0 +1,5934 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Wellness- Resources</title>
+<meta name="description"
+	content="Unika - Responsive One Page HTML5 Template">
+<meta name="keywords"
+	content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+<meta name="author" content="imransdesign.com">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts  -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500'
+	rel='stylesheet' type='text/css'>
+<!-- Body font -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400'
+	rel='stylesheet' type='text/css'>
+<!-- Navbar font -->
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../inc/animations/css/animate.min.css">
+<link rel="stylesheet"
+	href="../../inc/font-awesome/css/font-awesome.min.css">
+<!-- Font Icons -->
+<link rel="stylesheet" href="../../inc/owl-carousel/css/owl.theme.css">
+
+<!--Javscript-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/style.css">
+
+<link rel="stylesheet" href="../../css/mobile.css">
+<!--<link href="css/sb-admin.css" rel="stylesheet">-->
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="../../css/skin/cool-gray.css">
+<link rel="alternate stylesheet" media="screen" title="ice-blue"
+	href="../../css/skin/ice-blue.css">
+<link rel="alternate stylesheet" media="screen" title="summer-orange"
+	href="../../css/skin/summer-orange.css">
+<link rel="/alternate stylesheet" media="screen" title="fresh-lime"
+	href="../../css/skin/fresh-lime.css">
+<link rel="/alternate stylesheet" media="screen" title="night-purple"
+	href="../../css/skin/night-purple.css">
+
+<!--angular toaster-->
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+<script src="../../angular/toaster/toaster.js"></script>
+
+<link rel="stylesheet" media="screen" title="night-purple"
+	href="resource.css">
+
+<!--angular js-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>
+
+<!--angular toaster js-->
+<script src="../../angular/toaster/toaster.js"></script>
+
+<!--Controllers-->
+<script src="resourceCtrl.js"></script>
+<script src="../../config/config.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#myBtn").click(function() {
+			$("#myModal").modal();
+
+		});
+
+	});
+
+	(function(global) {
+
+		if (typeof (global) === "undefined") {
+			throw new Error("window is undefined");
+		}
+
+		var _hash = "!";
+		var noBackPlease = function() {
+			global.location.href += "#";
+
+			// making sure we have the fruit available for juice....
+			// 50 milliseconds for just once do not cost much (^__^)
+			global.setTimeout(function() {
+				global.location.href += "!";
+			}, 50);
+		};
+
+		// Earlier we had setInerval here....
+		global.onhashchange = function() {
+			if (global.location.hash !== _hash) {
+				global.location.hash = _hash;
+			}
+		};
+
+		global.onload = function() {
+
+			noBackPlease();
+
+		};
+
+	})(window);
+</script>
+
+<style>
+
+
+/* disabled the "container" class in each 
+section by changing the class name to container1.
+ This is to avoid text going out when zooming*/
+.terms-modal-dialog {
+	overflow-y: initial !important
+}
+
+.terms-modal-body {
+	height: 700px;
+	overflow-y: auto;
+}
+
+.termli {
+	padding-left: 36px;
+	list-style: circle;
+}
+
+.liststyle {
+	list-style: square;
+}
+
+.menu {
+	padding-left: 10px;
+	padding-top: 90px;
+}
+
+* {
+	margin: 0;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #eee;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+	text-rendering: optimizeLegibility;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+div.wrapper {
+	margin: 20px auto;
+	width: 850px;
+}
+
+p {
+	font-family: sans-serif;
+	text-align: justify;
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 11px;
+	padding-left: 5px;
+	color: #111111;
+	padding-bottom: 1px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+nav.vertical {
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+	overflow: hidden;
+	text-align: left;
+	margin-top: 60px;
+}
+
+nav.vertical>ul {
+	list-style-type: none;
+	padding-top: 0px;
+}
+
+nav.vertical>ul>li {
+	display: block;
+}
+
+nav.vertical>ul>li>a {
+	background-color: #3C3C3C;
+	color: rgb(255, 255, 255);
+	display: block;
+	font-size: 22px;
+	font-weight: 500;
+	height: 50px;
+	letter-spacing: .5rem;
+	line-height: 50px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	text-transform: uppercase;
+	transition: all .1s ease;
+	text-decoration: none;
+}
+
+nav.vertical>ul>li>a:hover {
+	background-color: #111111;
+}
+
+nav.vertical>ul>li>div {
+	background-color: rgb(255, 255, 255);
+}
+
+nav.vertical>ul>li>div>ul {
+	list-style-type: none;
+}
+
+nav.vertical>ul>li>div>ul>li>a {
+	background-color: #FFE0B2;
+	border-bottom: 1px solid rgba(0, 0, 0, .05);
+	color: #333331;
+	display: block;
+	font-size: 22px;
+	font-family: sans-serif;
+	padding: 10px 0;
+	padding-left: 20px;
+	text-decoration: none;
+	transition: all 0.15s linear;
+}
+
+nav.vertical>ul>li>div>ul>li:hover>a {
+	background-color: #3C3C3C;
+	color: rgb(255, 255, 255);
+	padding: 10px 0 10px 50px;
+}
+
+input[type=text] {
+	background-color: #9e6d6f;
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid white;
+}
+
+/*{
+box-sizing:border-box;
+}*/
+div.options>label>input {
+	visibility: hidden;
+}
+
+div.options>label>input:checked+img {
+	background: url(../../img/tick-png-image-97011.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 30px 30px;
+}
+
+img {
+	border: 2px solid;
+}
+
+.content-top {
+	width: 90%;
+	margin: 10px auto 10px;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.content-top1 {
+	width: 90%;
+	margin: 10px auto 10px;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+.center-container {
+	padding: 1.35em 0;
+	background-color: #9e6d6f;
+}
+
+h6 {
+	color: #111111;
+	font-family: sans-serif;
+}
+
+h3 {
+	color: #000000;
+	font-family: sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+a.big:hover {
+	font-size: 30px;
+	color: red;
+	text-decoration: underline;
+}
+
+#mynav {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+	height: 100px;
+	color: #aaa;
+	background-color: #3C3C3C;
+	text-align: center;
+}
+
+.page bg-style1 {
+	width: 70%;
+	
+}
+
+section {
+	position: relative;
+}
+
+.page-header {
+	padding-top: 15px;
+}
+/* modal cross mark displays brightly*/
+.close {
+	color:white;
+	opacity:.9;
+	}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media ( min-width : 1281px) {
+.content-top1 {
+	width: 65%;
+	/*margin: 10px auto 10px;
+	align:left;*/
+	background-color: #FFE0B2;
+	padding-left: 15px;
+	padding-right: 15px;
+	
+	/*margin-left:66px;*/
+}
+	.page1 {
+		display: none;
+	}
+	.container1 {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	
+	.container2 {
+		display: none;
+	}
+	
+	.container3 {
+		display: none ;
+	}
+	
+	.container1table {
+		display: none;
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 70px;
+	}
+	.page-header-wrapper2 {
+		height: 200px;
+	}
+	.page-header-wrapper3 {
+		height: 150px;
+	}
+	.page-header-wrapper4 {
+		height: 160px;
+	}
+	.page-header-wrapper5 {
+		height: 120px;
+	}
+	.h2class {
+		font-size: 30px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 32px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 20px;
+	}
+	.h5class {
+		font-size: 26px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 26px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 26px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 26px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 10px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 24px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 22px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 18px;
+		/*text-align:justify;*/
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 30px;
+		font-weight: 500;
+		height: 50px;
+		letter-spacing: .5rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 22px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 30px;
+		color: red;
+	}
+	.tableclass3 {
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tdclass3 {
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.thclass3a {
+	
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		/*min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;*/
+	}
+	.thclass3 {
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.tdw {
+		height: 90px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+	}
+	.tdw3a {
+		height: 106px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.queswidth {
+		color: black;
+		font-size: 18px;
+		width: 23% !important;
+		text-align: justify;
+	}
+	.tdwidth {
+		width: 4% !important;
+		font-size: 15px;
+	}
+	.tableclasspart2 {
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableheadclass {
+		display: none;
+		font-size: 12px;
+		font-family: sans-serif;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	.tdclass3a {
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	div.options>label {
+		display: block;
+		margin: 0 0 0 -10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		width: 77px;
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 30px;
+		width: 30px;
+		background: none;
+		border-radius: 15px;
+	}
+	.frameclass1 {
+		width: 650px;
+		height: 480px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 640px;
+		height: 480px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 30px;
+	}
+	
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 18px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media ( min-width : 1025px) and (max-width: 1280px) {
+.content-top1 {
+	width: 69%;
+	
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+	/*margin-left:60px;*/
+}
+	.page1 {
+		display: none;
+	}
+	.container1 {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.container2 {
+		display: none;
+	}
+	.container1table {
+		display: none;
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 70px;
+	}
+	.page-header-wrapper2 {
+		height: 230px;
+	}
+	.page-header-wrapper3 {
+		height: 150px;
+	}
+	.page-header-wrapper4 {
+		height: 130px;
+	}
+	.page-header-wrapper5 {
+		height: 90px;
+	}
+	.h2class {
+		font-size: 28px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 30px;
+		font-weight: bold;
+		padding-top: 1px;
+		padding-bottom: 1px;
+	}
+	.h5class {
+		font-size: 24px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 24px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 24px;
+		color: blue;
+		/*color: #ff9900;*/
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 24px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 10px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 21px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 24px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 22px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 22px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 24px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 16px;
+		/*text-align:justify;*/
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 21px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 30px;
+		font-weight: 500;
+		height: 50px;
+		letter-spacing: .5rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		padding-left: 0px;
+		text-align:center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 22px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 28px;
+		color: red;
+	}
+	.tableclass3 {
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableclass3a {
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tclass4 {
+		/*overflow-x: auto;*/
+		display: none;
+	}
+	.thclass4a {
+		display: none;
+	}
+	.thclass3 {
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.thclass3a {
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		/*min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;*/
+	}
+	.tdclass3 {
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.tdw {
+		height: 70px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+	}
+	.tdw3a {
+		height: 106px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 25px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.queswidth {
+		color: black;
+		font-size: 18px;
+		width: 23% !important;
+		text-align: justify;
+	}
+	.tdwidth {
+		width: 4% !important;
+		font-size: 15px;
+	}
+	.tableclasspart2 {
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tdclass3a {
+		display: none;
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	.tableheadclass {
+		display: none;
+		font-size: 12px;
+		font-family: sans-serif;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	div.options>label {
+		display: block;
+		margin: 0 0 0 -10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		width: 77px;
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 30px;
+		width: 30px;
+		background: none;
+		border-radius: 15px;
+	}
+	iframe {
+		width: 640px;
+		height: 480px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 640;
+		height: 480;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 30px;
+	}
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 16px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media ( min-width : 768px) and (max-width: 1024px) {
+.content-top1 {
+	width: 69%;
+	
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+	/*margin-left:50px;*/
+}
+	.page1 {
+		display: none;
+	}
+	.container1 {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.container2 {
+		display: none;
+	}
+	.container1table {
+		display: none;
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 70px;
+	}
+	.page-header-wrapper2 {
+		height: 200px;
+	}
+	.page-header-wrapper3 {
+		height: 150px;
+	}
+	.page-header-wrapper4 {
+		height: 130px;
+	}
+	.page-header-wrapper5 {
+		height: 90px;
+	}
+	.h2class {
+		font-size: 25px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 28px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 40px;
+	}
+	.h5class {
+		font-size: 21px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 21px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 21px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 21px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 40px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 20px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 14px;
+		/*text-align:justify;*/
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 16px;
+		line-height: 20px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 25px;
+		font-weight: 500;
+		height: 40px;
+		letter-spacing: .5rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 21px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 23px;
+		color: red;
+	}
+	.tableclass3 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableclass3a {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tclass4 {
+		/*overflow-x: auto;*/
+		display: none;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.thclass4a {
+		display: none; height : 10px;
+		font-size: 15px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		padding-right: 1px;
+		height: 10px;
+	}
+	.thclass3 {
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.thclass3a {
+		height: 70px;
+		font-size: 22px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		/*min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;*/
+	}
+	.tdclass3 {
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 22px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.tdw {
+		height: 70px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 22px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+	}
+	.tdw3a {
+		height: 106px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 22px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.queswidth {
+		color: black;
+		font-size: 18px;
+		width: 23% !important;
+		text-align: justify;
+	}
+	.tdwidth {
+		width: 4% !important;
+		font-size: 15px;
+	}
+	.tableclasspart2 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableheadclass {
+		display: none;
+		font-size: 12px;
+		font-family: sans-serif;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	.tdclass3a {
+		display: none;
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	div.options>label {
+		display: block;
+		margin: 0 0 0 -10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		width: 70px;
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 25px;
+		width: 25px;
+		background: none;
+		border-radius: 15px;
+	}
+	.frameclass1 {
+		width: 580px;
+		height: 430px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 580px;
+		height: 430px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 26px;
+	}
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 14px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media ( min-width : 768px) and (max-width: 1024px) and (orientation:
+	landscape) {
+	.content-top1 {
+	width: 68%;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+	/*margin-left:50px;*/
+}
+	.page1 {
+		display: none;
+	}
+	.container1 {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.container2 {
+		display: none;
+	}
+	.container1table {
+		display: none;
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 70px;
+	}
+	.page-header-wrapper2 {
+		height: 200px;
+	}
+	.page-header-wrapper3 {
+		height: 160px;
+	}
+	.page-header-wrapper4 {
+		height: 160px;
+	}
+	.page-header-wrapper5 {
+		height: 130px;
+	}
+	.h2class {
+		font-size: 22px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 25px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 20px;
+	}
+	.h5class {
+		font-size: 18px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 18px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 18px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 18px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 40px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 19px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 21px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 19px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 21px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 13px;
+		/*text-align:justify;*/
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 15px;
+		line-height: 19px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 25px;
+		font-weight: 500;
+		height: 40px;
+		letter-spacing: .5rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 20px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 20px;
+		color: red;
+	}
+	.tableclass3 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableclass3a {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tclass4 {
+		/*overflow-x: auto;*/
+		display: none;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.thclass4a {
+		display: none; height : 10px;
+		font-size: 15px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		padding-right: 1px;
+		height: 10px;
+	}
+	.thclass3 {
+		height: 50px;
+		font-size: 18px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.thclass3a {
+		height: 50px;
+		font-size: 12px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.tdclass3 {
+		font-size: 14px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 18px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.tdw {
+		height: 70px !important;
+		font-size: 16px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 18px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+	}
+	.tdw3a {
+		height: 106px !important;
+		font-size: 14px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 18px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.queswidth {
+		color: black;
+		font-size: 18px;
+		width: 23% !important;
+		text-align: justify;
+	}
+	.tdwidth {
+		width: 4% !important;
+		font-size: 15px;
+	}
+	.tableclasspart2 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableheadclass {
+		display: none;
+		font-size: 12px;
+		font-family: sans-serif;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	.tdclass3a {
+		display: none;
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	div.options>label {
+		display: block;
+		margin: 0 0 0 -10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		width: 60px;
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 20px;
+		width: 20px;
+		background: none;
+		border-radius: 15px;
+	}
+	.frameclass1 {
+		width: 580px;
+		height: 380px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 580px;
+		height: 380px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 22px;
+	}
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 12px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media ( min-width : 481px) and (max-width: 767px) {
+.link_new {
+font-size:15px;
+}
+.content-top1 {
+	width: 68%;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+	/*margin-left:35px;*/
+}
+	.page1 {
+		display: none;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	.container1 {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.container2 {
+		display: none;
+	}
+	.container1table {
+		display: none;
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 70px;
+	}
+	.page-header-wrapper2 {
+		height: 230px;
+	}
+	.page-header-wrapper3 {
+		height: 150px;
+	}
+	.page-header-wrapper4 {
+		height: 180px;
+	}
+	.page-header-wrapper5 {
+		height: 120px;
+	}
+	.h2class {
+		font-size: 19px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 22px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 40px;
+	}
+	.h5class {
+		font-size: 15px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 15px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 15px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 15px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 40px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 17px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 17px;
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 12px;
+		/*text-align:justify;*/
+		line-height: 22px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 25px;
+		font-weight: 500;
+		height: 40px;
+		letter-spacing: .5rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 18px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 16px;
+		color: red;
+	}
+	.tableclass3 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableclass3a {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tclass4 {
+		/*overflow-x: auto;*/
+		display: none;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.thclass4a {
+		display: none; 
+		height : 10px;
+		font-size: 15px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		padding-right: 1px;
+		height: 10px;
+	}
+	.thclass3 {
+		height: 40px;
+		font-size: 14px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.thclass3a {
+		height: 40px;
+		font-size: 12px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.tdclass3 {
+		font-size: 8px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 9px;
+		line-height: 14px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+	}
+	.tdw {
+		height: 60px !important;
+		font-size: 12px;
+		height: 160px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 14px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+	}
+	.tdw3a {
+		height: 80px !important;
+		font-size: 10px;
+		height: 160px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 10px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.queswidth {
+		color: black;
+		font-size: 10px;
+		width: 23% !important;
+		text-align: justify;
+	}
+	.tdwidth {
+		width: 4% !important;
+		font-size: 7px;
+	}
+	.tableclasspart2 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+	}
+	.tableheadclass {
+		display: none;
+		font-size: 12px;
+		font-family: sans-serif;
+	}
+	.tableaclass {
+		display: none;
+		color: blue;
+		margin-right: 5px;
+		padding-right: 2px;
+		line-height: 18px;
+	}
+	.tdclass3a {
+		display: none;
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	div.options>label {
+		display: block;
+		margin: 0 0 0 -10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		width: 56px;
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 18px;
+		width: 18px;
+		background: none;
+		border-radius: 15px;
+	}
+	.frameclass1 {
+		width: 350px;
+		height: 270px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 350px;
+		height: 270px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 22px;
+	}
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 10px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media ( min-width : 320px) and (max-width: 480px) {
+.content-top1 {
+	width: 90%;
+	margin: 10px auto 10px;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+	.container1 {
+		text-align: center;
+		padding-top: 10px;
+	}
+	.container2 {
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.container1table {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 80px;
+	}
+	.page-header-wrapper2 {
+		height: 250px;
+	}
+	.page-header-wrapper3 {
+		height: 160px;
+	}
+	.page-header-wrapper4 {
+		height: 180px;
+	}
+	.page-header-wrapper5 {
+		height: 160px;
+	}
+	.h2class {
+		font-size: 15px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 19px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 20px;
+	}
+	.h5class {
+		font-size: 14px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 14px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 14px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 14px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 40px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 12px;
+		/*text-align:justify;*/
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 20px;
+		font-weight: 300;
+		height: 40px;
+		letter-spacing: .2rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 15px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 15px;
+		color: red;
+	}
+	.tableclass3 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tableclass3a {
+		/*display: none;
+		overflow-x: auto;
+		*/
+		border: 1px;
+		display: block;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tclass4 {
+		overflow-x: auto;
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		overflow-x: auto;
+		width: 100%;
+	}
+	.thclass4a {
+		height: 10px;
+		font-size: 15px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		padding-right: 1px;
+	}*/
+	.thclass3 {
+		font-size: 10px;
+		background-color: #FFFDB9 !important;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		width: 33%;
+		word-wrap: break-word;
+		/*text-align: center;
+		height: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;*/
+	}
+	.thclass3a {
+		height: 20px;
+		font-size: 5px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.thclass3a {
+		height: 20px;
+		font-size: 7px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.tdclass3 {
+		font-size: 8px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 10px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		width: 33%;
+		word-wrap: break-word;
+	}
+	
+	.tdw {
+	width: auto;
+		height: 50px !important;
+		font-size: 11px;
+		/*height: 160px;*/
+	padding-left: 3px;
+		padding-right: 5px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 14px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		
+	}
+	.tdw3a {
+		height: 75px !important;
+		font-size: 9px ! important;
+		height: 140px;
+		padding-left: 0px;
+		padding-right: 0px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 10px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.tableclasspart2 {
+		display: none;
+		/*overflow-x: auto;
+		display: block;*/
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tdclass3a {
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	
+	div.options>label {
+		/*display: block;*/
+		margin: 0 6px 0 10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		font-size:12px;
+		/*width: 40px;*/
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 10px;
+		width: 10px;
+		background: none;
+		border-radius: 15px;
+		border-color: black;
+	}
+	.frameclass1 {
+		width: 230px;
+		height: 230px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 230px;
+		height: 230px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 25px;
+	}
+	
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 15px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+
+@media ( max-width : 319px) {
+.content-top1 {
+	width: 90%;
+	margin: 10px auto 10px;
+	background-color: #FFE0B2;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+	.container1 {
+		text-align: center;
+		padding-top: 10px;
+	}
+	.container2 {
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.container1table {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 5px;
+	}
+	.page-header-wrapper1 {
+		height: 80px;
+	}
+	.page-header-wrapper2 {
+		height: 250px;
+	}
+	.page-header-wrapper3 {
+		height: 160px;
+	}
+	.page-header-wrapper4 {
+		height: 180px;
+	}
+	.page-header-wrapper5 {
+		height: 160px;
+	}
+	.h2class {
+		font-size: 15px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.h3class {
+		color: #000000;
+		font-family: sans-serif;
+		font-size: 19px;
+		font-weight: bold;
+		padding-top: 2px;
+		padding-bottom: 20px;
+	}
+	.h5class {
+		font-size: 14px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+	}
+	.h5class1 {
+		font-size: 14px;
+		color: #ff9900;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+	}
+	.h5class2 {
+		font-size: 14px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+	}
+	.h5class3 {
+		font-size: 14px;
+		color: blue;
+		font-family: sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-style: italic;
+		margin-bottom: 40px;
+	}
+	.pclass {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass1 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+	.pclass2 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass3 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.pclass4 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass5 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 30px;
+	}
+	.pclass6 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass7 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+	}
+	.pclass8 {
+		font-family: sans-serif;
+		font-size: 12px;
+		/*text-align:justify;*/
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		text-align: left;
+		padding-left: 30px;
+	}
+	.pclass9 {
+		font-family: sans-serif;
+		text-align: justify;
+		font-size: 12px;
+		line-height: 26px;
+		margin-bottom: 11px;
+		padding-left: 5px;
+		color: #111111;
+		padding-bottom: 1px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	nav.vertical>ul>li>a {
+		background-color: #3C3C3C;
+		color: rgb(255, 255, 255);
+		display: block;
+		font-size: 20px;
+		font-weight: 300;
+		height: 40px;
+		letter-spacing: .2rem;
+		line-height: 50px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+		text-transform: uppercase;
+		transition: all .1s ease;
+		text-decoration: none;
+		text-align: center;
+	}
+	nav.vertical>ul>li>div>ul>li>a {
+		background-color: #FFE0B2;
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		color: #333331;
+		display: block;
+		font-size: 15px;
+		font-family: sans-serif;
+		padding: 10px 0;
+		padding-left: 20px;
+		text-decoration: none;
+		transition: all 0.15s linear;
+	}
+	a.big:hover {
+		font-size: 15px;
+		color: red;
+	}
+	.tableclass3 {
+		/*overflow-x: auto;*/
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tableclass3a {
+		/*display: none;*/
+		/*overflow-x: auto;
+		*/
+		border: 1px;
+		display:block;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tclass4 {
+		overflow-x: auto;
+		display: block;
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		overflow-x: auto;
+		width: 100%;
+	}
+	.thclass4a {
+		height: 10px;
+		font-size: 15px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		padding-right: 1px;
+	}*/
+	.thclass3 {
+		font-size: 10px;
+		background-color: #FFFDB9 !important;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		width: 33%;
+		word-wrap: break-word;
+		/*text-align: center;
+		height: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;*/
+	}
+	.thclass3a {
+		height: 20px;
+		font-size: 5px;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		min-width: 20px;
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.thclass3a {
+		height: 20px;
+		font-size: 7px !important;
+		text-align: center;
+		background-color: #FFFDB9 !important;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-family: sans-serif;
+		color: #ff9900;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		
+		word-spacing: 100vw;
+		padding-right: 1px;
+	}
+	.tdclass3 {
+		font-size: 8px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 10px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		width: 33%;
+		word-wrap: break-word;
+	}
+	
+	.tdw {
+	width: auto;
+		height: 50px !important;
+		font-size: 11px;
+		/*height: 160px;*/
+	padding-left: 3px;
+		padding-right: 5px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 14px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		
+	}
+	.tdw3a {
+		height: 75px !important;
+		font-size: 9px ! important;
+		height: 140px;
+		padding-left: 0px;
+		padding-right: 0px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		line-height: 10px;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		border: 1px solid #ff9900;
+		color: black;
+	}
+	.tableclasspart2 {
+		display: none;
+		/*overflow-x: auto;
+		display: block;*/
+		border: 1px;
+		border-collapse: collapse;
+		border: 2px solid #ff9900;
+		background-color: #FFE0B2;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.tdclass3a {
+		font-size: 13px;
+		/*height: 140px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-family: sans-serif;
+		padding-top: 1px;
+		*/
+		line-height: 16px;
+		color: black;
+		background-color: #FFFDB9;
+		border-color: #ff9900;
+		/*border: 1px solid #ff9900;*/
+		width: 100%;
+		word-wrap: break-word;
+		padding-right: 1px;
+		padding-left: 1px;
+		padding-bottom: 5px;
+	}
+	label {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 13px;
+		margin-left: 20px;
+	}
+	div.options>label {
+		/*display: block;*/
+		margin: 0 6px 0 10px;
+		padding: 0 0 20px 0;
+		height: 20px;
+		/*width: 40px;*/
+	}
+	div.options>label>img {
+		display: inline-block;
+		padding: 0px;
+		height: 10px;
+		width: 10px;
+		background: none;
+		border-radius: 15px;
+		border-color: black;
+	}
+	.frameclass1 {
+		width: 230px;
+		height: 230px;
+		margin: auto;
+		display: flex;
+	}
+	.frameclass2 {
+		width: 230px;
+		height: 230px;
+		margin: auto;
+		display: flex;
+		margin-bottom: 40px;
+	}
+	.modal-headerclass {
+		background-color: #5cb85c;
+		color: white !important;
+		text-align: center;
+		font-size: 25px;
+	}
+	
+	input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-sizing: border-box;
+		background-color: #FFFDB9;
+		color: #111111;
+		font-size: 15px;
+		font-family: sans-serif;
+		margin-bottom: 20px;
+	}
+	.spanclass1 {
+		font-style: italic;
+	}
+}
+</style>
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar"
+	ng-controller="resourcecontroller" oncontextmenu="return false;">
+	<toaster-container toaster-options="{'time-out': 7000}"></toaster-container>
+	<header id="header" class="header-main"
+		style="background-color: #9e6d6f;">
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+
+				<div id="mynav">
+					<div class="container1">
+						<button type="button" class="btn btn-success"
+							ng-click="homeClick()" style="border-radius: 4px !important;">
+							<a style="color: white; text-decoration: none;">Home</a>
+						</button>
+
+						<button type="button" class="btn btn-primary" ng-click="myPage()"
+							style="border-radius: 4px !important;">
+							<a style="color: white; text-decoration: none;">My page</a>
+						</button>
+
+					</div>
+					<h2 class="h2class">Useful Resources</h2>
+
+
+				</div>
+			</div>
+		</nav>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="center-container" style="margin-top: 10px;">
+			<div class="content-top1" style="margin-top: 40px;">
+
+				<section id="new-section" class="page bg-style1"
+					style="background-color: #FFE0B2; padding-top: 3px; padding-left: 0; padding-right: 0; padding-bottom: 30px; margin-top: 10px;">
+
+					<!-- Begin page header-->
+
+
+					<div class="rotate-box-1-wrapper">
+						<div class="container1">
+							<div class="row">
+								<div class="col-md-12"
+									style="text-align: justify; font-family: sans-serif; color: #fff">
+
+
+
+									<nav class="vertical">
+										<ul>
+											<li><a href="#" style="color: #FFFDB9;">What is
+													here?</a>
+												<div>
+													<ul>
+
+														<li><a class="page-scroll" href="#about-section">1.
+																Maintaining Well Being: Part 1 <i class="fa fa-chevron-right"></i></span></a></li>
+														<li><a class="page-scroll" href="#portfolio-section">2.
+																Maintaining Well Being: Part 2<i class="fa fa-chevron-right"></i></a></li>
+														<li><a class="page-scroll" href="#why-section">3.
+																Learning about different types of errors in thinking
+																(Cognitive Distortions)<i class="fa fa-chevron-right"></i></a></li>
+														<li><a class="page-scroll" href="#team-section">4.
+																Learn Self-Compassion<i class="fa fa-chevron-right"></i></a></li>
+														<li><a class="page-scroll" href="#team1-section">5.
+																Relaxation through Visualization<i class="fa fa-chevron-right"></i></a></li>
+														<li><a class="page-scroll" href="#team2-section">6.
+																Dealing with Suicidal Thoughts<i class="fa fa-chevron-right"></i></a></li>
+														<li><a class="page-scroll" href="#team3-section">7.
+																Step up: When you need to<i class="fa fa-chevron-right"></i></a></li>
+													</ul>
+												</div></li>
+
+
+										</ul>
+									</nav>
+
+
+
+
+
+								</div>
+
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.container -->
+
+						<!--<div class="devider"></div>-->
+						<!-- <p class="subtitle">Why us</p> -->
+					</div>
+
+
+
+					<!--<div class="devider"></div>-->
+					<!-- <p class="subtitle">Why us</p> -->
+
+
+
+
+				</section>
+			</div>
+		</div>
+
+	</header>
+	<!-- ========= END HEADER =========-->
+
+
+	<!-- Begin about section -->
+
+	<div class="center-container">
+		<div class="content-top">
+
+			<section id="about-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+				<!-- Begin page header-->
+				<div class="page-header-wrapper1">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInUp"
+							data-wow-delay="0.3s">
+							<h3 class="h3class">MAINTAINING WELL BEING : PART 1</h3>
+							<!--<div class="devider"></div>-->
+							<!-- <p class="subtitle">little information</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- End page header-->
+
+				<!-- Begin rotate box-1 -->
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<ul
+									style="padding-left: 7px; padding-top: 5px; text-align: center;">
+									<li><p class="pclass" style="font-size: 40px">
+											<span style="font-size: 50px;"></span>
+										</p></li>
+
+									<h5 class="h5class">Cultivating positive emotions</h5>
+									<li><p class="pclass">Cultivating positive emotions is
+											an important aspect of your well being. Research suggests
+											that negative emotions and positive emotions are not just
+											polar opposites. Similarly, most people do not consider "I am
+											not unhappy" to mean the same as "I am happy".</p> <br>
+										<p class="pclass">Reducing high intensity or high
+											frequency negative emotions is a critical step in reducing
+											your distress. However cultivating positive emotions can help
+											in further enhancing your well being and strengthening your
+											capacity to bounce back from stress.</p> <br>
+										<h5 class="h5class">Here are a few simple pointers for
+											cultivating positive emotions</h5></li>
+
+
+									<br>
+								</ul>
+
+								<div class="col-md-12" style="margin-bottom: 40px;">
+									<img src="../../img/poster 1.png"
+										style="width: 100%; height: 100%;">
+
+								</div>
+
+
+
+
+								<h5 class="h5class">More food for thought on cultivate
+									positive emotions</h5>
+								<li><p class="pclass1">
+										Hedonism is a way of thinking and behavior, with an aim to
+										experience maximum pleasurable sensations and minimizing any
+										kind of pain. It relates with a lifestyle organized around
+										things that give an immediate sense of sensory pleasure,
+										excitement or relief (the nature of these pleasurable
+										activities vary from person to person).<br> <br>
+										Engaging in pleasure -oriented activities can give a temporary
+										boost to your well being, but often this boost is short
+										lasting. This means that one is required to engage in such
+										activities again and again in order to feel good. <br>
+										There is nothing abnormal in itself about engaging in short
+										lasting sensory pleasurable activities, but it could be
+										problematic in a few situations as mentioned below: <br>
+
+
+									</p></li> <br>
+
+								<p class="pclass1">
+									a) When these are carried out very often or when these come in
+									ways that interfere with your doing other activities- other
+									activities that do not give you immediate pleasure but are
+									useful for you in the longer run <br> <br> b) When
+									these pleasure-oriented activities are harmful for your health
+									(e.g. smoking, repeatedly going for a bar of sweet to feel
+									good)<br> <br> c) Sometimes, frequently engaging in
+									such activities can actually be a marker of feeling distressed.
+								</p>
+								<br>
+
+
+								<p class="pclass1">There are times when we try to cope with
+									our negative feelings (e.g. sadness, hurt, anxiety or boredom)
+									by seeking out pleasure - oriented activities to get a quick
+									relief/to feel better. This can help lift our mood to an
+									extent. But we need to simultaneously figure out how to deal
+									with the underlying distress and find other methods of coping
+									too- which have longer term benefits.</p>
+								<br>
+
+								<p class="pclass1">Therefore we need to balance these with
+									meaning-oriented activities that can enhance our overall well
+									being. These are focused on experience of meaning, living in
+									alignment with one’s deepest values and evolving as a person
+									and are not motivated by the need to experience immediate sense
+									of pleasure or relief. These could include behaviours and
+									actions that provide a sense of deep connection with one’s
+									inner self, with others, and provide us a chance to manifest
+									the best in us. The exact nature of meaning-oriented
+									activities, of course, varies from person to person depending
+									on people’s temperament, preferences, skills and values (e.g.
+									spiritual pursuits, volunteering, meaningful discussions, doing
+									something creative and constructive, listening to someone and
+									supporting them, being with nature etc.) Exploring what kinds
+									of activities may help you express your deepest values and
+									investing time and efforts in such activities can add to your
+									sense of fulfillment in life.</p>
+								
+
+
+
+								<p class="pclass2">How volunteering may contribute to your
+									well being?</p>
+
+
+
+
+								<div class="col-md-12">
+									<img src="../../img/Poster 2.png"
+										style="width: 100%; height: 100%; margin-bottom: 40px; margin-top: 20px;">
+
+								</div>
+
+
+
+								<p class="pclass2">Broad types of volunteering:</p>
+								<p class="pclass1">Informal volunteering is a type of
+									volunteering that involves offering regular and voluntary help
+									of some kind for someone other than your family/close friend,
+									outside any formal organizational structure. On the other hand,
+									formal volunteering is providing help for a cause/for a group
+									of people through enrolling as a volunteer in an organization
+									(e.g. an NGO).</p>
+								
+
+								<p class="pclass2">What you need to take in account if you
+									decide to volunteer:</p>
+
+
+								<div class="col-md-12">
+									<img src="../../img/poster 3.png"
+										style="width: 100%; height: 100%; margin-bottom: 40px; margin-top: 20px; background-color: #FFE0B2;">
+
+								</div>
+								<h5 class="h5class">Yet another way to cultivate positive
+									emotions</h5>
+								<p class="pclass3">Develop a personal growth goal plan and
+									work towards it!</p>
+								<br>
+								<p class="pclass1">A variety of experience influence how we
+									develop and what we become as a person. To what extent do you
+									think, you, yourself contribute to or influence your own
+									development as a person? Please read the following statements
+									given below. Which of the four statements you most agree with?</p>
+
+								<p class="pclass1">
+									1. I cannot influence my own development much. I think my
+									development is very highly influenced by environmental factors
+									like society, people around me, where I am born, etc.<br>
+									<br> 2. I can influence my own development as a person to
+									some extent but other factors like society and environment
+									around me are more important factors in my development.<br>
+									<br> 3. I can influence my own development as a person and
+									my own role is of equal importance as the role of others
+									factors like my environment and society etc.<br> <br>
+									4. I think what I do and how I guide my development is the most
+									important factor in my personal development and other factors
+									including my environment have only a limited influence.<br>
+									<br> 
+								</p>
+								<p class="pclass2">Point to ponder: How is your belief
+									related to your role in your development is influencing how you
+									lead your life?</p>
+								<br>
+								<p class="pclass1">
+									Let us think about a type of goal called<span
+										style="font-weight: bold;"> ‘Personal Growth Goals’.</span>
+								</p>
+								<br>
+								<p class="pclass1">
+									<span style="font-weight: bold;">Personal growth goals
+										refer to any goal of putting efforts in changing or developing
+										yourself as a person/in any of your personal qualities.</span> All of
+									us have a broad picture or idea of who we are as individuals.
+									We are also aware of the different features/qualities that
+									describe us as a person. Working on personal growth goals can
+									in itself be a source of positive feelings because we see
+									ourselves as agents of development and positive change for our
+									own selves. It is also because we see ourselves as continuously
+									growing through our own efforts as well as our life
+									experiences.
+								</p>
+								<br>
+
+								<p class="pclass1">
+									Sometimes people may feel unhappy about personal quality and
+									hence may wish to change that quality. Sometimes people may <span
+										style="font-weight: bold;">NOT</span> be disturbed/ unhappy
+									about any particular personal quality <span
+										style="font-weight: bold;">BUT</span> still may want to
+									develop oneself as a person in some way or other that they
+									think is valuable/desirable.
+								</p>
+								<br>
+
+								<p class="pclass1">
+									Think of a quality/features/habit or a pattern of behaviour/
+									thinking that you currently <span style="font-weight: bold;">MAY</span>
+									wish to change. Even if you are not doing anything about it,
+									you are requested to still write down about such a wish. In
+									case you have more than one such changes you desire, put the
+									one that is most important to you. (e.g. “I want to reduce my
+									anger’, I want to be more tolerant in interacting with my
+									juniors’)
+								</p>
+								<br>
+
+
+								<h5 class="h5class">
+									<a class="big" data-toggle="modal" href="#myModal"><span
+										style="color: #111111; text-decoration: underline; text-decoration-color: red;">Want
+											to take stock of your personal growth goal? Click here.</span></a>
+								</h5>
+								<br>
+
+
+								<!-- Modal -->
+								<form name="resourceform" novalidate>
+									<div class="modal fade" id="myModal" role="dialog"
+										style="width: 100%;">
+										<div class="modal-dialog modal-lg terms-modal-dialog">
+											<div class="modal-content">
+												<div class="modal-headerclass">
+													Personal Growth Goal
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<br>
+												</div>
+												<div class="modal-body terms-modal-body">
+													<p class="pclass">Please list a personal growth goal
+														that you may have – even if you may not be attaching as
+														much important to it as other goals or you may not be
+														making a lot of efforts on such a goal currently.</p>
+													<p class="pclass" style="font-weight: bold;">The change
+														that I wish to make in me:</p>
+													<input type="text" placeholder="Type here"
+														ng-model="growth" ng-required="true">
+
+													<p class="pclass">Now keeping in mind this desire/ wish
+														in mind, please read carefully all the following
+														statements.</p>
+													<p class="pclass">
+													<h5 class="h5class" style="color: black;">I. Which of
+														the following statement is most correct for you currently?
+														Mark Only one statement that best describes you currently</h5>
+
+													<table class="tableclass3">
+														<tbody style="color: #111111;">
+															<tr>
+															
+																	<td class="tdw"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" name="q"
+																			ng-model="q1" ng-value="5" /> <img />
+																		</label>
+																	</div></td>
+																<td style="color: black;" class="tdw"><br>
+																	Currently, the thought about making this change come to
+																	my mind once in a while/ occasionally.</td>
+
+
+															</tr>
+															<tr>
+															
+																<td class="tdw"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" name="q"
+																			ng-model="q1" ng-value="6" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw" style="color: black;"><br>
+																	Currently, the thoughts about making this change come
+																	to my mind a few times.</td>
+
+
+															</tr>
+															<tr>
+															
+																<td class="tdw"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" name="q"
+																			ng-model="q1" ng-value="7" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw" style="color: black;"><br> 
+																	Currently, the thoughts about making this change come
+																	to my mind several times.</td>
+
+
+															</tr>
+															<tr>
+															
+																<td class="tdw"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" name="q"
+																			ng-model="q1" ng-value="8" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw" style="color: black;"><br>
+																	Currently, the thoughts about making this change come
+																	to my mind very frequently/almost all the times.</td>
+
+
+															</tr>
+														</tbody>
+													</table>
+
+													<p class="pclass"></p>
+													<h5 class="h5class" style="color: black;">II. Now
+														think about what you are doing to work on this growth
+														goal:</h5>
+
+
+
+
+													<br>
+
+
+													<table class="tableclass3a">
+														<thead style="color: #111111;">
+															<tr>
+
+																<th class="thclass3a">SL No</th>
+																<th class="thclass3a">Please mark all the items
+																	about THIS CHANGE.<span
+																	style="color: #111111; font-size: 350%;">&#8595;
+																</span>
+																</th>
+																<th class="thclass3a">Strongly Disagree</th>
+																<th class="thclass3a">Disagree</th>
+																<th class="thclass3a">Can’t say</th>
+																<th class="thclass3a">Agree</th>
+																<th class="thclass3a">Strongly Agree</th>
+															</tr>
+														</thead>
+														<tbody style="color: #111111;">
+															<tr ng-repeat="q in questionss">
+																<td class="tdw3a"><br>{{$index+1}}</td>
+																<td class="tdw3a"><br> {{q.value}}</td>
+																<td class="tdw3a"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" ng-model="q.ans"
+																			ng-value="1" name="{{$index}}" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw3a"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" ng-model="q.ans"
+																			ng-value="2" name="{{$index}}" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw3a"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" ng-model="q.ans"
+																			ng-value="3" name="{{$index}}" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw3a"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" ng-model="q.ans"
+																			ng-value="4" name="{{$index}}" /> <img />
+																		</label>
+																	</div></td>
+																<td class="tdw3a"><br>
+																	<div class="options ng-cloak">
+																		<label> <input type="radio" ng-model="q.ans"
+																			ng-value="5" name="{{$index}}" /> <img />
+																		</label>
+																	</div></td>
+															</tr>
+
+															<!-- more rows here... -->
+														</tbody>
+
+													</table>
+													
+													
+													
+													
+															
+													
+													
+													
+
+													
+													
+													
+													
+													
+															
+													
+
+													
+
+
+													<br> <br>
+													<div class="button">
+														<button
+															style="margin-left: 47%; margin-right: 47%; color: black; margin-bottom: 30px;"
+															type="button" class="btn btn-success"
+															ng-click="resourceSubmit()">submit</button>
+
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button
+														style="margin-left: 45%; margin-right: 45%; color: #111111;"
+														type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+
+
+
+								<div id="myModaltable" class="modal fade">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-headerclass">
+												<button type="button" class="close" ng-click="modelclose()">&times;</button>
+												<h4 class="modal-title">Personal Growth</h4>
+											</div>
+											<div class="modal-body">
+
+												<p class="pclass1">
+													<small>Your level of mental engagement (thinking
+														about this goal) with this goal seems to be high. It is
+														also likely that you are not merely thinking about the
+														change you wish to make but also actively taking steps to
+														make this change. Appreciate yourself for your efforts and
+														keep at it!</small>
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													style="margin-left: 45%; margin-right: 45%;"
+													ng-click="modelclose()">Close</button>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="myModaltable2" class="modal fade">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-headerclass">
+												<button type="button" class="close" ng-click="modelclose()">&times;</button>
+												<h4 class="modal-title">Personal Growth</h4>
+											</div>
+											<div class="modal-body">
+
+												<p class="pclass1">
+													<small>Your level of mental engagement and
+														preoccupation with this goal seems to be high. However, it
+														is likely that there is a scope to turn your desire into a
+														goal and an action-plan. You may find that you are not
+														being able to take consistent actions to work on this
+														aspect. It would help to take small, yet consistent steps
+														towards the change you desire. Taking positive actions on
+														what you value would add to your sense of growth and well
+														being.</small>
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													style="margin-left: 45%; margin-right: 45%;"
+													ng-click="modelclose()">Close</button>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div id="myModaltable3" class="modal fade">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-headerclass">
+												<button type="button" class="close" ng-click="modelclose()">&times;</button>
+												<h4 class="modal-title">Personal Growth</h4>
+											</div>
+											<div class="modal-body">
+
+												<p class="pclass1">
+													<small>Your level of mental engagement or
+														preoccupation with this growth goal is modest/low.
+														Perhaps, you do not find the need to work on it very
+														deliberately and consciously! But you seem to be taking
+														some steps/actions to make this change. Appreciate
+														yourself for your efforts and keep at it and also discover
+														new growth goals you value/ wish to work upon!</small>
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													style="margin-left: 45%; margin-right: 45%;"
+													ng-click="modelclose()">Close</button>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div id="myModaltable4" class="modal fade">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-headerclass">
+												<button type="button" class="close" ng-click="modelclose()">&times;</button>
+												<h4 class="modal-title">Personal Growth</h4>
+											</div>
+											<div class="modal-body">
+
+												<p class="pclass1">
+													<small>Your level of mental engagement or
+														preoccupation with this growth goal is modest/low. Also,
+														it seems that you may not be taking active steps to work
+														on this aspect of yourself. Perhaps it is merely a
+														desire/wish and not really set as a growth goal. At times,
+														this may be the case when we want to do something that
+														others may want us to work upon without having our own
+														conviction in the need for doing so. It may be useful to
+														think independently whether you want to work on this or
+														any other personal growth goal (develop any personal
+														quality) that you value/that may help you to achieve your
+														other life goals. </small>
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													style="margin-left: 45%; margin-right: 45%;"
+													ng-click="modelclose()">Close</button>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+
+
+
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- End rotate box-1 -->
+
+	<!-- <div class="extra-space-l"></div> -->
+	<!-- Begin Portfolio -->
+
+	<div class="center-container">
+		<div class="content-top">
+			<section id="portfolio-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper1">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class" style="margin-bottom: 40px;">MAINTAINING
+								WELL BEING: PART 2</h3>
+						</div>
+					</div>
+				</div>
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<ul
+									style="padding-left: 7px; padding-top: 5px; text-align: left;">
+									<li><p class="pclass" style="font-size: 40px">
+											<span style="font-size: 50px;"></span>
+										</p></li>
+
+
+									<h5 class="h5class1">Emotional well being</h5>
+									<br>
+									<p class="pclass1">Well being is often seen as experiencing
+										more of positive emotions and less of negative emotions. We
+										discussed about cultivating positive emotions in the previous
+										sections.</p>
+									<br>
+									<p class="pclass">We need to remember that negative
+										emotions also have their own value and utility. Negative
+										emotions point toward what needs to be managed/corrected/dealt
+										with. Moreover, expecting that one should 'never' feel
+										negative emotions/ be 'stress-free all the time' can in itself
+										be stressful and unrealistic!</p>
+									<br>
+									<p class="pclass1">Although there is continuing debate and
+										research on what is an optimal balance between positive and
+										negative emotions, the ratios wherein negative emotions
+										dominate the positive emotions are likely to be problematic,
+										in most contexts.</p>
+									<br>
+									<p class="pclass1">Ratios wherein positive emotions
+										outweigh the negative ones (e.g. 3: 1 and 5: 1) have been
+										suggested as beneficial by researchers in this area, though
+										these should be taken tentatively rather than as any fixed
+										magical figures. Moreover, the optimum ratio in one situation
+										may not be the best/most ideal one in another situation and we
+										normally tend to operate within a range rather than at fixed
+										points. You would know your positivity ratio if you take the
+										emotional well being test on at least two occasions.</p>
+									<br>
+									<p class="pclass1">As you will realize, improving the
+										positivity ratio can involve cultivating positive emotions as
+										well as working to decrease the frequency with which we
+										experience negative emotions. If you think that you are
+										experience negative emotions more frequently, you may find it
+										useful to go over the sections on thinking errors, self
+										compassion, relaxation and step-up.</p>
+									<br>
+									<p class="pclass1">Self care includes being responsible to
+										reach out for professional help. So do not hesitate to seek
+										help to help yourself. You may also want to explore these
+										books:</p>
+									<br>
+									<p class="pclass1">
+										Burns, D. D. (2009).<span class="spanclass1"> Feeling
+											good: The new mood therapy.</span> New York: Harper Collins
+										Publishers.
+									</p>
+									<br>
+
+									<h5 class="h5class1">Psychological well being</h5>
+									<br>
+									<p class="pclass1">Positive and negative emotions as well
+										as their balance are only one of the approaches to gauge our
+										well being and it is often referred to as emotional well
+										being.</p>
+									<br>
+									<p class="pclass1">Another approach to understand well
+										being is to explore how we are functioning psychologically
+										rather than how we are feeling. In this approach, feelings are
+										given secondary importance and seen as a by-product of how we
+										are leading our lives.</p>
+									<br>
+									<p class="pclass">There are different dimensions of
+										psychological well being.</p>
+									<br>
+									<p class="pclass4">Let us focus on four of these components
+										here, which are captured through psychological well being
+										questionnaire in this wellness app.</p>
+									<br>
+
+								</ul>
+
+								<div class="col-md-12">
+									<img src="../../img/poster 4.png"
+										style="width: 100%; height: 100%; margin-bottom: 40px;">
+
+								</div>
+
+								<p class="pclass1">The psychological well being
+									questionnaire is merely to help you discover and decide for
+									yourself, which dimensions or aspects you might want to focus
+									upon, in order to experience an overall increase in your well
+									being. These dimensions also provide you the idea that you
+									could enhance your well being in multiple ways.</p>
+								<br>
+								<p class="pclass">Here are a few quick tips about working on
+									various dimensions of psychological well being.</p>
+								<br>
+
+								<h5 class="h5class1">Enhancing sense of mastery and
+									competence:</h5>
+								<br>
+								<p class="pclass">An overall sense of mastery in dealing
+									with demands and challenges in one’s life is an important
+									aspect of well being.</p>
+								<br>
+								<p class="pclass1">This does not mean that we have/we need
+									to expect to have full control over our life situations! It is
+									about an overall sense of being able to manage oneself and
+									one’s life reasonably well, under the circumstances.</p>
+								<br>
+								<p class="pclass1">If you find that you are not doing well
+									in terms of this aspect of psychological well being, it might
+									help to ask yourself a few questions to identify what may help:</p>
+								<br>
+
+
+								<p class="pclass4">What could the reasons for a low sense of
+									mastery and competence in my case:</p>
+								<br>
+
+
+
+								<table class="tableclasspart2">
+									<!-- <col class="colclass1" style="width: 20%">
+									<col class="colclass2" style="width: 60%">
+									<col class="colclass3" style="width: 20%">-->
+									<thead>
+										<tr>
+											<th class="thclass3">Possible underlying factors</th>
+											<th class="thclass3">Tips</th>
+											<th class="thclass3">You may want to explore these</th>
+										</tr>
+									</thead>
+									<tbody style="color: #111111;">
+										<tr>
+											<td class="tdclass3">Am I feeling overwhelmed due to
+												major ongoing life events/stress?</td>
+											<td class="tdclass3">When we are preoccupied with things
+												that are going wrong, we tend to ignore those aspects of the
+												situation/our life which are manageable/under over control.
+												<br> <br> A. Try making a list of all the
+												things/tasks/aspects of your life that you may be ignoring
+												but about which you can do something. Taking care of such
+												aspects can help in giving you a somewhat better overall
+												sense of mastery control which can contribute to enhancing
+												your well being. This is of course in addition to whatever
+												else you may be doing to address the problem-situation
+												itself. B. Are you looking at all possible options to handle
+												the problem situation or you are feeling stuck due to
+												narrowly /rigidly focusing only one or the other way of
+												handling an issue?
+											</td>
+											<td class="tdclass3"><a style="color: blue;"
+												target="_blank"
+												href="https://www.helpguide.org/
+												articles/stress/stress-management.html">
+													https://www.helpguide.org/articles/stress<br>
+													/stress-management.html
+											</a><br> <br> <a style="color: blue;" target="_blank"
+												href="http://www.huffingtonpost.com/
+												lisabeth-saunders-medlock-phd/
+												seven-things-you-need-to-_b_4129918.html">
+													http://www.huffingtonpost.com/lisabeth-<br>
+													saunders-medlock-phd/seven-things- <br>you-need-to-_b_4129918.html
+											</a><br> <br> <a style="color: blue;" target="_blank"
+												href="https://www.psychologytoday.com/blog/
+												fixing-families/201307/keys-handling
+												-lifes-transitions">
+													https://www.psychologytoday.com/
+													blog/fixingfamilies/201307/keys-<br>handling-lifes-transitions
+											</a><br></td>
+										</tr>
+										<tr>
+											<td class="tdclass3">Is it that I have difficulties in
+												prioritizing various things in my life?</td>
+											<td class="tdclass3">Prioritizing different life aspects
+												and tasks can enhance a sense of control rather than trying
+												to manage everything at one go without planning/drifting
+												from one thing to another based on pulls and pushes one may
+												face.</td>
+											<td class="tdclass3">Bregman, P. (2011). <span
+												style="font-style: italic;">18 minutes: Find your
+													focus .Master distraction and get the right things done. </span>London:Orion.<br>
+												<br> Goldsmith, M., Reiter, M. (2015). <span
+												style="font-style: italic;"> Triggers. Sparking
+													positive change and making it last.</span>London: Marshall
+												Goldsmith Inc.<br> <br> <a style="color: blue;"
+												target="_blank"
+												href="https://journal.thriveglobal.com/
+												how-to-better-manage-your-energy-time-and-attention-
+												for-peak-performance-22b20b96ebc7">
+													https://journal.thriveglobal.com/how-to-better-manage-your-energy-time-and-attention-for-peak-performance-22b20b96ebc7</a><br>
+												<br>
+											</td>
+										</tr>
+										<tr>
+											<td class="tdclass3">Do I tend to postpone things/stop
+												them mid-way as I find it difficult to be self-disciplined?</td>
+											<td class="tdclass3">If you think that postponing things
+												is a pattern that is often interfering with your doing your
+												best , think about taking up changing this pattern of
+												postponing ‘ as a personal growth goal.</td>
+											<td class="tdclass3"><a style="color: blue;"
+												target="_blank"
+												href="https://www.mindtools.com/pages
+												/article/newHTE_96.html">
+													https://www.mindtools.com/pages/article/ newHTE_96.html</a><br>
+												<br> Fiore, N. (2007).<span style="font-style: italic;">
+													The now habit: A strategic program for overcoming
+													procrastination <br>and enjoying guilt-free play.
+											</span> New York:<br>Tarcher/Penguin.<br> <br></td>
+										</tr>
+
+										<tr>
+											<td class="tdclass3">Is it that I am not having
+												sufficient skills required to feel competent in an important
+												life domain?</td>
+											<td class="tdclass3">If the lack of sense of mastery is
+												coming from deficiency in some specific skills, then the
+												obvious step would be finding ways to strengthen that skill.</td>
+											<td class="tdclass3"><a style="color: blue;"
+												target="_blank"
+												href="https://positivepsychologyprogram.com/3-ways-build-self-efficacy/">
+													https://positivepsychologyprogram.com/<br>
+													3-ways-build-self-efficacy/
+											</a></td>
+										</tr>
+
+
+										<tr>
+											<td class="tdclass3">It is that I am setting too high
+												standard for myself and being harsh on myself?</td>
+											<td class="tdclass3">Setting high standards can motivate
+												us but setting rigid standards as to how things should
+												be/how life should be -and judging oneself or one’s life
+												based on that can take a toll on your well being</td>
+											<td class="tdclass3"><a style="color: blue;"
+												target="_blank"
+												href="https://www.anxietybc.com/sites/default/files/Perfectionism.pdf">https://www.anxietybc.com
+													/sites/default/<br>files/Perfectionism.pdf
+											</a><br> <br> <a style="color: blue;" target="_blank"
+												href="http://self-compassion.org/">
+													http://self-compassion.org/</a><br> <br></td>
+
+										</tr>
+
+										<tr>
+											<td class="tdclass3">Is it that I have a very high need
+												for control and find it difficult to let go those aspects of
+												reality that cannot be changed?</td>
+											<td class="tdclass3">Persisting as well as letting go
+												are important aspects of dealing with life-challenges.<br>
+												<br> Wisdom consists in differentiating between those
+												aspects of life that can be worked upon vs. those aspects
+												about which there is little scope of change.
+											</td>
+											<td class="tdclass3"><a style="color: blue;"
+												target="_blank"
+												href="https://www.helpguide.org
+												/articles/anxiety/how-to-stop-worrying.html">
+													https://www.helpguide.org/articles/anxiety<br>/how-to-stop-worrying.html
+											</a><br> <br> <a style="color: blue;" target="_blank"
+												href="http://www.apa.org/helpcenter/stress-myths.aspx">
+													http://www.apa.org/helpcenter/stress-<br>myths.aspx
+											</a><br> <br> <a style="color: blue;" target="_blank"
+												href="https://psychcentral.com/blog/archives/2015/08/28/3-dbt-skills-everyone-can-benefit-from/">https://psychcentral.com/blog/archives/2015<br>/08/28/3-dbt-skills-everyone-can-benefit-from/
+											</a><br> <br></td>
+
+										</tr>
+									</tbody>
+								</table>
+
+								<section id="tablesection" class="page1 bg-style2"
+									style="background-color: #FFFDB9; padding: 20px 0; border: 2px solid #ff9900; margin-top: 1px;">
+
+									<!-- Begin page header-->
+
+									<div class="rotate-box-1-wrapper">
+										<div class="container1table">
+
+											<div class="col-md-12"
+												style="text-align: justify; font-family: sans-serif; color: #fff">
+
+												<h5 class="tableheadclass" style="color: #ff9900;">1.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">Am I feeling overwhelmed due to
+													major ongoing life events/stress?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">When we are preoccupied with things
+													that are going wrong, we tend to ignore those aspects of
+													the situation/our life which are manageable/under over
+													control.</p>
+												<p class="tdclass3a">A) Try making a list of all the
+													things/tasks/aspects of your life that you may be ignoring
+													but about which you can do something. Taking care of such
+													aspects can help in giving you a somewhat better overall
+													sense of mastery control which can contribute to enhancing
+													your well being. This is of course in addition to whatever
+													else you may be doing to address the problem-situation
+													itself.</p>
+												<p class="tdclass3a">B) Are you looking at all possible
+													options to handle the problem situation or you are feeling
+													stuck due to narrowly /rigidly focusing only one or the
+													other way of handling an issue?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://www.helpguide.org/articles/stress/stress-management.html"
+														style="color: blue; margin-right: 1px;"><span
+														style="color: blue;">https://www.helpguide.org/articles/stress/stress-management.html</span></a>
+												</p>
+
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="http://www.huffingtonpost.com/lisabeth-saunders-medlock-phd/seven-things-you-need-to-_b_4129918.html"
+														style="color: blue; margin-right: 1px;"><span
+														style="color: blue;">http://www.huffingtonpost.com/lisabeth-saunders-medlock-phd/seven-things-you-need-to-_b_4129918.html</span></a>
+												</p>
+
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://www.psychologytoday.com/blog/fixing-families/201307/keys-handling-lifes-transitions"
+														style="color: blue; margin-right: 1px;"><span
+														style="color: blue;">https://www.psychologytoday.com/blog/fixing-families/201307/keys-handling-lifes-transitions</span></a>
+												</p>
+
+
+
+
+
+												<h5 class="tableheadclass" style="color: #ff9900;">2.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">Is it that I have difficulties in
+													prioritizing various things in my life?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">Prioritizing different life aspects
+													and tasks can enhance a sense of control rather than trying
+													to manage everything at one go without planning/drifting
+													from one thing to another based on pulls and pushes one may
+													face.</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+												<p class="tdclass3a">
+													Bregman, P. (2011). <span style="font-style: italic;">18
+														minutes: Find your focus .Master distraction and get the
+														right things done. </span> London: Orion.
+												</p>
+												<p class="tdclass3a">
+													Goldsmith, M., Reiter, M. (2015). <span
+														style="font-style: italic;"> Triggers. Sparking
+														positive change and making it last.</span> London: Marshall
+													Goldsmith Inc.
+												</p>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://journal.thriveglobal.com/how-to-better-manage-your-energy-time-and-attention-for-peak-performance-22b20b96ebc7"
+														style="color: blue; margin-right: 1px;"><span
+														style="color: blue;">https://journal.thriveglobal.com/how-to-better-manage-your-energy-time-and-attention-for-peak-performance-22b20b96ebc7</span></a>
+												</p>
+
+
+
+
+
+												<h5 class="tableheadclass" style="color: #ff9900;">3.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">Do I tend to postpone things/stop
+													them mid-way as I find it difficult to be self-disciplined?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">If you think that postponing things
+													is a pattern that is often interfering with yourdoing your
+													best , think about taking up changing this pattern of
+													postponing ‘ as a personal growth goal.</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://www.mindtools.com/pages/article/newHTE_96.html"
+														style="color: blue"><span style="color: blue;">https://www.mindtools.com/pages/article/newHTE_96.html</span></a>
+												</p>
+												<p class="tdclass3a">
+													Fiore, N. (2007). <span style="font-style: italic;">
+														The now habit: A strategic program for overcoming
+														procrastination <br>and enjoying guilt-free play.
+													</span> New York: Tarcher/Penguin.
+												</p>
+
+
+												<h5 class="tableheadclass" style="color: #ff9900;">4.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">Is it that I am not having
+													sufficient skills required to feel competent in an
+													important life domain?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">If the lack of sense of mastery is
+													coming from deficiency in some specific skills, then the
+													obvious step would be finding ways to strengthen that
+													skill.</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://positivepsychologyprogram.com/3-ways-build-self-efficacy/"
+														style="color: blue;"><span style="color: blue;">https://positivepsychologyprogram.com/3-ways-build-self-efficacy/</span></a>
+												</p>
+
+
+												<h5 class="tableheadclass" style="color: #ff9900;">5.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">It is that I am setting too high
+													standard for myself and being harsh on myself?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">Setting high standards can motivate
+													us but setting rigid standards as to how things should
+													be/how life should be -and judging oneself or one’s life
+													based on that can take a toll on your well being</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://www.anxietybc.com/sites/default/files/Perfectionism.pdf"
+														style="color: blue"><span
+														style="color: blue; margin-right: 1px;">https://www.anxietybc.com/sites/default/files/Perfectionism.pdf</span></a>
+												</p>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="http://self-compassion.org/" style="color: blue"><span
+														style="color: blue;">http://self-compassion.org/</span></a>
+												</p>
+
+
+												<h5 class="tableheadclass" style="color: #ff9900;">6.
+													Possible underlying factors-</h5>
+												<p class="tdclass3a">Is it that I have a very high need
+													for control and find it difficult to let go those aspects
+													of reality that cannot be changed?</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">Tips-
+												</h5>
+												<p class="tdclass3a">
+													Persisting as well as letting go are important aspects of
+													dealing with life-challenges.<br>Wisdom consists in
+													differentiating between those aspects of life that can be
+													worked upon vs. those aspects about which there is little
+													scope of change.
+												</p>
+												<h5 class="tableheadclass" style="color: #ff9900;">You
+													may want to explore these-</h5>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://www.helpguide.org/articles/anxiety/how-to-stop-worrying.html"
+														style="color: blue"><span style="color: blue;">https://www.helpguide.org/articles/anxiety/how-to-stop-worrying.html"</span></a>
+												</p>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="http://www.apa.org/helpcenter/stress-myths.aspx"
+														style="color: blue"><span
+														style="color: blue; margin-right: 1px;">http://www.apa.org/helpcenter/stress-myths.aspx"</span></a>
+												</p>
+												<p class="tdclass3a">
+													<a class="tableaclass" target="_blank"
+														href="https://psychcentral.com/blog/archives/2015/08/28/3-dbt-skills-everyone-can-benefit-from/"
+														style="color: blue; margin-right: 1px;"><span
+														style="color: blue;">https://psychcentral.com/blog/archives/2015/08/28/3-dbt-skills-everyone-can-benefit-from/"</span></a>
+												</p>
+
+
+											</div>
+
+
+											<!-- /.row -->
+										</div>
+										<!-- /.container -->
+
+										<!--<div class="devider"></div>-->
+
+									</div>
+
+
+
+									<!--<div class="devider"></div>-->
+
+
+
+								</section>
+
+
+								<br> <br>
+
+
+
+
+
+								<h5 class="h5class1">Cultivating a sense of
+									self-acceptance:</h5>
+								<br>
+
+								<p class="pclass" style="line-height: 26px;">
+									This is about accepting yourself as a whole, and feeling a fair
+									degree of satisfaction about the way your life has shaped up.
+									This does not imply being complacent – a healthy sense of self
+									acceptance can give you the foundation to work on personal
+									growth and doing your best in life. Low self-acceptance makes
+									you vulnerable to distress, and therefore you will benefit from
+									increased self kindness and compassion.<span
+										style="font-weight: bold;"> If you think, it is an area
+										of concern for you we would want you to go over the
+										self-compassion section. </span>
+								</p>
+								<br>
+								<p class="pclass">In addition, you may find one or more of
+									the following tasks to be useful:</p>
+								<br>
+
+
+
+
+
+								<p class="pclass">• Observe, think back and discover your
+									strengths/qualities as a person that helps you to manage
+									certain situations well.</p>
+								<br>
+
+								<p class="pclass">• Ask a few people around you about when
+									they found you showing/manifesting your best qualities/handling
+									a difficult situation well. From a collection of such
+									scenarios, find out which strengths of yours are reflected in
+									your behaviors, as observed by others.</p>
+								<br>
+
+								<p class="pclass">• Try to stay objective about your
+									weaknesses. Decide the best way to manage them, in your life
+									context, without over generalizing and evaluating yourself as a
+									'bad' or 'weak' person.</p>
+								<br>
+
+
+								<p class="pclass">
+									You may want to explore:<a target="_blank"
+										href=" http://self-compassion.org/" style="color: blue;"><span
+										style="color: blue;"> http://self-compassion.org/</span></a>
+
+
+								</p>
+								<br>
+
+								<h5 class="h5class1">Cultivating positive relationships</h5>
+								<br>
+								<p class="pclass" style="line-height: 26px;">Feeling content
+									and satisfied on the whole with various relationships in your
+									life is an important aspect of psychological well being. Warm
+									personal relationships, characterized by trust and sharing can
+									be an immense source of positive emotions and well being.
+									Maintaining positive relationships is a skill and a reward in
+									itself, keep doing what you are doing.</p>
+								<br>
+								<p class="pclass" style="line-height: 26px;">Experience of
+									one or more close trusting relationships herein you feel a
+									sense of belongingness, warmth and trust is not only an aid to
+									your mental well being; it is also an important resource for
+									bouncing back from stressful life situations. To improve your
+									well being further, you may want to increase your investment,
+									in terms of time and efforts in cultivating meaningful
+									relationships, making efforts in repairing a relationship if it
+									is feasible and valuable and letting go of a relationship that
+									is beyond repair/that is damaging to your mental health as well
+									as opening up to opportunities to form newer healthy
+									relationships. If your self-efforts have not helped beyond a
+									point, you can consider seeking professional help to improve
+									this aspect of your well being.</p>
+								<br>
+								<p class="pclass">
+									You may want to explore : <a target="_blank"
+										href="http://www.advocatesforyouth.org/publications/1229-strengthening-family-relationships"
+										style="color: blue;"><span style="color: blue;">
+											http://www.advocatesforyouth.org/publications/1229-strengthening-family-relationships</span></a>
+								</p>
+								<br>
+
+
+
+								<h5 class="h5class1">Cultivating a sense of engagement and
+									growth</h5>
+								<br>
+
+								<p class="pclass1">It means having a feeling of continued
+									development, being able to see one self as growing and
+									expanding and see improvement in self and behaviour over time,
+									being open to new experiences, having a sense of realizing
+									one’s potential and being able to change oneself in ways that
+									reflect more self-knowledge and effectiveness. Feeling actively
+									engaged with your environment, doing things that are personally
+									meaningful, setting personal growth goals and working on them
+									can help enhance one’s well being. You can increase you time
+									and efforts towards intentional growth to enhance well being.
+									Please look up sections on self compassion and cultivating
+									positivity (working on personal growth goals). There is always
+									a scope of evolving further as a person. Of course, we need to
+									accept and respect ourselves as a person while enjoying this
+									journey of growing and doing things that make us feel active
+									and connected to our environment. It can be a fulfilling
+									experience!</p>
+								<br>
+								<p class="pclass">You may want to explore:</p>
+
+								<p class="pclass8">
+									<a target="_blank"
+										href=" https://www.blackdoginstitute.org.au/docs/default-source/factsheets/positivepsychology.pdf?sfvrsn=2
+Lyubomirsky, S. (2008). The how of happiness: A scientific approach to getting the life you want. New York: Penguin Press."
+										style="color: blue;"><span style="color: blue;">
+											https://www.blackdoginstitute.org.au/docs/default-source/factsheets/positivepsychology.pdf?sfvrsn=2</span></a><br>
+									<span style="color: black;">Lyubomirsky, S. (2008). <span
+										style="font-style: italic; color: black;">The how of
+											happiness: A scientific approach to getting the life you
+											want.</span> New York: Penguin Press.
+									</span>
+								</p>
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+
+					<!--<div class="devider"></div>-->
+					<!-- <p class="subtitle">Why us</p> -->
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+	<!-- End portfolio -->
+
+
+
+	<!-- Begin Portfolio -->
+	<div class="center-container">
+		<div class="content-top">
+			<section id="why-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper2">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class">
+								LEARNING ABOUT DIFFERENT TYPES OF ERRORS IN THINKING<br>
+								(COGNITIVE DISTORTIONS)?
+							</h3>
+							<h5 class="h5class2" style="font-style: italic;">Heard of
+								this insightful statement by William James?</h5>
+							<h5 class="h5class3">“The greatest weapon against stress is
+								our ability to choose one thought over another”</h5>
+						</div>
+					</div>
+				</div>
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<p class="pclass" style="line-height: 26px;">
+									<br>Becoming aware of our patterns of thinking,
+									questioning and modifying them when needed can be a powerful
+									approach to enhancing well being. In fact, the most
+									well-researched and practiced interventions ( cognitive
+									behavior therapies) for common mental health problems revolve
+									around this approach and utilize multiple strategies that focus
+									on bringing about changes in thinking patterns and beliefs
+									thereby influencing feelings and behaviors. In this context, it
+									becomes useful to look at the concept of cognitive distortions.
+									Cognitive distortions are systematic errors in thinking or
+									biases when interpreting situations, events and/or experiences.
+									As a result of these "thinking errors" we make conclusions, or
+									respond through our behaviors and emotions in ways that are
+									unhelpful or dysfunctional. <br> <br>
+								<p class="pclass6">Let us become familiar with common errors
+									in thinking so that we can spot them through self monitoring
+									and practice.</p>
+								<br>
+								</p>
+
+
+
+
+								<div class="col-md-12">
+									<img src="../../img/poster 5.png"
+										style="width: 100%; height: 100%; margin-bottom: 40px;">
+
+								</div>
+								<p class="pclass9">Dealing with cognitive errors</p>
+
+								<p class="pclass1">Becoming aware and taking a pause to
+									reflect on our own thoughts is the critical step in correcting
+									cognitive errors. We can ask ourselves a few questions that
+									could help us to dealing with cognitive errors.</p>
+								<br>
+								<p class="pclass9">Examples of questions we can ask
+									ourselves:</p>
+
+
+
+
+								<p class="pclass">• Have I had any experiences that show
+									that this thought is not completely true ALL the time?</p>
+
+								<p class="pclass">• If my best friend or someone I loved had
+									this thought, what would I tell them?</p>
+
+								<p class="pclass1">• If my best friend or someone who loves
+									me knew I was thinking this, what would they say to me? What
+									evidence would they point out to me that would suggest that my
+									thoughts were not 100% true?</p>
+
+								<p class="pclass">• Five years from now, if I look back at
+									this situation, will I look at it any differently?</p>
+
+								<p class="pclass">• When I am not feeling this way, do I
+									think about this type of situation any differently?</p>
+
+								<p class="pclass">• Are there any strengths or positives in
+									me or the situation that I am ignoring?</p>
+
+								<p class="pclass">• What are the advantages and
+									disadvantages of thinking this way?</p>
+
+
+
+								<p class="pclass1">Tip: Questioning your negative thoughts
+									using one or more of the above questions may help in becoming
+									aware of the fallacies in our thinking and thereby give us a
+									scope to correct thinking errors which in turn can positively
+									influence our moods and behaviors.</p>
+								<p class="pclass">
+									You may want to explore: <span class="spanclass1"
+										style="color: black; text-decoration: none;">Greenberger,
+										D., & Padesky, C. A. (1995). Mind over mood. New York:
+										Guilford Press.</span>
+								</p>
+
+
+
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+
+					<!--<div class="devider"></div>-->
+
+				</div>
+
+
+
+				<!--<div class="devider"></div>-->
+
+
+
+			</section>
+		</div>
+	</div>
+
+	<!-- End portfolio -->
+
+
+	<div class="center-container">
+		<div class="content-top">
+			<!--Team section-->
+			<section id="team-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper3">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class">LEARN SELF-COMPASSION</h3>
+							<h5 class="h5class2" style="font-style: italic;">The most
+								powerful relationship you will ever have is the relationship
+								with yourself</h5>
+							<h5 class="h5class3">Steve Maraboli</h5>
+						</div>
+					</div>
+				</div>
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<ul
+									style="padding-left: 7px; padding-top: 5px; text-align: left;">
+									<li><p style="font-size: 40px">
+											<span style="font-size: 50px;"></span>
+										</p></li>
+
+									<h5 class="h5class1">Busting myths about self-compassion</h5>
+									<p class="pclass" style="line-height: 26px;">We are
+										introducing self-compassion because it has been related to
+										well being and high self-criticality is often linked to
+										depression and other common mental health problems. You may
+										find this notion of self-compassion to be vague/funny/rather
+										strange. So we will try to clear your doubts. What are the
+										questions that come to your mind when you think about
+										self-compassion?</p>
+									<br>
+
+									<h5 class="h5class1">What is self-compassion?</h5>
+									<p class="pclass" style="line-height: 26px;">Compassion
+										means being aware of/acknowledging suffering, experiencing
+										feelings of kindness/care, and understanding that
+										imperfections and fragility are universal aspects of being
+										human- that all of us share in common. Self-compassion is
+										nothing but compassion toward one's own self.</p>
+									<br>
+
+									<h5 class="h5class1">I think what I need is to do things
+										to maintain high self-esteem.</h5>
+									<p class="pclass" style="line-height: 26px;">
+										Self-esteem is about a positive evaluation of oneself<br>
+										Very often, people understand and base their self- esteem on
+										certain conditions such as being better than others in some
+										respect, achieving things in life etc.<br> Such things
+										become the conditions for valuing ourselves positively and
+										then our self-esteem keeps fluctuating based on whether we are
+										able to meet these standards. This approach is not a healthy
+										way of functioning.<br> Conditional self-esteem (when we
+										set conditions to feel Ok /good about ourselves) can enhance
+										risk of depression in the face of failures/losses and result
+										in undue anxiety and stress while trying to meet certain
+										standards 'before we value ourselves'. It can also result in
+										various undesirable methods people might use to preserve their
+										self-esteem (e.g. putting others down, avoiding to think about
+										what is going wrong). Self-compassion is also about positive
+										regard for oneself but it is not a conditional state.<br>
+										<br>
+									<h5 class="h5class1">Self-compassion seems like self-pity.
+										I would not want that.</h5>
+									<p class="pclass" style="line-height: 26px;">
+										True self-compassion is very different from self-pity. In
+										self-pity, one focuses on oneself and may brood /ruminate over
+										and again about the negative aspects of a situation.<br>
+										Self-compassion on the other hand is about just being aware
+										(mindful) of the situation/feelings, rather than constantly
+										dwelling/drowning in these.<br> Moreover self-compassion
+										draws upon the belief that suffering is universal aspect of
+										living life for everyone so one is not special as compared to
+										others.<br> This is unlike self-pity which tends to evoke
+										a sense of 'me' suffering in isolation from others.
+
+
+									</p>
+									<br>
+
+
+
+									<h5 class="h5class1">What is self-criticism?</h5>
+									<p class="pclass" style="line-height: 26px;">Self-criticism
+										refers to internal thoughts/views about oneself, one's
+										behaviors in a negative fashion, like fault- finding. It can
+										be in the form of negative, comparisons of one's own self with
+										others or internal - in terms of feeling that one has not
+										lived up to one's own internal goals/standards.</p>
+									<br>
+									<h5 class="h5class1">I think being self-critical is good.
+										It can motivate us.</h5>
+									<p class="pclass" style="line-height: 26px;">
+										Of course, it is important that we recognize our
+										mistakes/errors/failures and learn from them or correct our
+										patterns of thinking/action.<br> However, this is not
+										same as being self-critical.<br> High levels of
+										self-criticality (comparing unfairly with others or with our
+										own harsh and unrealistic internal standards) has been linked
+										to various kinds of mental health problems. This is because
+										high and relentless self-criticality results in excessive
+										brooding and worsening of moods which in turn affect our
+										functioning.<br> Although some level of anxiety and
+										tension can motivate us to do better, over- generalized/global
+										judgments of ourselves as persons (e.g. when I forgot to
+										address someone appropriately during a meeting, telling myself
+										that I am such a 'stupid person' who can 'never succeed'..)
+										can worsen our mood to an extent that we can end up doing
+										self-destructive things to feel better (e.g. using alcohol to
+										cope with the resultant low mood) or avoid preparing for
+										another upcoming meeting due to heightened sense of pressure.<br>
+										On the other hand, being self-compassionate can help us to
+										acknowledge (rather than deny/avoid) what went wrong without
+										unfavorably judging ourselves as 'bad /wrong persons' and thus
+										free us to work towards improving what we want to improve.
+
+
+
+									</p>
+									<br>
+									<h5 class="h5class1">How is self-criticism related to
+										being criticized by others?</h5>
+									<p class="pclass" style="line-height: 26px;">There are
+										times when another person's comments become upsetting because
+										they reflect what you have already been telling yourself- in
+										the form of an internal dialogue. Thus, others'
+										comments/behaviors may trigger negative, self-critical or
+										self-blaming thoughts leading to sadness.</p>
+									<br>
+
+									<h5 class="h5class1">What can I do to become less
+										self-critical and more self-compassionate?</h5>
+									<p class="pclass" style="line-height: 26px;">Some people
+										find it useful to look back at their past experiences to
+										figure out why and how they learnt to become so self-critical
+										of themselves. This may help in understanding to some extent
+										why we carry such a harsh and critical voice within us. But
+										such insights are not automatically sufficient to change this
+										pattern. What is helpful is practicing the new approach
+										repeatedly and consciously till it becomes a new habit.</p>
+									<br>
+
+									<div class="col-md-12">
+										<img src="../../img/poster 6.png"
+											style="width: 100%; height: 100%; margin-bottom: 40px; margin-top: 20px;">
+
+									</div>
+									<h5 class="h5class1">About mindfulness:</h5>
+									<p class="pclass1">When we are feeling disturbed, we
+										experience negative thoughts, often about the past,/about
+										oneself, that can further intensify the negative moods. This
+										type of thinking, which appears to be recurring, perseveres on
+										negative aspects is known as rumination or ruminative
+										thinking.</p>
+									<p class="pclass1">The mood worsens further when we attach
+										significance to these thoughts (meaning of these thoughts and
+										seeing thoughts as facts for example: a person having negative
+										automatic thoughts of labeling - 'I am a failure', does not
+										see it as a mere thought, instead believes that he/she is a
+										failure and feels more distressed.)</p>
+									<p class="pclass1">Mindfulness is a term that is a rough
+										English translation of the Pali (Buddhist Tradition) word
+										Vipassana which means 'to view in a special way'. It involves
+										paying attention to experiences (emotions, thoughts etc.) in a
+										special way-seeing them as mental events but non-judgmentally,
+										with curiosity, openness and acceptance. It also involves
+										viewing self in a non-judgmental manner, staying with whatever
+										comes, in a non-reactive manner.</p>
+									<p class="pclass1">Mindfulness can help the person become
+										aware of and recognize unhelpful patterns of thinking, and
+										learn to- ‘not respond to these thoughts as if they were
+										facts’ ('thoughts are not facts and I am not my thoughts!'),
+										thereby being objective and learning to view these as passing
+										mental phenomenon.</p>
+									<p class="pclass1">Mindfulness can thus allow people to
+										recognize mental traps or habitual patterns of thinking and to
+										step back from them.</p>
+									<p class="pclass">You can explore mindfulness exercises
+										online or with the help of a psychologist trained in
+										mindfulness.</p>
+									<p class="pclass">You may want to explore:</p>
+
+									<p class="pclass5">
+										<a target="_blank"
+											href="https://www.mindful.org/meditation/mindfulness-getting-started/"
+											style="color: blue;"><span
+											style="color: blue; font-style: italic;">
+												https://www.mindful.org/meditation/mindfulness-getting-started/</span></a>
+									</p>
+
+									<p class="pclass5">
+										<a target="_blank"
+											href="https://www.mindful.org/meditation/mindfulness-getting-started/"
+											style="color: blue;"><span
+											style="color: blue; font-style: italic;">
+												https://www.mindful.org/meditation/mindfulness-getting-started/</span></a>
+									</p>
+									<p class="pclass5">
+										<a target="_blank"
+											href="http://franticworld.com/free-meditations-from-mindfulness/"
+											style="color: blue;"><span
+											style="color: blue; font-style: italic;">
+												http://franticworld.com/free-meditations-from-mindfulness/</span></a>
+									</p>
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+
+					<!--<div class="devider"></div>-->
+
+				</div>
+
+
+				<!--<div class="devider"></div>-->
+				<!-- <p class="subtitle">Why us</p> -->
+
+
+
+
+			</section>
+		</div>
+	</div>
+
+	<!--End team section-->
+
+
+
+	<div class="center-container">
+		<div class="content-top">
+			<section id="team1-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper1">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class">RELAXATION THROUGH VISUALIZATION</h3>
+						</div>
+					</div>
+				</div>
+
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<ul
+									style="padding-left: 7px; padding-top: 5px; text-align: left;">
+									<li><p class="pclass" style="font-size: 40px">
+											<span style="font-size: 50px;"></span>
+										</p></li>
+
+									<p class="pclass1">
+										<span style="font-size: 20px;"></span><br>Anxiety is a
+										common mental health symptom and anxiety disorders are one of
+										the common mental health disorders apart from depression.
+									</p>
+									<br>
+									<p class="pclass1">Anxiety symptoms, in general, can
+										include one or more of the following:</p>
+									<p class="pclass1">
+										1. An experience of tension, apprehension. 2. Frequent worries
+										regarding negative future happenings.<br> 3. Muscular
+										tension, and aches and pains (such as headaches).<br> 4.
+										A sense of uneasiness and difficulty in staying still/calm or
+										in being relaxed. <br> 5. Bodily arousal symptoms such as
+										breathlessness, palpitations (increased heart rate), feeling
+										hot, sweating and a funny sensation in the stomach (sometimes
+										described as having butterflies in the stomach).
+									</p>
+									<br>
+									<p class="pclass1">Although there are different
+										manifestations or expressions of anxiety as well as different
+										types of anxiety disorders, a common feature across all of
+										them is the experience of physiological arousal. There are
+										specific psychological interventions related to the nature of
+										anxiety (e.g. generalized constant anxiety vs. brief lasting
+										periods of acute anxiety). However, most presentations of
+										anxiety and especially bodily arousal symptoms can be reduced
+										by learning and applying a relaxation skill or technique.
+										Learning how to relax is thus a skill that can be acquired to
+										manage anxiety.</p>
+									<br>
+									<p class="pclass1">There are muscle relaxation procedures
+										which are best learnt under the guidance of a
+										supervisor/counselor. Presented here are a few
+										visualization--based approaches to relaxation. You may choose
+										to try out and practice one of these, based on your
+										preference, the type of anxiety you are experiencing as well
+										as how useful you find it to be for anxiety reduction. Each of
+										these requires regular practice in order to be effective. They
+										must be learned sufficiently well so that they can be applied
+										well in times of need. Remember all methods of relaxation are
+										aimed at reducing the bodily arousal, increasing your body's
+										as well as your mind's ability to withstand triggers to
+										anxiety and to help you come back to a relaxed state in a
+										short period.</p>
+									<br>
+									<p class="pclass1">
+										<span style="font-weight: bold;"> IMPORTANT NOTE:</span>Learning
+										to relax is not sufficient in itself for management of all
+										anxiety symptoms and people with anxiety disorders often
+										require a multiple set of strategies that depend on the nature
+										of their problem. So, it is strongly recommended that you seek
+										a professional consultation if you think you may be
+										experiencing significant anxiety.
+									</p>
+									<br>
+
+									<p class="pclass1">Anxiety symptoms often co-occur with
+										depressive symptoms and relaxation methods can be used as
+										supplement in such instances. BUT, Individuals who are
+										experiencing high severity of depressive symptoms (such as
+										frequent crying spells, thoughts of self-harm, hopelessness,
+										low energy, preferring to be alone, reduced social
+										interaction) and those experiencing minimal/no anxiety or
+										bodily arousal symptoms are unlikely to benefit from applying
+										relaxation methods. if this is so, we recommend you to work on
+										increasing your activity - levels using behavioral-activation
+										and other techniques such as modifying unhelpful thoughts,
+										rather than practicing relaxation when you are depressed. At
+										times, certain relaxation methods may even worsen a person's
+										mental health condition if these are not suitable at a given
+										point of time for that person. In case you are unsure, it is
+										best to contact a mental health professional.</p>
+									<br>
+
+									<p class="pclass1">There are many different types of
+										methods that produce a state of relaxation and calmness. Each
+										of these methods is useful for different types or
+										manifestations of anxiety. Two of the following methods focus
+										on using imagery/visualization for relaxation. Pleasant
+										imagery/rich visualization involving different senses can help
+										absorb our attention on soothing and calming cues which can
+										induce a relaxed state.</p>
+									<br>
+
+									<p class="pclass1">You can use one of the two video clips
+										presented here for imagery based relaxation exercise. The
+										first exercise involves visualizing a nature scene in detail.
+										The audio instruction can guide you to create vivid and
+										specific images and stay focused on the same. This exercise
+										may also be useful for entering a relaxed state just before
+										going to sleep. The content of this exercise is based on the
+										understanding that many people find scenes from nature to be
+										calming and pleasant. The second exercise also utilizes our
+										power of visualization. However, its content focuses on
+										recreating an imagery based on spiritual experiences. The
+										content is general and not specific to any particular
+										religion. Those who are religiously inclined may find it to be
+										a useful tool for relaxation.</p>
+									<br>
+
+									<p class="pclass1">If neither of the visualization
+										exercises suits your needs and preferences, you can try to
+										create your own personalized audio-tape and use that for
+										relaxation. Please remember that you need to utilize specific
+										and vivid, clear images that absorb your attention and have a
+										calming effect on you.</p>
+									<br>
+
+									<h5 class="h5class1" style="margin-bottom: 40px;">Relaxation
+										through creative visualization (Nature based imagery)</h5>
+
+									<div>
+										 <!-- <iframe class="frameclass1"
+											src="https://drive.google.com/file/d/0B8UVEdUoYshrdjVkSHhKZ2RNWlk/preview"
+											allowfullscreen="allowfullscreen"></iframe>-->
+											
+											<iframe  class="frameclass1" src="https://www.youtube-nocookie.com/embed/tXa6CxTitHs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+											
+											<!--  <iframe class="frameclass1" width="100%" height="100%"
+											src="https://wwww.youtube.com/TGX6nHxlsG8"></iframe>-->
+									</div>
+									<h5 class="h5class1"
+										style="margin-bottom: 40px; margin-top: 40px;">Relaxation
+										through creative visualization (Imagery based on spiritual
+										experiences)</h5>
+
+									<div>
+										<!-- <iframe class="frameclass2"
+											src="https://drive.google.com/file/d/0B8UVEdUoYshrZzZyU0ZkbE9LeE0/preview"
+											allowfullscreen="allowfullscreen"></iframe>-->
+											
+											<iframe class ="frameclass2" src="https://www.youtube-nocookie.com/embed/WJSp4WOSgmM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+											
+											 <!-- <iframe class="frameclass2" width="100%" height="100%"
+											src="https://www.youtu.be/QElRGu8VkTs"
+											allowfullscreen="allowfullscreen"></iframe>-->
+									</div>
+
+
+								</ul>
+
+
+
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+
+					<!--<div class="devider"></div>-->
+					<!-- <p class="subtitle">Why us</p> -->
+				</div>
+
+
+
+				<!--<div class="devider"></div>-->
+				<!-- <p class="subtitle">Why us</p> -->
+
+
+
+
+			</section>
+		</div>
+	</div>
+
+	<!--End of team1 section-->
+
+
+	<div class="center-container">
+		<div class="content-top">
+			<section id="team2-section" class="page bg-style1"
+				style="background-color: #FFE0B2; padding: 20px 0;">
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper4">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class">DEALING WITH SUICIDAL THOUGHTS</h3>
+							<h5 class="h5class2" style="font-style: italic;">Here is a
+								test to find out whether your mission in life is complete.</h5>
+							<h5 class="h5class3">If you're alive, it isn't. -Richard
+								Bach</h5>
+						</div>
+					</div>
+				</div>
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+
+
+								<br>
+								<p class="pclass1">‘Raj looked at his watch again...for the
+									10th time....he had been waiting for a job offer letter
+									desperately. On top of that, after a big fight with his mother,
+									he suddenly felt as if nothing in this world made sense
+									anymore. He felt as if all his strength to fight with
+									adversities in life was draining out. For a split second, a
+									thought crossed his mind …....I might as well end it all.'</p>
+								<br>
+								<p class="pclass1">Thoughts about ending one's life can come
+									to anyone. There are times in our lives, when we feel stuck,
+									and there seems to be no possible solution which can take us
+									out of our misery. During such moments, thoughts about death
+									and dying may cross one’s mind. Thoughts about suicide can be
+									scary. It is important to realize that getting suicidal
+									thoughts is a sign that you are finding it difficult to cope
+									with challenges in your life at this point of time and many of
+									us go through such moments/periods in our lives.</p>
+								<br>
+								<h5 class="h5class1">When do these thoughts occur?</h5>
+
+								<p class="pclass1">Suicidal thoughts or death-wishes can
+									occur when we feel that we don’t have enough coping resources
+									to deal with the life-challenges we are experiencing. This may
+									happen because of limitations in our resources (e.g. internal
+									resources such as energy level or external resources such as
+									supportive-figures) at any given point of time or the severity
+									of the challenges /demands we are facing or a combination of
+									both. Suicidal thinking can vary in severity. While
+									death-wishes are passive thoughts where a person experiences
+									transient wishes that life comes to an end by itself (for e.g.
+									death due to a fatal illness, accident, during sleep etc.);
+									active suicidal thoughts are the thoughts which involve
+									thinking about taking one’s life.</p>
+								<br>
+								<p class="pclass1">These thoughts may cross one’s mind
+									because of various reasons such as:</p>
+								<br>
+								<p class="pclass">• Feeling overwhelmed and unable to
+									control situations in life (For e.g. frequent fights with
+									friends or family)</p>
+								<p class="pclass">
+									Feeling guilty (For e.g. blaming oneself for losing loved one)<br>
+								</p>
+								<p class="pclass">• Feeling stuck and powerless (For e.g.
+									feeling trapped and not seeing a way out of a difficult
+									situation, failing in an important exam)</p>
+								<p class="pclass">• Feeling angry (For e.g. thinking of
+									suicide as a way of taking revenge)</p>
+								<p class="pclass">• Feeling meaningless (For e.g. an elderly
+									person feeling empty and seeing no purpose to live on, feeling
+									that the family will be better off without him/her)</p>
+								<br>
+
+
+								<p class="pclass1">Sometimes these thoughts can occur when
+									we are feeling extremely sad, hopeless and discouraged in life.</p>
+								<br>
+								<p class="pclass1">Although a wish to die or end it all can
+									be part and parcel of clinical depression, such thoughts can
+									occur independently of depression too. Moreover all individuals
+									with depression do not necessarily experience suicidal
+									thoughts.</p>
+								<br>
+								<p class="pclass1">While for some people, these thoughts are
+									fleeting and come to one’s mind only in an extremely
+									overwhelming situation; for some others, these thoughts can be
+									intense and nagging, and may seem like the only possible
+									solution to a problem.</p>
+								<br>
+								<p class="pclass1">The frequency and intensity of these
+									thoughts may vary from individual to individual, and may also
+									change from one point of time to another in the same
+									individual, depending on the immediate life context and how we
+									perceive our resources to cope with difficulties. Just because
+									you get these thoughts does not always mean that you will lose
+									control and act on them. When suicidal thoughts cross our
+									minds, typically it is not because we want to end our life but
+									because we want a way to decrease our pain or suffering or to
+									feel more in control. Hence when we are able to do something
+									about this (even a little thing) /get even a small additional
+									resource or see the whole issue slightly differently, it can
+									minimize our suffering and bring back a sense of some control.
+									Then such thoughts can decrease significantly and disappear.</p>
+								<br>
+
+								<h5 class="h5class1">How do you keep these thoughts in
+									check?</h5>
+								<br>
+								<p class="pclass6">Given below are a few questions which you
+									should ask and answer for yourself thoughtfully if you are
+									getting suicidal thoughts.</p>
+
+
+								<div class="col-md-12">
+									<img src="../../img/poster 7.png"
+										style="width: 100%; height: 100%; margin-top: 20px; margin-bottom: 48px;">
+
+								</div>
+								<h5 class="h5class1">How can you reduce the frequency of
+									these thoughts?</h5>
+								<br>
+
+								<div class="col-md-12">
+									<img src="../../img/new-piktochart optional one suicidality-page-001.jpg"
+										style="width: 100%; height: 100%; margin-top: 20px; margin-bottom: 40px;">
+
+								</div>
+
+
+
+
+
+
+
+								</ul>
+
+
+
+							</div>
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+
+					<!--<div class="devider"></div>-->
+					<!-- <p class="subtitle">Why us</p> -->
+				</div>
+
+
+
+				<!--<div class="devider"></div>-->
+				<!-- <p class="subtitle">Why us</p> -->
+
+			</section>
+		</div>
+	</div>
+
+	<!--end of team2 section-->
+
+
+	<div class="center-container">
+		<div class="content-top">
+			<section id="team3-section" class="page bg-style1"
+				style="background-color: #FFE0B2;padding 20px 0;">
+
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper5">
+					<div class="container1">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<h3 class="h3class">STEP UP: WHEN YOU NEED TO</h3>
+							<h5 class="h5class3">An obstacle is often a stepping stone.
+								Prescott</h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="rotate-box-1-wrapper">
+					<div class="container1">
+						<div class="row"
+							style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+							<div class="col-md-12"
+								style="text-align: justify; font-family: sans-serif; color: #fff">
+								<br>
+								<p class="pclass1">Some ups and downs in our mood and
+									functioning, etc. are common aspects of human life and are
+									manageable with use of self-care strategies as well as support
+									from our loved ones. But sometimes, these disturbances in moods
+									and functioning can indicate the need for reaching out to a
+									mental health professional. In fact mental health problems are
+									commoner than what most people might imagine. If there is a
+									possibility of a mental health problem, it would help to go for
+									an evaluation to clarify the same and to seek interventions as
+									may be required. For most mental health conditions, it is not
+									the lack of effective treatment but the mental and social
+									barriers to seeking professional help that become a major
+									obstacle to leading a fulfilling life. Informal support and
+									professional support are not substitutes/replacements for each
+									other. When you seek professional help, it does need to imply
+									that self-help and informal support are irrelevant; all these
+									can supplement and complement each other.</p>
+								<br>
+								<h5 class="h5class1">When to Step-up?</h5>
+								<br>
+								<p class="pclass">Please read and think as to which of the
+									following statements are true for you.</p>
+								<br>
+								<p class="pclass">1. Did the wellness check survey indicate
+									that you are experiencing high distress or negative emotions
+									and low positivity ratio?</p>
+
+								<p class="pclass">2. Are you finding that your motivation
+									level for engaging in your usual activities is going down quite
+									a bit?</p>
+								<p class="pclass">3. Is the severity of your negative mood
+									increasing /not decreasing in the last few weeks?</p>
+								<p class="pclass">4. Are the thoughts about suicide coming
+									to your mind in the last few days/weeks?</p>
+								<p class="pclass1">5. Would you say that you do not seem to
+									be getting any benefit from using self-help methods and /or
+									seeking support from your loved ones, despite sufficiently
+									trying and finding that your mental health condition is
+									worsening?</p>
+
+								<p class="pclass1">6. Do you find that you just cannot
+									motivate yourself to do things to help yourself, although you
+									are aware as to what might help?</p>
+								<p class="pclass">7. Do you find that your day-to-day
+									functioning is declining in the last few days/weeks due to your
+									mental state?</p>
+								<br>
+
+								<p class="pclass7">We advise you to seek face to face
+									consultation with a trained mental health professional if you
+									notice that any one or more of the above statements is true for
+									you.</p>
+								<br>
+								<h5 class="h5class1">Overcoming mental blocks to seeking
+									professional help</h5>
+								<p class="pclass1">It is very common for people to
+									experience mental barriers/blocks to seek help from a mental
+									health professional, even if they need such help and even if
+									they know that it may be of some use.</p>
+
+
+								<p class="pclass1">This may be due to a variety of factors
+									such as sense of stigma/fear of being stigmatized, fear of the
+									unknown, doubts about oneself etc.</p>
+								<p class="pclass">Try one or more of the strategies
+									mentioned in the video to overcome your internal barriers to
+									seeking professional help:</p>
+								<br>
+
+
+								<div>
+									<!-- <iframe class="frameclass2"
+										src="https://drive.google.com/file/d/0B3nHvc0wCTqFVDgyQkhETEFBQnc/preview"
+										allowfullscreen="allowfullscreen"></iframe> -->
+										<iframe  class="frameclass2" src="https://www.youtube-nocookie.com/embed/EKcM82xHFSs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								</div>
+
+								<h5 class="h5class1">Feeling better prepared to seek
+									professional help</h5>
+								<br>
+								<p class="pclass1">If you decide to take direct face-to-face
+									help from a mental health professional, you can do one/more of
+									the following to feel better prepared:</p>
+								<p class="pclass">• As a first step, you can ask us and
+									clarify your doubts regarding seeking direct professional help.</p>
+								<p class="pclass">• Do some background exploration and check
+									as to which kind of professional might be best suited to
+									address your needs.</p>
+								<p class="pclass">• Give yourself a chance to decide after
+									meeting a trained professional and gauging your comfort level</p>
+								<p class="pclass1">• Take charge of your situation by
+									preparing to ask all the questions about your problem and
+									options of interventions when you meet a professional</p>
+								<p class="pclass1">• Keep open the possibility of taking
+									along with you someone you trust and feel comfortable with (at
+									least for the first session/till you gain confidence)</p>
+								<p class="pclass1">• If one of your attempts at taking help
+									from a professional has been unsatisfactory, do not shy away
+									from trying another source of professional help, after some
+									background check (Just because you did not benefit from
+									consultation with one professional does not mean that
+									professional help for mental health problems is ineffective or
+									that everyone has the same professional style/expertise that
+									matches your needs). Avoid over generalizing!</p>
+								<br>
+
+
+
+
+
+
+
+
+
+
+							</div>
+
+
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+					<br>
+					<p class="pclass" style="font-weight: bold;">How/whom to
+						approach:</p>
+					<p class="pclass" style="line-height: 26px;">
+						If you are unclear on this, drop us a mail and we will guide you
+						through the possible options for seeking additional professional
+						help for your mental health concern.<span
+							style="color: blue; text-decoration: none;">
+							positivepsychology.nimhans@gmail.com</span> or <span
+							style="color: blue; text-decoration: none;">wellbeing.flourish.nimhans@gmail.com</span>
+					</p>
+
+
+					<!-- <p class="subtitle">Why us</p> -->
+				</div>
+				
+				<!-- <p class="subtitle">Why us</p> -->
+
+			</section>
+		
+		</div>
+			<div class ="link_new" style = "text-align: center;">
+				<a href="../links/link.html"><span style="color:blue;text-decoration-color: black;">Click here to go to the References and Links Section</span></a>
+				</div>
+	</div>
+	<!--end of team3 section-->
+
+
+
+
+
+
+
+	<!-- Begin footer -->
+	<footer class="text-off-white">
+
+		<div class="footer">
+			<div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+				<p class="pclass" class="copyright"
+					style="text-align: center; color: #fff;">Copyright &copy; 2017
+					- NIMHANS</p>
+			</div>
+		</div>
+
+	</footer>
+	<!-- End footer -->
+
+	<a href="#" class="scrolltotop"
+		style="background-color: #fff; color: #111111; border-color: #111111;"><i
+		class="fa fa-arrow-up"></i></a>
+	<!-- Scroll to top button -->
+	</div>
+	<!-- body ends -->
+
+
+
+
+	<!-- Plugins JS -->
+	<script src="../../inc/jquery/jquery-1.11.1.min.js"></script>
+	<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../inc/owl-carousel/js/owl.carousel.min.js"></script>
+	<script src="../../inc/stellar/js/jquery.stellar.min.js"></script>
+	<script src="../../inc/animations/js/wow.min.js"></script>
+	<script src="../../inc/waypoints.min.js"></script>
+	<script src="../../inc/isotope.pkgd.min.js"></script>
+	<script src="../../inc/classie.js"></script>
+	<script src="../../inc/jquery.easing.min.js"></script>
+	<script src="../../inc/jquery.counterup.min.js"></script>
+	<script src="../../inc/smoothscroll.js"></script>
+	<script src="../../inc/styleswitch.js"></script>
+
+	<!-- Theme JS -->
+	<script src="../../js/theme.js"></script>
+
+
+
+	<!--================================================================================
+        ///// Begin Stylesheet Switcher /////
+        ================================================================================ -->
+	<!--   <div class="switcher-wrapper hidden-sm hidden-xs">
+        	<div class="switcher pull-left">
+        		<p>Color Scheme</p>
+        		<a class="switcher-box default" href="javascript:chooseStyle('none', 60)"></a>
+        		<a class="switcher-box blue" href="javascript:chooseStyle('ice-blue', 60)"></a>
+        		<a class="switcher-box lime" href="javascript:chooseStyle('fresh-lime', 60)"></a>
+        		<a class="switcher-box orange" href="javascript:chooseStyle('summer-orange', 60)"></a>
+        		<a class="switcher-box purple" href="javascript:chooseStyle('night-purple', 60)"></a>
+        	</div>
+        	<div class="switcher-btn pull-right"><i class="fa fa-paint-brush"></i></div>
+        </div> -->
+
+	<script type="text/javascript">
+		$(function() {
+
+			$(".switcher-btn").on("click", function(e) {
+				e.preventDefault();
+				var div = $(".switcher-wrapper");
+				if (div.css("left") === "-160px") {
+					$(".switcher-wrapper").animate({
+						left : "0px"
+					});
+				} else {
+					$(".switcher-wrapper").animate({
+						left : "-160px"
+					});
+				}
+			});
+
+		});
+	</script>
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<br>
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" ng-click="logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==============================================================================
+        ///// End Stylesheet Switcher /////
+        ============================================================================== -->
+
+</body>
+
+</html>

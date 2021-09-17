@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Wellness Application</title>
+<meta name="description"
+	content="Unika - Responsive One Page HTML5 Template">
+<meta name="keywords"
+	content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+<meta name="author" content="imransdesign.com">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts  -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>-->
+<link href="EXTERNAL/roboto.css" rel='stylesheet' type='text/css'>
+
+
+<!-- Body font -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>-->
+<link href="EXTERNAL/lato.css" rel='stylesheet' type='text/css'>
+
+
+<!-- Navbar font -->
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="inc/animations/css/animate.min.css">
+<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">
+<!-- Font Icons -->
+<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
+<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+
+<!--Javscript-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="EXTERNAL/jquery.min.js"></script>
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="css/skin/cool-gray.css">
+<link rel="alternate stylesheet" media="screen" title="ice-blue"
+	href="css/skin/ice-blue.css">
+<link rel="alternate stylesheet" media="screen" title="summer-orange"
+	href="css/skin/summer-orange.css">
+<link rel="alternate stylesheet" media="screen" title="fresh-lime"
+	href="css/skin/fresh-lime.css">
+<link rel="alternate stylesheet" media="screen" title="night-purple"
+	href="css/skin/night-purple.css">
+
+<!--angular toaster css-->
+<link rel="stylesheet" href="angular/toaster/toaster.css">
+
+<!--angular js-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>-->
+<script src="EXTERNAL/angular.min.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>-->
+<script src="EXTERNAL/angular-cookies.js"></script>
+
+<!--angular toaster js-->
+<script src="angular/toaster/toaster.js"></script>
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="angular/loading/loader.js"></script>
+<link rel='stylesheet' href='angular/loading/loading-bar.min.css'
+	type='text/css' media='all' />
+<script type='text/javascript' src='angular/loading/loading-bar.min.js'></script>
+
+
+
+<!--Controllers-->
+<script src="js/logincontroller.js"></script>
+<script src="config/config.js"></script>
+
+<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script',
+			'https://www.google-analytics.com/analytics.js', 'ga');
+
+	//ga('create', 'UA-91103912-1', 'auto');
+	ga('create', 'UA-115966828-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#myBtn").click(function() {
+			$("#myModal").modal();
+		});
+	});
+	$(document).ready(function() {
+		$("#myBtn1").click(function() {
+			$("#myModal1").modal();
+		});
+	});
+	$(document).ready(function() {
+		$("#myBtn2").click(function() {
+			if ($(window).width() < 500) {
+				//window.location.href = "files/sections/googleplay.html";
+				window.location.href = "files/sections/sections.html";
+			} else
+
+				window.location.href = "files/sections/sections.html";
+		});
+	});
+</script>
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar"
+	ng-controller="loginController" oncontextmenu="return false;">
+	<toaster-container toaster-options="{'time-out': 8000}"></toaster-container>
+	<div class="page-loader"></div>
+	<!-- Display loading image while page loads -->
+	<div class="body">
+
+		<!--========== BEGIN HEADER ==========-->
+		<header id="header" class="header-main">
+
+			<!-- Begin Navbar -->
+			<nav id="main-navbar" class="navbar navbar-default navbar-fixed-top"
+				role="navigation">
+				<!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<label style="color: #fff; padding-top: 23px; font-size: 25px;">WELLNESS&nbsp;-&nbsp;CHECK</label>
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html"></a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+						<li><a class="page-scroll" href="#carousel-section"
+							style="font-size: 16px;">Home</a></li>
+						<li><a class="page-scroll" href="#about-section"
+							style="font-size: 16px;">About</a></li>
+						<li><a class="page-scroll" href="#portfolio-section"
+							style="font-size: 16px;">What</a></li>
+						<li><a class="page-scroll" href="#why-section"
+							style="font-size: 16px;">Why</a></li>
+						<li><a class="page-scroll" href="#team-section"
+							style="font-size: 16px;">Team</a></li>
+						<li><a class="page-scroll" data-toggle="modal" href="#term"
+							style="font-size: 16px;">Terms &<br> conditions
+						</a></li>
+						<li><a class="page-scroll" href="#contact-section"
+							style="font-size: 16px;">Contact</a></li>
+						<li ng-hide="home"><a class="page-scroll" href="#myBtn"
+							id="myBtn" style="font-size: 16px;">Login</a></li>
+						<li ng-hide="home"><a class="page-scroll" href="#myBtn1"
+							id="myBtn1" style="font-size: 16px;">New user?<br>Register
+								here
+						</a></li>
+
+						<li ng-show="home"><a class="page-scroll" href="#myBtn2"
+							id="myBtn2" style="font-size: 16px;">My page</a></li>
+						<li ng-show="home"><a class="page-scroll" data-toggle="modal"
+							href="#logoutModal" style="font-size: 15px;">Logout</a></li>
+						<!-- <li ng-show="showLogout"><a ng-click="logout()" >Logout</a></li> -->
+				</div>
+				<!-- /.navbar-collapse -->
+				<!-- </div> -->
+				<!-- /.container -->
+			</nav>
+
+
+			<!-- End Navbar -->
+
+		</header>
+		<!-- ========= END HEADER =========-->
+
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="term" role="dialog"
+			style="padding-top: 94px;">
+			<div class="modal-dialog modal-lg terms-modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">TERMS OF USE</h4>
+					</div>
+					<div class="modal-body terms-modal-body"
+						style="text-align: justify;">
+
+						<p>
+						<h5>The delimited scope and purpose of the Wellness Check</h5>
+						</p>
+						<p>
+							The Information contained in, or accessed through, this website
+							is for your general information and Self-development use only and
+							is not intended to be used as medical advice and should not be
+							used to diagnose, treat, cure or prevent any medical condition.<br>
+							The diagnosis and treatment of any mental illness requires a
+							detailed evaluation by a medical practitioner or qualified mental
+							health practitioner. People seeking a diagnosis or treatment of
+							depression, anxiety or other mental health disorders should
+							consult a medical practitioner or mental health professional.<br>
+							This website is not designed to diagnose or treat common mental
+							health disorders. It is merely designed to help people to become
+							more self-aware about various aspects of their mental well-being
+							and general levels of psychological distress so that they feel
+							motivated to and can choose to take appropriate actions to
+							enhance their well-being or reduce their distress by using
+							appropriate methods including utilization of appropriate help and
+							services Although some information on maintaining well-being is
+							provided and people are likely to find the information on
+							self-care to be useful; however this is NOT a substitute for
+							seeking professional consultation and advice. There is no claim
+							made that the material contained on this website is likely to be
+							of help for everyone who uses this website.<br> If you have
+							a mental health condition or if you are likely to have a
+							diagnosis of mental health condition, you should seek
+							professional consultation from a trained mental health
+							professional or a medical consultant.<br> If at the time of
+							registering for program or at any point of time after registering
+							for this wellness check program, you notice that you are getting
+							thoughts about harming yourself or harming another person, you
+							should seek urgent medical advice. If your patterns of responses
+							suggest that you are experiencing significant distress, you will
+							be strongly suggested to immediately seek medical help through a
+							direct/face-to face contact with any trained professional of your
+							choice. If you so desire, the wellness check team will try its
+							best to provide you some information regarding the availability
+							of centers/trained mental health professional in your region , if
+							such information is available to the team.<br> We strongly
+							recommend that you always seek the advice of a medical
+							practitioner or qualified mental health practitioner for any
+							questions regarding personal health or medical conditions. We
+							strongly recommend that you never avoid or delay in obtaining
+							medical advice from your medical practitioner or qualified mental
+							health practitioner because of what you may have read on this
+							website.<br> If you think you may have a medical emergency,
+							call a local help-line/reach out to an emergency service.<br>
+							NIMHANS does not recommend or endorse any specific tests,
+							providers (including, but not limited to, hospitals and
+							physicians), products, procedures, or other information that may
+							be mentioned on the website. Any opinions expressed on the
+							website are the opinions of the individual authors, not of
+							NIMHANS.<br> The few questionnaires available on this
+							Website are intended solely for the purpose of giving you a rough
+							/broad idea of a particular issue and are not designed to provide
+							a diagnosis.<br> You represent and warrant that you are at
+							least 18 years of age or older. Persons under age 18 with
+							depressive symptoms are advised to talk with their
+							parents/guardians about getting direct help from a qualified
+							mental health professional/medical professional.<br> By
+							accessing and using the website, or any portion of the website,
+							you agree to be bound by each of the Terms of Use and all
+							applicable laws and regulations governing the website. If you do
+							not agree with any of the Terms of Use, you are not authorized to
+							access or use the website for any purpose. We reserve the right
+							to modify these Terms of Use at any time. Your use of the website
+							following any such modification constitutes your agreement to
+							follow and be bound by the Terms of Use as modified.
+						</p>
+						<br>
+						<p>
+						<h5>Fees, charges and cancellation</h5>
+						</p>
+						<p>
+							There is no fee or charge for you to register with Wellness
+							Check. However, if you access the Program through the use of a
+							mobile phone or the Internet, your normal phone/Internet charges
+							will apply.<br>There is no minimum contract associated with
+							the use of Wellness Check. You may choose to stop using the
+							Program at any time.
+						</p>
+						<br>
+						<p>
+						<h5>License to Use</h5>
+						</p>
+						<p>The information and materials on the website unless
+							otherwise stated, are copyrighted by the National Institute for
+							Mental Health and Neuro Sciences (NIMHANS), and may be used by
+							registered users solely for their own personal use. We grant you
+							a limited, personal, non-exclusive, non-transferable license to
+							use our content for your own personal, non-commercial use. Except
+							as otherwise provided, you acknowledge and agree that you have no
+							right to modify, edit, copy, reproduce, create derivative works
+							of, reverse engineer, alter, enhance or in any way exploit any of
+							the content in any manner, except for modifications in filling
+							out the forms for your authorized use. You shall not remove any
+							copyright notice from any page/form.</p>
+						<br>
+						<p>
+						<h5>Disclaimer of Warranties</h5>
+						</p>
+						<p>You agree to assume total responsibility and risk for your
+							use of the website, the service and the content. We make no
+							express or implied warranties, representations or endorsements
+							whatsoever with respect to the website, the service or the
+							content. We expressly disclaim all warranties, including, but not
+							limited to, implied warranties of merchantability, fitness for a
+							particular purpose, title and non-infringement with regard to the
+							website, the service, and the content. We do not warrant that the
+							functions performed by the website or the service will be
+							uninterrupted, timely, secure or error-free, free of viruses or
+							other malicious code, or that defects in the website/server or
+							the service will be corrected. We do not warrant the accuracy,
+							currency, or completeness of the content, or that any errors in
+							the content will be corrected. We reserve the right to correct
+							any errors, inaccuracies or omissions and to change or update
+							information at any time without prior notice. We do not, however,
+							guarantee that any errors, inaccuracies or omissions will be
+							corrected. The site, the service and the content are provided on
+							an 'as is' and 'as available' basis. The foregoing does not
+							affect any warranties which cannot be excluded or limited under
+							applicable law.</p>
+						<br>
+						<p>
+						<h5>Disclaimer of liability</h5>
+						</p>
+						<p>You understand and agree that under no circumstances we
+							will be liable for any damages whatsoever, including, but not
+							limited to direct, indirect, incidental, consequential, or
+							punitive damages arising out of the use of or inability to use
+							the website, the service, or the content. If you are dissatisfied
+							with the website, the service, the content, or the terms of use,
+							your sole and exclusive remedy is to discontinue using the
+							website. You acknowledge, by your use of the website, that your
+							use of the website is at your sole risk. We are not liable to any
+							user or person for any decision made or action taken in reliance
+							upon information or content displayed or provided in this
+							website. It is your responsibility to make your own decisions
+							about the currency, completeness, accuracy, reliability and
+							suitability of information, services, programs and communities of
+							interest contained in (or accessible from) linked websites.</p>
+						<br>
+						<p>
+						<h5>Security, viruses, errors and availability</h5>
+						</p>
+						<p>The internet is an insecure public network which means
+							there are risks that information sent to or from this website may
+							be intercepted, corrupted or modified by third parties. In
+							addition, files obtained from or through this website may contain
+							computer viruses, disabling codes, worms or other devices or
+							defects. You bear the risks and responsibility for any loss or
+							damage caused, directly or indirectly, by these risks and we
+							accept no liability for any interference with, or damage to, your
+							computer system, software or data occurring in connection with
+							this Website.</p>
+						<br>
+						<p>
+						<h5>Use of cookies</h5>
+						</p>
+						<p>
+							The website uses transient or session cookies. Cookies are pieces
+							of information that a website transfers to your computer's hard
+							disk when you open the program pages. Cookies by themselves do
+							not identify you or any user but they do identify your browser.
+							Because this website uses 'transient' cookies, your computer does
+							not retain the information delivered in the cookie once you leave
+							the website. When you log out, the transient cookie set up by the
+							website is destroyed, and no personal information is retained
+							which could identify you or your browser next time you log on to
+							the website. Most web browsers are set up to accept cookies, and
+							while you can set your browser to not accept cookies you will not
+							be able to use this website if you do this.<br>We may also
+							filter, remove or refuse to post files which interfere with the
+							technical operations of the program, including files which
+							threaten to overload or crash a system.
+						</p>
+						<br>
+						<p>
+						<h5>Privacy</h5>
+						</p>
+						<p>
+							This statement sets out the National Institute for Mental Health
+							and Neuro Sciences policy relating to the collection and use of
+							your personal information in the Wellness Check program. This
+							Notice is in addition to the Terms of Use. Your registration as a
+							Wellness check user constitutes your agreement to terms of the
+							Privacy Notice and the Terms of Use.<br> Please note that
+							this Privacy Notice applies only to the Wellness Check site and
+							not to any other sites that are linked to the Wellness Check site
+							or mentioned on the website.
+						</p>
+						<br>
+						<p>
+						<h5>Your personal information is important to us</h5>
+						</p>
+						<p>NIMHANS recognizes that your privacy is very important to
+							you and that we are under a legal and ethical obligation to
+							protect the integrity of your personal information. When you
+							register with Wellness Check you will be asked to enter your
+							username. We suggest that you use a pseudonym or a made-up
+							username.</p>
+						<br>
+						<p>
+						<h5>Why the program collects personal information from you</h5>
+						</p>
+						<p>
+							When you enter the Wellness Check Program you will be asked to
+							complete a number of tests and enter some information, which you
+							may consider to be sensitive, about yourself. The program asks
+							for this information in order to provide you with tailored and
+							specifically relevant feedback. The information is stored in the
+							Wellness Check database along with information about the date and
+							time you complete each exercise. Information is also collected in
+							summary form about most frequently visited pages. This is
+							intended to help the designers understand how visitors use the
+							Program. All the information gathered is stored on the NIMHANS
+							server and is subject to stringent security measures.<br>The
+							information you provide may be used for research on understanding
+							well being variables , their association with demographics as
+							well as the utility of wellness check and for any publication or
+							presentation in scientific forums.However all data , when used in
+							such a manner will be anonymized and your personal identifying
+							information that you provide during sign- up shall never be
+							disclosed in any presentation, forum or publication.<br>We
+							will not use or disclose any information about you without your
+							consent unless we are required to do so by law.<br>We will
+							never use your personal information to send you unsolicited
+							information or "spam".<br>Like most Internet sites, this
+							website is accessible worldwide. However, not all products or
+							Services are available to all persons or in all geographic
+							locations. Wellness Check reserves the right to limit the
+							provision of its products and Services to any person, geographic
+							area, or jurisdiction. This website is not intended for use
+							outside India and its content may not be most appropriate for
+							those residing outside the country. You agree to comply with all
+							applicable laws and local rules or restrictions relating to this
+							website.
+						</p>
+						<br>
+						<p>
+						<h5>Risks and benefits</h5>
+						</p>
+						<p>Wellness Check offers a set of tools which aim to benefit
+							users in different ways such as:</p>
+						<!-- <p>A user can repeatedly respond to questionnaires and obtain
+							summaries of his/her scores over time, as compared to other
+							Indian users of similar age group for whom the normative data are
+							available.</p>-->
+						<ul class="termli">
+							<br>
+							<li class="liststyle">Helping them to become self-aware
+								about various aspects of their mental well being such as
+								frequency of experience of positive and negative emotions, sense
+								of mastery and sense of personal growth etc. in addition to
+								capturing their level of mental distress at a given point of
+								time.</li>
+							<br>
+							<li class="liststyle">Providing general suggestions for
+								maintaining/enhancing one’s state of well-being.</li>
+						</ul>
+						<br>
+						<p>A user can repeatedly respond to questionnaires and obtain
+							summaries of his/her scores over time, as compared to other
+							Indian users of similar age group for whom the normative data are
+							available.</p>
+						<p>
+							<b>Wellness Check does not ‘diagnose’ you or ‘treat’ you, or
+								replace standard assessment, psychological testing or
+								psychiatric evaluation and treatment provided by a health and/or
+								mental health professional.</b>
+						</p>
+						<p>Therefore, there are risks associated with its use,
+							including;</p>
+						<ul class="termli">
+							<br>
+							<li class="liststyle">The possibility that you may have a
+								major mental health condition but Wellness Check does not
+								produce any finding to indicate that you have low well-being.</li>
+							<br>
+							<li class="liststyle">The possibility that you miss seeking
+								professional help when it is actually needed, due to
+								inappropriately relying on Wellness Check feedback.</li>
+							<br>
+							<li class="liststyle">The possibility that your symptoms
+								persist /worsen while using the Program.</li>
+							<br>
+							<li class="liststyle">The possibility that new symptoms or
+								health conditions develop while using the Program.</li>
+							<br>
+							<li class="liststyle">The possibility that the feedback
+								generated by Wellness Check is not suitable or appropriate
+								specifically for you at a particular point in time.</li>
+						</ul>
+						<br>
+						<h5>External links</h5>
+						<br>
+						<p>Links to external websites on the Program are provided for
+							easy access to various sources of information for your
+							convenience only. Such links do not constitute or imply an
+							endorsement, sponsorship, or recommendation by NIMHANS of the
+							third party, the third-party website, or the information
+							contained therein. You acknowledge and agree that the NIMHANS or
+							Wellness Check Team is not responsible for the availability of
+							any such site and that it does not endorse or warrant, and is not
+							responsible or liable for, any such website, its content, its
+							privacy policy or practices, or the acts or omissions of its
+							operators. Wellness Check makes no warranty and accepts no
+							responsibility or liability in relation to any information,
+							products, services or advice provided by these external links and
+							any views or recommendations provided in linked websites do not
+							necessarily represent those of Wellness Check. You acknowledge
+							that you enter any third party websites at your own risk.</p>
+						<br>
+						<h5>Copyright</h5>
+						<br>
+						<p>NIMHANS and the Wellness Check team respect the
+							intellectual property rights of others. If you believe that your
+							work has been copied in a way that constitutes copyright
+							infringement, please provide the following information in writing
+							to us.</p>
+						<p>A physical or electronic signature of a person authorized
+							to act on behalf of the owner of the copyright.</p>
+						<p>
+							A description of the copyrighted work that you claim has been
+							infringed.<br>A description of the material that you claim
+							to be infringing or to be the subject of infringing activity and
+							that is to be removed or access to which is to be disabled, and
+							information sufficient to permit us to locate the material.
+							Information so that we can contact you, such as address,
+							telephone number and e-mail address.
+						</p>
+						<p>A statement that you have a good faith belief that use of
+							the material in the manner complained of is not authorized by the
+							copyright owner, its agent, or the law.</p>
+						<p>A statement that the information in the notification is
+							accurate that you are the copyright owner or are authorized to
+							act on behalf of the owner of a copyright that is allegedly
+							infringed.</p>
+						<p>Upon the receipt of a proper notice of claimed
+							infringement, we shall respond at the earliest to resolve the
+							claim between the notifying party and the alleged infringer who
+							provided the content in issue, including, where applicable,
+							removing, or disabling access to content claimed to be infringing
+							or by removing or disabling access to links to such content.</p>
+						<br>
+						<h5>Your obligations</h5>
+						<br>
+						<p>You are solely responsible for any content or material
+							which you post or upload on the Program, or which is posted by
+							another person using your user name or password. Wellness Check
+							excludes all liability (to the extent permitted by law) for any
+							loss, damage or expenses suffered by you or claims made against
+							you arising from content or material which you post or upload on
+							the Program, or which is posted by another person (whether using
+							your username or password or otherwise).</p>
+						<br>
+						<h5>Use of the website</h5>
+						<br>
+						<p>
+							You agree not to use the website for unlawful purposes, and you
+							agree to comply with all applicable laws, rules and regulations
+							while using the website.<br> You agree not to use the
+							website for any commercial purposes, including any advertisement,
+							commercial solicitation, or promotion of any specific goods or
+							services.
+						</p>
+						<p>You agree not to collect or use any information or other
+							data available via the website inappropriately.</p>
+						<p>You may not distribute, modify, copy (except as set forth
+							in these Terms of Use), transmit, display, reuse, reproduce,
+							publish, license, create derivative works from, transfer,
+							translate, sell, reverse engineer, decompile or disassemble, or
+							otherwise use the website or the Content (as defined herein),
+							except as specifically authorized in the Terms of Use, without
+							written permission from NIMHANS.</p>
+						<p>You agree not to use the website to post or transmit any
+							threatening, harmful, false, misleading, abusive, harassing,
+							libelous, defamatory, vulgar, obscene, scandalous, inflammatory,
+							pornographic, or profane material or any material that could
+							constitute or encourage conduct that would be considered a
+							criminal offense, give rise to civil liability, or otherwise
+							violate any law.</p>
+						<p>You agree not to use the website to advertise or perform
+							any commercial solicitation, or otherwise exploiting for any
+							commercial purposes any portion of, use of or access to the
+							website.</p>
+						<p>You agree not to incorporate any code into the code of the
+							website or to use the website to post or transmit any virus,
+							worm, Trojan Horse, time bomb, spyware, bot, tracking device,
+							screen scraping software or other computer code, file or program
+							that is harmful or invasive or is intended to damage or hijack
+							the operation of, or to monitor the use or operation of the Site
+							or any user of the website.</p>
+						<p>You agree not to use the website in conjunction with any
+							screen scraping software.</p>
+						<p>
+							You agree not to restrict or inhibit any other person from use of
+							the website.<br> You agree not to interfere with or disrupt
+							the operation of the website or the servers or networks used to
+							make the website available, or violate any requirements,
+							procedures, policies or regulations of such networks.
+						</p>
+						<p>You agree not to use the website to harvest or collect
+							personally identifiable information about users of the Site.</p>
+						<p>
+							You agree not to use the website to disrespect the privacy or
+							views of others.<br> You agree not to use the website to
+							impersonate another person or supply false information about
+							yourself or another person.
+						</p>
+						<p>You agree not to post material on the website that
+							infringes on the copyright or other intellectual property rights
+							of others, or the privacy, publicity, or other personal rights of
+							others.</p>
+						<br>
+						<h5>Your Suggestions</h5>
+						<br>
+						<p>We appreciate your feedback or other suggestions about the
+							website, the Service and the Content, but you understand that we
+							may use your feedback or other suggestions without any obligation
+							to compensate you for them. For any queries or suggestions or
+							complaints, you may contact:</p>
+						<br>
+						<h5>wellbeing.flourish.nimhans@gmail.com</h5>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" ng-show="mymodel">
+			<div class="modal fade" id="myModal" role="dialog"
+				style="padding-top: 94px;">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header"
+							style="padding: 7px 50px; background-color: #7FB2F0;">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 style="background-color: #7FB2F0;">
+								<span class="{{headericon}}"></span> {{modelheadername}}
+							</h4>
+						</div>
+						<div class="modal-body" style="padding: 40px 50px;"
+							ng-show="modalview">
+							<form name="signinform" novalidate>
+								<div class="form-group">
+									<label for="usrname">Username</label> <input type="text"
+										autocomplete="off" class="form-control" ng-model="uname"
+										id="usrname" placeholder="Enter username"
+										onfocus="this.placeholder = ''">
+								</div>
+								<div class="form-group">
+									<label for="psw">Password</label> <input autocomplete="off"
+										type="{{inputType}}" class="form-control" ng-model="pswd"
+										id="psw" placeholder="Enter password"
+										onfocus="this.placeholder = ''">
+								</div>
+								<span><p>
+										Forgot <a data-toggle="modal" href="#forgot">Password?</a>
+
+									</p></span> <span style="float: right; margin-top: -20px;"> </span> <br>
+								<button type="submit" ng-click="login()"
+									class="btn btn-info btn-block">
+									<span class="glyphicon glyphicon-off"></span>Login
+								</button>
+
+
+
+
+								<div class="form-group" style="text-align: center;"
+									ng-show="spinner">
+									<i class="fa fa-spinner fa-spin"
+										style="font-size: 30px; color: #9e6d6f;"></i>
+								</div>
+							</form>
+						</div>
+
+						<div class="modal-body" style="padding: 40px 50px;"
+							ng-show="modalview1">
+							<form role="form">
+								<div class="form-group">
+									<input type="email" class="form-control" autocomplete="off"
+										ng-model="email" placeholder="Enter Email">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" autocomplete="off"
+										ng-model="username" id="usrname" placeholder="Create Username">
+								</div>
+								<div class="form-group">
+									<input type="password" autocomplete="off" class="form-control"
+										ng-model="password" placeholder="Create Password">
+								</div>
+								<div class="form-group">
+									<input type="password" autocomplete="off" class="form-control"
+										ng-model="cpassword" placeholder="Confirm Password"><br>
+									<span id='message'></span>
+								</div>
+								<button type="submit" ng-disabled="!cpassword"
+									ng-click="registration()" class="btn btn-info btn-block">
+									<span class="glyphicon glyphicon-off"></span> Send
+								</button>
+							</form>
+						</div>
+
+						<div class="modal-footer">
+							<button type="submit"
+								class="btn btn-danger btn-default pull-left"
+								data-dismiss="modal">
+								<span class="glyphicon glyphicon-remove"></span> Cancel
+							</button>
+							<!-- <p ng-show="signupshow">
+								Not a member? <a href="" ng-click="signup()">Sign Up</a>
+							</p> -->
+							<p ng-show="loginshow">
+								Already registered? <a href="" ng-click="logins()">Login</a>
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="container" ng-show="mymodel1">
+			<div class="modal fade" id="myModal1" role="dialog"
+				style="padding-top: 94px;">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header"
+							style="padding: 7px 50px; background-color: #7FB2F0;">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 style="background-color: #7FB2F0;">
+								<span class="{{headericon}}"></span> {{modelheadername1}}
+							</h4>
+						</div>
+						<div class="modal-body" style="padding: 40px 50px;"
+							ng-show="modalview">
+							<form name="signinform" novalidate>
+
+
+
+
+								<div class="form-group">
+									<label for="usrname">Email</label> <input type="email"
+										autocomplete="off" class="form-control" ng-model="email"
+										id="usrname" placeholder="Enter email" ng-required="true"
+										onfocus="this.placeholder = ''">
+								</div>
+								<button type="submit" ng-disabled="signbutton"
+									ng-click="signup()" class="btn btn-info btn-block">
+									<span class="glyphicon glyphicon-log-in"></span> Sign up
+								</button>
+								<br>
+								<div class="form-group" style="text-align: center;"
+									ng-show="spinner">
+									<i class="fa fa-spinner fa-spin"
+										style="font-size: 30px; color: #9e6d6f;"></i>
+								</div>
+							</form>
+						</div>
+
+						<div class="modal-body" style="padding: 40px 50px;"
+							ng-show="modalview1"></div>
+
+						<div class="modal-footer">
+							<button type="submit"
+								class="btn btn-danger btn-default pull-left"
+								data-dismiss="modal">
+								<span class="glyphicon glyphicon-remove"></span> Cancel
+							</button>
+
+							<!-- <p ng-show="signupshow">
+								Not a member? <a href="" ng-click="signup()">Sign Up</a>
+							</p> -->
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<form name="forgotform" novalidate>
+			<div class="modal fade" id="forgot" role="dialog"
+				style="padding-top: 94px;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h5 class="modal-title">Plese enter your registered email</h5>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<input type="text" class="form-control" autocomplete="off"
+									ng-model="forgot" id="forgot" placeholder="Email"
+									onfocus="this.placeholder = ''" ng-required="true">
+							</div>
+							<div class="form-group" style="text-align: center;">
+								<button type="submit" ng-disabled="forgotbutton"
+									ng-click="forgots()" class="btn btn-success">Submit</button>
+							</div>
+							<div class="form-group" style="text-align: center;"
+								ng-show="spinners">
+								<i class="fa fa-spinner fa-spin"
+									style="font-size: 30px; color: #9e6d6f;"></i>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+
+
+		<!-- Begin text carousel intro section -->
+		<section id="carousel-section" style="background-color: #9e6d6f;">
+
+			<div class="slider">
+				<br> <br> <br> <br>
+				<!-- <div class="col-md-12" style="text-align: center;" ng-show="mybutton">
+				<button type="button" ng-click="mypagebutton()" class="btn btn-primary">Mypage</button>
+				</div> -->
+				<br> <br> <br>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+
+						<div class="item active">
+							<img src="img/WELLNESS-CHECK 22.png" style="width: 100%;">
+							<div class="carousel-caption"></div>
+						</div>
+
+						<div class="item">
+							<img src="img/pikto.png" style="width: 100%;">
+							<div class="carousel-caption"></div>
+						</div>
+
+						<div class="item">
+							<img src="img/WELLNESS-CHECK slider2.png" style="width: 100%;">
+							<div class="carousel-caption"></div>
+						</div>
+
+						<!-- 						<div class="item">
+								<img src="img/WELLNESS-CHECK slider 3.png" style="width:100%;">
+								<div class="carousel-caption">
+								</div>
+							</div> -->
+
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left"></span> <span
+						class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right"></span> <span
+						class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+
+		</section>
+		<!-- End text carousel intro section -->
+
+
+
+		<!-- Begin about section -->
+		<section id="about-section" class="page bg-style1 sectionClass">
+			<!-- Begin page header-->
+			<div class="page-header-wrapper" style="height: 97px;">
+				<div class="container">
+					<div class="page-header text-center wow fadeInUp"
+						data-wow-delay="0.3s">
+						<p class="myClass">About Wellness - Check</p>
+						<div class="devider"></div>
+						<!-- <p class="subtitle">little information</p> -->
+					</div>
+				</div>
+			</div>
+			<!-- End page header-->
+
+			<!-- Begin rotate box-1 -->
+			<div class="rotate-box-1-wrapper">
+				<div class="container">
+					<div class="row"
+						style="border-top: 4px solid #FFB74D; border-bottom: 4px solid #FFB74D;">
+						<div class="col-md-12"
+							style="text-align: justify; font-family: sans-serif; color: #fff">
+							<ul
+								style="padding-left: 7px; padding-top: 5px; text-align: center;">
+								<li><p class="aboutClass">
+										<span class="aboutList">A</span>n internet based program
+									</p></li>
+								<br>
+								<li><p class="aboutClass">
+										<span class="aboutList">T</span>o give you a chance to take a
+										break from the running race & reflect on how you are and where
+										you are going
+									</p></li>
+								<br>
+								<li><p class="aboutClass">
+										<span class="aboutList">T</span>o answer a few questions on
+										various aspects of mental well being and get feedback
+									</p></li>
+								<br>
+								<li><p class="aboutClass">
+										<span class="aboutList">T</span>o track one’s mental well
+										being over time
+									</p></li>
+								<br>
+								<li><p class="aboutClass">
+										<span class="aboutList">T</span>o access basic information on
+										various ways of maintaining or enhancing well being
+									</p></li>
+								<br>
+							</ul>
+						</div>
+
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- End rotate box-1 -->
+
+			<!-- <div class="extra-space-l"></div> -->
+			<!-- Begin Portfolio -->
+			<section id="portfolio-section" class="page bg-style1"
+				style="background-color: #9e6d6f;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="portfolio">
+								<!-- Begin page header-->
+								<div class="page-header-wrapper">
+									<div class="container">
+										<div class="page-header text-center wow fadeInDown"
+											data-wow-delay="0.4s">
+											<p class="myClass">What ?</p>
+											<div class="devider"></div>
+											<!-- <p class="subtitle">Why us</p> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<img src="img/pikto1.png" style="width: 100%; height: 100%">
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End portfolio -->
+
+			<!-- Begin Portfolio -->
+			<section id="why-section" class="page bg-style1"
+				style="background-color: #9e6d6f; padding: 29px 0;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="portfolio">
+								<!-- Begin page header-->
+								<div class="page-header-wrapper">
+									<div class="container">
+										<div class="page-header text-center wow fadeInDown"
+											data-wow-delay="0.4s">
+											<p class="myClass">Why ?</p>
+											<div class="devider"></div>
+											<!-- <p class="subtitle">Why us</p> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12" style="padding-top: 10px;">
+								<img src="img/new-piktochart second poster.png"
+									style="width: 100%; height: 100%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End portfolio -->
+
+
+			<!--Team section-->
+			<section id="team-section" class="page bg-style1"
+				style="background-color: #9e6d6f;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="portfolio">
+								<!-- Begin page header-->
+								<div class="page-header-wrapper">
+									<div class="container">
+										<div class="page-header text-center wow fadeInDown"
+											data-wow-delay="0.4s">
+											<p class="myClass"">ABOUT WELLNESS - CHECK TEAM</p>
+											<div class="devider"></div>
+											<!-- <p class="subtitle">Why us</p> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="rotate-box-1-wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-12"
+											style="text-align: justify; font-family: sans-serif;">
+
+											<div
+												style="border: 2px solid #FFB74D; background-color: #FFE0B2; color: black;">
+												<div style="padding: 14px 23px 11px 21px;">
+													<p class="aboutTeam">WELLNESS - CHECK program was
+														developed as part of a research project carried out by Dr.
+														Seema Mehrotra as the Principal Investigator and funded by
+														the Indian Council of Social Science Research, New Delhi.
+														Dr. Seema Mehrotra currently serves as Professor of
+														Clinical Psychology and In Charge of Positive Psychology
+														Unit at the Department of Clinical Psychology at the
+														National Institute of Mental Health and Neuro Sciences,
+														NIMHANS, Bangalore.</p>
+													<p class="aboutTeam">Dr. Seema also runs a positive
+														mental health clinic called FLOURISH at the NIMHANS Center
+														for Well Being. She has developed preventive and promotive
+														intervention program modules for young adults in the
+														community. She has acted as primary supervisor of research
+														at M Phil and PhD levels for more than two dozen scholars
+														and has led research projects funded by ICMR, ICSSR and
+														CSIR and has published papers in national and
+														international peer reviewed, indexed journals and authored
+														chapters in books. Her areas of research include mental
+														health promotion, application of positive psychology using
+														a public health framework and digital interventions for
+														mental health.</p>
+													<p class="aboutTeam">Dr. Jyotsna Agrawal, her colleague
+														in the Positive Psychology Unit, and Assistant Professor
+														at the Department of Clinical Psychology was involved in
+														the initial phase of this project in supporting the
+														development of Wellness - Check Program.</p>
+													<p class="aboutTeam">Dr. Neha Swami worked as the
+														Research Staff for this Indian Council of Social Science
+														Research (ICSSR) funded project and provided valuable
+														support in the development and deployment of
+														Wellness-Check web and mobile based applications.</p>
+													<p class="aboutTeam">The Wellness Check team is
+														provided technology assistance by its collaborators
+														Professor T. K. Srikanth at the E-Health Research Center
+														of the International Institute of Information Technology,
+														Bangalore (IIIT-B) and his technology team.</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- /.row -->
+								</div>
+								<!-- /.container -->
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--End team section-->
+
+
+			<!-- Begin contact section -->
+			<section id="contact-section" class="page text-white parallax"
+				data-stellar-background-ratio="0.5"
+				style="background-image: url(img/map-bg.jpg);">
+				<div class="cover"></div>
+
+				<!-- Begin page header-->
+				<div class="page-header-wrapper">
+					<div class="container">
+						<div class="page-header text-center wow fadeInDown"
+							data-wow-delay="0.4s">
+							<p class="myClass">Contact</p>
+							<div class="devider"></div>
+							<!-- <p class="subtitle">All to contact us</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- End page header-->
+
+				<div class="contact wow bounceInRight" data-wow-delay="0.4s">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-sm-12">
+								<div class="contact-info">
+									<!-- <h4>Our Address</h4> -->
+									<ul class="contact-address" style="text-align: center;">
+										<p class="myClass">
+											If you wish to know the registration process or have any
+											other query, write to us at - <label style="color: #2196F3;">wellbeing.flourish.nimhans@gmail.com</label>
+
+										</p>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container -->
+				</div>
+			</section>
+			<!-- End contact section -->
+
+
+
+
+			<!-- Begin footer -->
+			<footer class="text-off-white">
+
+				<div class="footer">
+
+
+
+
+					<div class="row" style="margin-bottom: 15px;">
+						<div class="col-md-4"></div>
+						<div class="col-md-4"
+							style="border: 1px solid black; background-color: #FFE0B2; text-align: center; padding-top: 10px; padding-bottom: 5px;">
+							<h6 style="color: black;">Number of Page Views:
+								{{pageviews}}</h6>
+						</div>
+
+						<div class="col-md-4"></div>
+					</div>
+					<div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+						<p class="copyright">Copyright &copy; 2017 - NIMHANS</p>
+					</div>
+				</div>
+
+			</footer>
+			<!-- End footer -->
+
+			<a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a>
+			<!-- Scroll to top button -->
+	</div>
+	<!-- body ends -->
+
+
+
+
+	<!-- Plugins JS -->
+	<script src="inc/jquery/jquery-1.11.1.min.js"></script>
+	<script src="inc/bootstrap/js/bootstrap.min.js"></script>
+	<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
+	<script src="inc/stellar/js/jquery.stellar.min.js"></script>
+	<script src="inc/animations/js/wow.min.js"></script>
+	<script src="inc/waypoints.min.js"></script>
+	<script src="inc/isotope.pkgd.min.js"></script>
+	<script src="inc/classie.js"></script>
+	<script src="inc/jquery.easing.min.js"></script>
+	<script src="inc/jquery.counterup.min.js"></script>
+	<script src="inc/smoothscroll.js"></script>
+	<script src="inc/styleswitch.js"></script>
+
+	<!-- Theme JS -->
+	<script src="js/theme.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			$(".switcher-btn").on("click", function(e) {
+				e.preventDefault();
+				var div = $(".switcher-wrapper");
+				if (div.css("left") === "-160px") {
+					$(".switcher-wrapper").animate({
+						left : "0px"
+					});
+				} else {
+					$(".switcher-wrapper").animate({
+						left : "-160px"
+					});
+				}
+			});
+
+		});
+	</script>
+
+</body>
+
+</html>

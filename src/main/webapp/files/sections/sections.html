@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness" ng-controller="sectionController">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sections</title>
+
+<!-- ionic/angularjs js -->
+<script src="../../lib/ionic/js/ionic.bundle.js"></script>
+<link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="sections.css">
+
+<!--custom css-->
+
+
+<!--Javscript-->
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../../js/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.maphilight.js"></script>
+
+<!--Angular-->
+<script src="../../angular/angular.min.js"></script>
+<script src="../../angular/angular-cookies.js"></script>
+
+<!--angular toaster-->
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+<script src="../../angular/toaster/toaster.js"></script>
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../../angular/loading/loader.js"></script>
+<link rel='stylesheet' href='../../angular/loading/loading-bar.min.css'
+	type='text/css' media='all' />
+<script type='text/javascript'
+	src='../../angular/loading/loading-bar.min.js'></script>
+
+
+
+
+<!--Controllers-->
+<script src="sectionsCtrl.js"></script>
+<script src="../../config/config.js"></script>
+
+<script>
+	jQuery(function() {
+		jQuery('#ImageMap1').maphilight();
+	});
+
+	function fun() {
+
+		alert("hi");
+	}
+</script>
+<script>
+
+window.setInterval(function(){
+	  $('.blink').toggle();
+	}, 1000);</script>
+
+<style>
+
+.notification-message-unread1 {
+
+ display:none;
+ 
+}
+
+.notification-message-unread {
+
+  float: left; 
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 90px;
+  border-radius: 25px;
+   
+  /*animation: blinker 1s linear infinite;
+  color: #666;
+  background: white;
+  padding-left: 15px;
+   padding-right: 15px;
+   width: 180px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px; 
+  */
+  
+}
+
+/*.blink {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px; 
+  /* width and height can be anything, as long as they're equal 
+}*/
+
+/*@keyframes blink {
+
+  100%{opacity: 1;}
+  
+}*/
+
+.center-block {
+	margin-top: 4%;
+}
+
+#mynav {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+	height: 100px;
+	color: #aaa;
+	background-color: #3C3C3C;
+	text-align: center;
+}
+
+.nav li:hover a {
+	border: none;
+	background: none;
+	color: #00adee;
+	margin: 0 !important;
+}
+
+.SteppedProgress li.complete:before {
+	background-color: {{color}};
+color:white;
+}
+.circle {
+	position: relative;
+	border: 2px solid #999;
+	border-radius: 100%;
+	width: 38px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 50px;
+	color: #fff;
+	background-color: #fff;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.circle:first-child {
+	margin-top: 0;
+}
+
+.circle:before {
+	position: absolute;
+	border: 1px solid #999;
+	width: 0;
+	height: 50px;
+	display: block;
+	content: '';
+	left: 50%;
+	z-index: 1;
+	top: -52px;
+	margin-left: -1px;
+}
+
+.circle:first-child:before {
+	display: none;
+}
+
+.circle1 {
+	position: relative;
+	border: 2px solid #999;
+	border-radius: 100%;
+	width: 38px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 18px;
+	color: #fff;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.circle1:first-child {
+	margin-top: 0;
+}
+
+.circle1:before {
+	position: absolute;
+	border: 1px solid #999;
+	width: 0;
+	height: 50px;
+	display: block;
+	content: '';
+	left: 50%;
+	z-index: 1;
+	top: -52px;
+	margin-left: -1px;
+	display: none;
+}
+
+.circle1:first-child:before {
+	display: none;
+}
+
+.label-info {
+background-color:black;
+}
+
+.label-arrow {
+	position: relative;
+}
+
+.label-arrow-right {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-right: 10px;
+}
+
+.label-arrow-right:after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	border-left-color: #999;
+	border-width: 10px;
+	border-bottom-width: 9px;
+	margin-top: -10px;
+}
+
+.label-arrow-left {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: 10px;
+}
+
+.label-arrow-left:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	border-right-color: #999;
+	border-width: 10px;
+	border-bottom-width: 9px;
+	margin-top: -10px;
+}
+
+
+
+.label-primary.label-arrow:after {
+	border-left-color: #428bca;
+}
+
+.label-primary.label-arrow:before {
+	border-right-color: #428bca;
+}
+
+.label-primary.banner-left:before, .label-primary.banner-right:after {
+	border-color: #428bca;
+}
+
+.label-success.label-arrow:after {
+	border-left-color: #5cb85c;
+}
+
+.label-success.label-arrow:before {
+	border-right-color: #5cb85c;
+}
+
+.label-warning.label-arrow:after {
+	border-left-color: #f0ad4e;
+}
+
+.label-warning.label-arrow:before {
+	border-right-color: #f0ad4e;
+}
+
+.label-danger.label-arrow:after {
+	border-left-color: #d9534f;
+}
+
+.label-danger.label-arrow:before {
+	border-right-color: #d9534f;
+}
+/*changed color of arrow and label box */
+
+.label-info.label-arrow:after {
+	border-left-color: black;
+}
+
+.label-info.label-arrow:before {
+	border-right-color: black;
+	
+}
+
+
+
+.banner-left:before {
+	border: 10px solid #999;
+	border-left: 10px solid transparent !important;
+	border-bottom-width: 9px;
+	left: -18px;
+	position: absolute;
+	top: 0;
+	height: 0;
+	content: " ";
+}
+
+.banner-right:after {
+	border: 10px solid #999;
+	border-right: 10px solid transparent !important;
+	border-bottom-width: 9px;
+	right: -18px;
+	position: absolute;
+	top: 0;
+	height: 0;
+	content: " ";
+}
+
+h1 .label-arrow-right {
+	margin-right: 22px;
+}
+
+h1 .label-arrow-left {
+	margin-left: 22px;
+}
+
+h1 .label-arrow-right:after, h1 .label-arrow-left:before {
+	border-width: 22px;
+	margin-top: -22px;
+}
+
+h1 .banner-left:before {
+	border-width: 24px;
+	border-left-width: 24px:
+    right:-10px;
+	border-bottom-width: 21px;
+}
+
+@media ( min-width : 1281px) {
+	.headerButton {
+		text-align: right;
+		padding-top: 5px;
+		padding-right: 20px;
+	}
+	.desktop {
+		display: none;
+	}
+	.center-block1 {
+		width: 800px;
+		height: 600px;
+		margin-top: 4%;
+	}
+}
+
+@media ( min-width : 1025px) and (max-width: 1280px) {
+	.headerButton {
+		text-align: right;
+		padding-top: 5px;
+		padding-right: 20px;
+	}
+	.desktop {
+		display: none;
+	}
+	.center-block1 {
+		width: 680px;
+		height: 590px;
+		margin-top: 4%;
+	}
+}
+
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.headerButton {
+		text-align: right;
+		padding-top: 5px;
+		padding-right: 20px;
+	}
+	.desktop {
+		display: none;
+	}
+	.center-block1 {
+		width: 600px;
+		height: 500px;
+		margin-top: 4%;
+	}
+}
+
+@media ( min-width : 481px) and (max-width: 767px) {
+	.mobile {
+		display: none;
+	}
+	.modal-backdrop {
+		background-color: transparent;
+	}
+}
+
+@media ( min-width : 320px) and (max-width: 480px) {
+	.mobile {
+		display: none;
+	}
+	.modal-backdrop {
+		background-color: transparent;
+	}
+}
+</style>
+</head>
+
+<body style="background-color: white;">
+	<div class="mobile">
+		<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+		<div id="mynav">
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<h2>Hello, {{username | capitalize}}</h2>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2"></div>
+				<div class="col-md-4 headerButton">
+					<button type="button" ng-click="homeclick()"
+						class="btn btn-success">Home</button>
+					<button ng-show="navenable <= 4" type="button"
+						ng-click="resumeclick()" class="btn btn-primary">Resume</button>
+					<button type="button" ng-click="logout()" class="btn btn-danger">Logout</button>
+
+
+				</div>
+			</div>
+			<h1 style="color: white;">Sections</h1>
+
+
+		</div>
+
+		<br>
+		<br> <br>
+
+		<div class="col-md-12" style="overflow-y: scroll;">
+			<div class="col-md-2 img-responsive center-block">
+
+				<ul class="nav nav-pills nav-stacked col-sm-12"
+					style="margin-top: 10px; margin-bottom: 65px;">
+					<br>
+					<br>
+					<li style="background-color: #5597d0; font-size: 16px;"
+						ng-click="summary()"><a href="#" style="color: white;"><i></i>My
+							Summary</a></li>
+							<li style="background-color: #5597d0; font-size: 16px;"
+						ng-click="overall_summary()"><a href="#" style="color: white;"><i></i>My Overall
+							Summary</a></li>
+					<li style="background-color: #5597d0; font-size: 16px;"
+						ng-click="resource()"><a href="#" style="color: white;"><i></i>Useful
+							Resources</a></li>
+					<li style="background-color: #5597d0; font-size: 16px;"
+						ng-click="link()"><a href="#" style="color: white;"><i></i>References
+							& External Links</a></li>
+				</ul>
+				
+				<!-- changed the background color in below  code from #f1694d to #000000-->
+
+				<span ng-if="navenable == 0"
+					style="font-size: 12px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">Click
+					on Psychological well being to start</span>
+					 <span ng-if="navenable == 1"
+					style="font-size: 13px; padding-left: 20px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">Click
+					on the Next Section</span> <span ng-if="navenable == 2"
+					style="font-size: 13px; padding-left: 20px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">Click
+					on the Next Section</span> <span ng-if="navenable == 3"
+					style="font-size: 13px; padding-left: 20px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">Click
+					on the Next Section</span> <span ng-if="navenable == 4"
+					style="font-size: 13px; padding-left: 20px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">Click
+					on the Next Section</span> <span ng-if="navenable == 5"
+					style="font-size: 12px; background-color: #000000;padding-top:5px;padding-bottom:5px;"
+					class="label label-info black-background label-arrow label-arrow-right">You
+					can re-do any section, any time.</span>
+					
+					<!-- new code for flash-->
+					
+					<div ng-if="navenable == 0" class="notification-message-unread1"
+					 style="display:none;"></div>
+					 
+					<div ng-if="navenable == 1" class="notification-message-unread1"
+					 style="display:none;"></div>
+					 
+					<div ng-if="navenable == 2" class="notification-message-unread1"
+					 style=""display:none;"></div>
+					 
+					<div ng-if="navenable == 3" class="notification-message-unread1"
+					 style="display:none;"></div>
+					 
+					<div ng-if="navenable == 4" class="notification-message-unread1"
+					 style="display:none;"></div>
+					 
+					<div ng-if="navenable == 5" class="notification-message-unread"
+					 style="background-color:#7E4031;margin-top:20px;padding-top:10px;"><p class="blink" style="text-align:center;color:#FFFFFF;font-size:15px
+					;">Refill<br> Emotional Well being again<br> to get Positivity Ratio!</p></div>
+			</div>
+			<div class="col-md-8">
+				<img id="ImageMap1" src="../../img/bulb_image.png"
+					class="center-block" usemap="#image-map" alt="" />
+				 <!-- <map name="image-map">
+					<area ng-if="navenable >=0" target=""
+						alt="Psychological well being" title="Psychological well being"
+						ng-click="psychological()" coords="108,290,68" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable >= 1" target="" alt="Emotional well being"
+						title="Emotional well being" ng-click="emotion()"
+						coords="266,280,59" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable >= 2" target="" alt="Social well being"
+						title="Social well being" ng-click="social()" coords="430,299,57"
+						shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable >= 3" target="" alt="Your distress"
+						title="Your distress" ng-click="distress()" coords="207,431,59"
+						shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable >= 4" alt="Your activity pattern"
+						title="Your activity pattern" ng-click="activity()"
+						coords="396,416,62" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+				</map>-->
+				
+				<!-- disable each section after completing it and go to next section for first time users -->
+				
+				 <map name="image-map">
+					<area ng-if="navenable ==0 || navenable >= 5" target=""
+						alt="Psychological well being" title="Psychological well being"
+						ng-click="psychological()" coords="108,290,68" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable == 1 || navenable >=5" target="" alt="Emotional well being"
+						title="Emotional well being" ng-click="emotion()"
+						coords="266,280,59" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable == 2 || navenable >=5" target="" alt="Social well being"
+						title="Social well being" ng-click="social()" coords="430,299,57"
+						shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable == 3 || navenable >=5" target="" alt="Your distress"
+						title="Your distress" ng-click="distress()" coords="207,431,59"
+						shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+					<area ng-if="navenable == 4 || navenable >=5" alt="Your activity pattern"
+						title="Your activity pattern" ng-click="activity()"
+						coords="396,416,62" shape="circle"
+						data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"FFFFFF","fillOpacity":0.6, "neverOn": false}'>
+				</map>
+			</div>
+			<div class="col-md-2 img-responsive center-block">
+				<span ng-if="navenable == 0"><b>You are yet to start!</b></span> <span
+					ng-if="navenable == 1"><b>Congrats! 1 out of 5 sections
+						done</b></span> <span ng-if="navenable == 2"><b>Congrats! 2 out of
+						5 sections done</b></span> <span ng-if="navenable == 3"><b>Congrats!
+						3 out of 5 sections done</b></span> <span ng-if="navenable == 4"><b>Congrats!
+						4 out of 5 sections done</b></span> <span ng-if="navenable == 5"><b>Congrats!
+						5 out of 5 sections done</b></span>
+				<div style="padding-left: 30%;">
+					<div class="circle1" title="Psychological well being"
+						ng-style="{'background-color':navenable >= 1 ?  '#3C3C3C': 'white','color':'#3C3C3C'}">&nbsp;</div>
+					<div class="circle" title="Emotional well being"
+						ng-style="{'background-color':navenable >= 2 ?  '#3C3C3C': 'white','color':'#3C3C3C'}">&nbsp;</div>
+					<div class="circle" title="Social well being"
+						ng-style="{'background-color':navenable >= 3 ?  '#3C3C3C': 'white','color':'#3C3C3C'}">&nbsp;</div>
+					<div class="circle" title="Your distress"
+						ng-style="{'background-color':navenable >= 4 ?  '#3C3C3C': 'white','color':'#3C3C3C'}">&nbsp;</div>
+					<div class="circle" title="Your activity pattern"
+						ng-style="{'background-color':navenable >= 5 ?  '#3C3C3C': 'white','color':'#3C3C3C'}">&nbsp;</div>
+				</div>
+				<span ng-if="navenable == 0"><b>Please answer all
+						sections on a page and click 'NEXT' to save your responses or move
+						forward</b></span> <span ng-if="navenable == 1"> <b>Please answer
+						all sections on a page and click 'NEXT' to save your responses or
+						move forward Complete all 5 sections in sequence .Then check
+						Feedback on My Summary page.</b></span> <span ng-if="navenable == 2">
+					<b>Please answer all sections on a page and click 'NEXT' to
+						save your responses or move forward Complete all 5 sections in
+						sequence .Then check Feedback on My Summary page.</b>
+				</span> <span ng-if="navenable == 3"> <b>Please answer all
+						sections on a page and click 'NEXT' to save your responses or move
+						forward Complete all 5 sections in sequence .Then check Feedback
+						on My Summary page.</b></span> <span ng-if="navenable == 4"> <b>Please
+						answer all sections on a page and click 'NEXT' to save your
+						responses or move forward Complete all 5 sections in sequence
+						.Then check Feedback on My Summary page.</b></span> <span
+					ng-if="navenable == 5"><b>Your Feedback is ready. Click
+						My Summary button to view Feedback. <br>To calculate
+						positivty ratio, revisit and answer Emotional Well being section
+						again in 7-15 days
+				</b></span>
+
+			</div>
+
+		</div>
+
+		<!-- 		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+
+	<div class="desktop">
+		<ion-pane> <ion-side-menus> <ion-side-menu-content>
+
+		<div class="bar bar-header bar-positive item-input-inset">
+			<button menu-toggle="left"
+				class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+			<h2 class="title" style="font-size: 14px;">
+				<label>Your well being <br> Check different aspects (5
+					Sections)
+				</label>
+			</h2>
+		</div>
+		<ion-content> <br>
+		<br>
+		<br>
+		<br>
+
+
+
+
+		<div class="container">
+			<button class="button button-block button-royal psychological"
+				ng-click="psychological()" ng-disabled="psy">Psychological
+				well being</button>
+			<br>
+			<button class="button button-block button-balanced emotional"
+				ng-click="emotion()" ng-disabled="emo">Emotional well being</button>
+			<br>
+			<button class="button button-block button-energized social"
+				ng-click="social()" ng-disabled="sco">Social well being</button>
+			<br>
+			<button class="button button-block button-royal distress"
+				ng-click="distress()" ng-disabled="dist">Your Distress</button>
+			<br>
+			<button class="button button-block button-balanced activity"
+				ng-click="activity()" ng-disabled="act">Your Activity
+				Pattern</button>
+		</div>
+		</ion-content> <br>
+		<div class="bar bar-footer footer">
+			<h3 class="title" style="font-size: 14px;">Complete all measures
+				once to get your first feedback</h3>
+		</div>
+
+		</ion-side-menu-content>
+		<div id="loading-bar-spinner" ng-show="loading">
+			<div>
+				<img src="../../angular/loading/loading.gif" width="20%">
+			</div>
+		</div>
+		<ion-side-menu side="left" class="listColor">
+		<div class="item item-avatar listColor">
+			<h2>Hello, {{username | capitalize}}</h2>
+		</div>
+		<ion-list> <ion-item menu-close ng-click="summary()"
+			class="listColor"> My Summary </ion-item> <ion-item menu-close
+			class="listColor" ng-click="resource()"> Useful Resources
+		</ion-item> <ion-item menu-close class="listColor" ng-click="link()">
+		References & External Links </ion-item> <ion-item menu-close class="listColor"
+			ng-show="navenable <= 4" ng-click="resumeclick()"> Resume
+		section </ion-item> <ion-item menu-close class="listColor" ng-click="homeclick()">
+		Home </ion-item> <ion-item menu-close class="listColor" ng-click="logout()">
+		Logout </ion-item> </ion-list> </ion-side-menu> </ion-side-menus> </ion-pane>
+
+
+
+
+
+	</div>
+
+</body>
+
+</html>

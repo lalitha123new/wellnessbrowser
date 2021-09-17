@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LOGOUT</title>
+
+<!-- ionic/angularjs js -->
+
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="sections.css">
+
+
+
+
+<!--angular toaster -->
+<script src="../../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../../angular/loading/loader.js"></script>
+<link rel='stylesheet' href='../../angular/loading/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../angular/loading/loading-bar.min.js'></script>
+
+<!-- Language -->
+<script src="../../angular/language/angular-internationalization.js"></script>
+
+<script src="../../js/logincontroller.js"></script>
+<script src="../../config/config.js"></script>
+
+<style>
+</style>
+</head>
+
+<body style="background-color: white;" ng-controller="loginController">
+
+	<div class="container">
+		<div class="container" id="new"
+			style="padding-right: 20px; padding-left: 20px; padding-top: 50px; border: 2px solid black;">
+			<p style="font-size: 12px; text-align: justify;">
+				<b>We recommend that you log out now and then log in from inside
+					the Wellness Check app if you are planning to use your mobile for
+					completing Wellness Check.</b>{{mypage12}}
+			</p>
+			
+			<a class="btn btn-primary" ng-click="logout()">Logout</a>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

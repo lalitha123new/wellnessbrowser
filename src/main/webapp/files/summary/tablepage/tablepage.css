@@ -1,0 +1,309 @@
+html {
+	background-color: #9e6d6f;
+}
+
+
+	
+#mynav {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+	height: 100px;
+	color: #aaa;
+	background-color: #3C3C3C;
+	text-align: center;
+}
+
+
+
+.footer_class {
+	padding : 10px 10px 10px 10px;
+	 text-align : center;
+	 background-color:#9e6d6f;
+}
+
+
+/* begin code for make the page responsive in different browser window widths*/
+@media ( min-width : 1281px) {
+	.center-container {
+	padding-top: 10px;
+	background-color: #9e6d6f;
+	padding-bottom : 3px;
+}
+
+.content-top {
+	background-color: #9e6d6f;
+	width: 80%;
+	margin: 20px auto 20px;
+	padding: 40px 40px;
+}
+
+.score_table {
+	border: 2px solid #FFB74D;
+	background-color: #FFE0B2;
+	 margin: 0 auto;
+	 table-layout: fixed;
+	 width : 100%;
+}
+
+
+.header {
+	font-size : 15px !important;
+	border : 1px solid #FFB74D;
+	padding : 15px 15px 15px 15px;
+	font-weight: bold;
+	background-color: #FFFDB9 !important;
+	text-align : center;
+	
+	
+}
+
+td {
+	border : 1px solid #FFB74D;
+	padding : 15px 15px 15px 15px;
+	text-align : center;
+	font-weight: bold;
+}
+
+.boldclass {
+	font-weight : bold;
+	font-family:Comic  sans;
+	font-size:16px;
+}
+.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+}
+
+@media ( min-width : 1025px) and (max-width: 1280px) {
+	.center-container {
+	padding-top: 10px;
+	background-color: #9e6d6f;
+	padding-bottom : 3px;
+}
+
+.content-top {
+	background-color: #9e6d6f;
+	width: 80%;
+	margin: 20px auto 20px;
+	padding: 40px 40px;
+}
+
+.score_table {
+	border: 2px solid #FFB74D;
+	background-color: #FFE0B2;
+	 margin: 0 auto;
+	 table-layout: fixed;
+	 width : 100%;
+}
+
+
+.header {
+	font-size : 15px !important;
+	border : 1px solid #FFB74D;
+	padding : 15px 15px 15px 15px;
+	font-weight: bold;
+	background-color: #FFFDB9 !important;
+	text-align : center;
+}
+td {
+	border : 1px solid #FFB74D;
+	padding : 15px 15px 15px 15px;
+	text-align : center;
+	font-weight: bold;
+}
+
+.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.boldclass {
+	font-weight : bold;
+	font-family:Comic  sans;
+	font-size:16px;
+}
+}
+
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.center-container {
+	padding-top: 10px;
+	background-color: #9e6d6f;
+	padding-bottom : 3px;
+}
+
+.content-top {
+	background-color: #9e6d6f;
+	width: 80%;
+	margin: 20px auto 20px;
+	padding: 40px 40px;
+}
+
+.score_table {
+	border: 2px solid #FFB74D;
+	background-color: #FFE0B2;
+	 margin: 0 auto;
+	 table-layout: fixed;
+	 width : 100%;
+}
+
+
+.header {
+	font-size : 15px !important;
+	border : 1px solid #FFB74D;
+	padding : 15px 15px 15px 15px;
+	font-weight: bold;
+	background-color: #FFFDB9 !important;
+	text-align : center;
+	
+}
+td {
+	border : 1px solid #FFB74D;
+	padding : 15px 5px 15px 5px;
+	text-align : center;
+	font-size:15px;
+	
+}
+
+
+.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.boldclass {
+	font-weight : bold;
+	font-family:Comic  sans;
+	font-size:14px;
+}
+}
+
+@media ( min-width : 481px) and (max-width: 767px) {
+	.center-container {
+	padding-top: 10px;
+	background-color: #9e6d6f;
+	padding-bottom : 3px;
+}
+
+.content-top {
+	background-color: #9e6d6f;
+	width: 80%;
+	margin: 20px auto 20px;
+	padding: 40px 40px;
+}
+
+.score_table {
+	border: 2px solid #FFB74D;
+	background-color: #FFE0B2;
+	 margin: 0 auto;
+	 table-layout: fixed;
+	 width : 100%;
+}
+
+
+.header {
+	font-size : 12px !important;
+	border : 1px solid #FFB74D;
+	padding : 15px 5px 15px 5px;
+	font-weight: bold;
+	background-color: #FFFDB9 !important;
+	text-align : center;
+	
+}
+td {
+	border : 1px solid #FFB74D;
+	padding : 15px 5px 15px 5px;
+	text-align : center;
+	font-size : 11px;;
+}
+.boldclass {
+	font-weight : bold;
+	font-family:Comic  sans;
+	font-size:12px;
+}
+
+
+}
+
+@media ( min-width : 320px) and (max-width: 480px) {
+	.center-container {
+	padding-top: 10px;
+	background-color: #9e6d6f;
+	padding-bottom : 3px;
+}
+
+.content-top {
+	background-color: #9e6d6f;
+	width: 80%;
+	margin: 20px auto 20px;
+	padding: 40px 40px;
+}
+
+.score_table {
+	border: 2px solid #FFB74D;
+	background-color: #FFE0B2;
+	 margin: 0 auto;
+	 table-layout: fixed;
+	 width : 100%;
+}
+
+
+.header {
+	font-size : 8px !important;
+	border : 1px solid #FFB74D;
+	padding : 15px 5px 15px 5px;
+	font-weight: bold;
+	background-color: #FFFDB9 !important;
+	
+}
+td {
+	border : 1px solid #FFB74D;
+	padding : 15px 5px 15px 5px;
+	text-align : center;
+	font-size : 8px;
+	
+}
+
+
+}
+/* end of code for make the page responsive in different browser window widths*/
+
+.heading {
+	background-color:#9e6d6f;
+	height:50px;
+	margin-top:40px;
+}
+
+.paragraph_thanks {
+	background-color:white;
+	font-size:16px;
+	padding: 20px;
+}
+.red {
+	/* background-color: red; */
+	background-color:#edac5c;
+}
+.green {
+	/* background-color: #5cb85c; */
+	background-color: #77dd77;
+}
+.blue{
+	background-color: #428bca;
+}
+
+.paragraph_thanks_content {
+	font-size:20px;
+	color:white;
+	text-align:center;
+}
+.quote_class {
+	background-color:#3C3C3C;
+	color:white;
+	text-align:center;
+}
+
+.heade_sub {
+	width:700px;
+}

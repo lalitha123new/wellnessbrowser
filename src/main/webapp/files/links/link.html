@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en" ng-app="wellness">
+<head>
+<title>Wellness-Links</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+
+<!-- /font files -->
+<!-- css files -->
+<link href="link.css" rel='stylesheet' type='text/css' media="all" />
+<!-- Latest compiled and minified CSS -->
+
+
+<script src="../../inc/jquery/jquery.min.js"></script>
+<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+<!--Javscript-->
+<script src="../../inc/jquery/jquery.min.js"></script>
+<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!--Angular-->
+<script src="../../angular/angular.min.js"></script>
+<script src="../../angular/angular-cookies.js"></script>
+
+<script src="linkCtrl.js"></script>
+
+
+
+
+<style type="text/css">
+html {
+	background-color: #9e6d6f;
+}
+
+/*.content-top {
+	background-color: #FFE0B2;
+    width: 80%;
+    margin-top:20px;
+
+
+    margin: 10px auto 10px;
+    padding: 40px 40px;
+
+}
+
+.center-container {
+	margin-top:5px;
+}*/
+.listyle {
+	list-style: square;
+}
+
+#mynav {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+	height: 95px;
+	color: #aaa;
+	background-color: #3C3C3C;
+	text-align: center;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media ( min-width : 1281px) {
+	.container {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 0px;
+	}
+	.center-container {
+		margin-top: 5px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 40px 40px;
+	}
+	.h4class {
+		font-size: 24px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.content-top {
+		margin-top: 20px;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 16px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 30px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 50px;
+	}
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media ( min-width : 1025px) and (max-width: 1280px) {
+	.container {
+		text-align: right;
+		padding-top: 10px;
+		padding-right: 0px;
+	}
+	.center-container {
+		margin-top: 7px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 40px 40px;
+	}
+	.h4class {
+		font-size: 22px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 14px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 28px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 50px;
+	}
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.container {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.center-container {
+		margin-top: 7px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 40px 40px;
+	}
+	.h4class {
+		font-size: 19px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 12px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 25px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 48px;
+	}
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media ( min-width : 768px) and (max-width: 1024px) and (orientation:
+	landscape) {
+	.container {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.center-container {
+		margin-top: 7px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 40px 40px;
+	}
+	.h4class {
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 12px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 22px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 42px;
+	}
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media ( min-width : 481px) and (max-width: 767px) {
+	.container {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.center-container {
+		margin-top: 7px;
+		
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 40px 40px;
+	}
+	.h4class {
+		font-size: 13px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 10px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 19px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 38px;
+	}
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media ( min-width : 320px) and (max-width: 480px) {
+	.container {
+		text-align: center;
+		padding-top: 10px;
+	}
+	.center-container {
+		margin-top: 7px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 30px 30px;
+	}
+	.h4class {
+		font-size: 12px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 9px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 15px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 1px;
+		
+		
+	}
+}
+
+@media ( max-width : 319px) {
+	.center-container {
+		margin-top: 7px;
+	}
+	.content-top {
+		background-color: #FFE0B2;
+		width: 80%;
+		margin: 20px auto 20px;
+		padding: 30px 30px;
+	}
+	.h4class {
+		font-size: 12px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.liclass {
+		list-style: square;
+		font-size: 8px;
+		font-family: sans-serif;
+		margin-bottom: 9px;
+	}
+	.h2class {
+		font-size: 15px;
+		color: #FFF;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 20px;
+		font-weight:700;
+	}
+	.olclass {
+		margin-left: 1px;
+		
+	}
+}
+</style>
+
+</head>
+<body ng-controller="linkController">
+	<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+
+
+	<form name="feedbackForm" novalidate>
+		<div id="mynav">
+			<div class="container">
+				<button type="button" ng-click="homeClick()" class="btn btn-success">
+					<a style="color: white; text-decoration: none;">Home</a>
+				</button>
+
+				<button type="button" class="btn btn-primary" ng-click="myPage()">
+					<a style="color: white; text-decoration: none;">My page</a>
+				</button>
+
+
+			</div>
+			<h2 class="h2class">External Links</h2>
+
+
+		</div>
+
+		<br> <br> <br> <br>
+		<div class="center-container">
+			<div class="content-top">
+				<div class="col-md-12" style="margin-bottom: 10px;">
+					<h4 class="h4class">Popular books on enhancing mental
+						well-being:</h4>
+				</div>
+				<div class="clear"></div>
+				<ol class="olclass">
+					<li class="liclass">Bregman, P. (2011).<span
+						style="font-style: italic; color: black;"> 18 minutes: Find
+							your focus .Master distraction and get the right things done.</span>
+						London: Orion.
+					</li>
+					<li class="liclass">Buckingham, M., & Clifton, D. O. (2001).<span
+						style="font-style: italic; color: black;"> Now, Discover
+							Your Strengths: How to develop your talents and those of the
+							people you manage.</span> London: Pocket Books.
+					</li>
+					<li class="liclass">Buckingham, M. (2007).<span
+						style="font-style: italic; color: black;"> Go put your
+							strengths to work: Six powerful steps to achieve outstanding
+							performance.</span> London: CBS Company.
+					</li>
+					<li class="liclass">Burns, D. D. (2009).<span
+						style="font-style: italic; color: black;"> Feeling good:
+							The new mood therapy.</span> New York: Harper Collins Publishers.
+					</li>
+					<li class="liclass">Fiore, N. (2007).<span
+						style="font-style: italic; color: black;"> The now habit: A
+							strategic program for overcoming procrastination and enjoying
+							guilt-free play. </span> New York: Tarcher/Penguin.
+					</li>
+					<li class="liclass">Goldsmith, M., Reiter, M. (2015).<span
+						style="font-style: italic; color: black;"> Triggers.
+							Sparking positive change and making it last.</span> London: Marshall
+						Goldsmith Inc.
+					</li>
+					<li class="liclass">Greenberger, D., & Padesky, C. A. (1995).<span
+						style="font-style: italic; color: black;"> Mind over mood.</span>
+						New York: Guilford Press.
+					</li>
+					<li class="liclass">Haidt, J. (2006).<span
+						style="font-style: italic; color: black;"> The Happiness
+							Hypothesis.</span> New York: Basic Books.
+					</li>
+					<li class="liclass">Linley, A. (2008).<span
+						style="font-style: italic; color: black;"> Average to A+:
+							Realizing strengths in yourself and others.</span> Coventry: CAPP Press.
+					</li>
+					<li class="liclass">Lyubomirsky, S. (2008).<span
+						style="font-style: italic; color: black;"> The how of
+							happiness: A scientific approach to getting the life you want.</span>
+						New York: Penguin Press.
+					</li>
+					<li class="liclass">Pink, D. H. (2009).<span
+						style="font-style: italic; color: black;"> Drive: The
+							surprising truth about what motivates us.</span> Edinburgh: Canongate.
+					</li>
+					<li class="liclass">Rath, T., & Clifton, D. O. (2004).<span
+						style="font-style: italic; color: black;"> How full is your
+							bucket? Positive strategies for work and life.</span> New York: Gallup
+						Press.
+					</li>
+					<li class="liclass">Seligman, M. E. P. (2011).<span
+						style="font-style: italic; color: black;"> Flourish: A
+							visionary new understanding of happiness and well-being.</span> New
+						York: Free Press.
+					</li>
+					<li class="liclass">Thurmon, D. (2016).<span
+						style="font-style: italic; color: black;"> Off Balance on
+							Purpose: Embrace Uncertainty and Create a Life You Love (2nd
+							ed.). (n.p.):</span> Motivation Works, Inc.
+					</li>
+				</ol>
+				<div class="clear"></div>
+				<br>
+				<div class="col-md-12" style="margin-bottom: 10px;">
+					<h4 class="h4class">Website links that the readers may wish to
+						explore:</h4>
+				</div>
+				<div class="clear"></div>
+				<ol class="olclass">
+					<li class="liclass"><a target="_blank"
+						href="http://self-compassion.org/"><span
+							style="color: blue; text-decoration: underline;">http://self-compassion.org/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/mindfulness.aspx"><span
+							style="color: blue; text-decoration: underline;">http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/mindfulness.aspx</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://franticworld.com/"><span
+							style="color: blue; text-decoration: underline;">http://franticworld.com/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://marc.ucla.edu/mindful-meditations/"><span
+							style="color: blue; text-decoration: underline;">http://marc.ucla.edu/mindful-meditations/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://www.pursuit-of-happiness.org/science-of-happiness/"><span
+							style="color: blue; text-decoration: underline;">http://www.pursuit-of-happiness.org/science-of-happiness/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://langleygroupinstitute.com/your-one-stop-shop-for-positive-psychology-resources/"><span
+							style="text-decoration: underline; color: blue;">http://langleygroupinstitute.com/your-one-stop-shop-for-positive-psychology-resources/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="https://positivepsychologyprogram.com/negative-emotions/"><span
+							style="text-decoration: underline; color: blue;">https://positivepsychologyprogram.com/negative-emotions/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="https://www.takingcharge.csh.umn.edu/enhance-your-wellbeing/health/thoughts-emotions/deal-negativity-healthy-way/"><span
+							style="text-decoration: underline; color: blue;">https://www.takingcharge.csh.umn.edu/enhance-your-wellbeing/health/thoughts-emotions/deal-negativity-healthy-way/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://www.apa.org/topics/anger/control.aspx/"><span
+							style="text-decoration: underline; color: blue;">http://www.apa.org/topics/anger/control.aspx/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="https://www.helpguide.org/articles/relationships-communication/anger-management.htm#understanding/"><span
+							style="text-decoration: underline; color: blue;">https://www.helpguide.org/articles/relationships-communication/anger-management.htm#understanding/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://www.whiteswanfoundation.org/"><span
+							style="text-decoration: underline; color: blue;">http://www.whiteswanfoundation.org/</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="http://www.advocatesforyouth.org/publications/1229-strengthening-family-relationships"><span
+							style="color: blue; text-decoration: underline;">http://www.advocatesforyouth.org/publications/1229-strengthening-family-relationships</span></a></li>
+					<li class="liclass"><a target="_blank"
+						href="https://www.blackdoginstitute.org.au/docs/default-source/factsheets/positivepsychology.pdf?sfvrsn=2"><span
+							style="text-decoration: underline; color: blue;">https://www.blackdoginstitute.org.au/docs/default-source/factsheets/positivepsychology.pdf?sfvrsn=2</span></a></li>
+							<li class="liclass"><a target="_blank"
+						href="https://echargementalhealth.nimhans.ac.in/pushd/"><span
+							style="text-decoration: underline; color: blue;">https://echargementalhealth.nimhans.ac.in/pushd/</span></a></li>
+							<li class="liclass"><a target="_blank"
+						href="http://www.nimhans.ac.in/nimhans-centre-well-being "><span
+							style="text-decoration: underline; color: blue;">http://www.nimhans.ac.in/nimhans-centre-well-being </span></a></li>
+				</ol>
+				<div class="clear"></div>
+			</div>
+			</div>
+
+			<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<br>
+							<h5 class="modal-title" id="exampleModalLabel">Ready to
+								Leave?</h5>
+						</div>
+						<div class="modal-body">Select "Logout" below if you are
+							ready to end your current session.</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Cancel</button>
+							<a class="btn btn-primary" ng-click="logout()">Logout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</form>
+</body>
+</html>

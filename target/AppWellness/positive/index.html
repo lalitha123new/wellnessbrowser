@@ -1,0 +1,36 @@
+<html ng-app="wellness">
+<head>
+<title>Wellness Admin</title>
+<!-- css files -->
+<link href="admin.css" rel='stylesheet' type='text/css' media="all" />
+<link rel="stylesheet" href="../inc/bootstrap/css/bootstrap.min.css">
+
+<!--angular js-->
+<script src="../angular/angular.min.js"></script>
+<script src="../angular/angular-cookies.js"></script>
+
+<!--angular toaster -->
+<script src="../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../angular/toaster/toaster.css">
+
+<!-- controllers -->
+<script src="adminCtrl.js"></script>
+<script src="../config/config.js"></script>
+</head>
+<body ng-controller="admincontroller" style="background-color: green">
+<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+<div class = "container">
+	<div class="wrapper">
+		<form name="Login_Form" class="form-signin">       
+		    <h3 class="form-signin-heading">Admin</h3>
+			  <hr class="colorgraph"><br>
+			  
+			  <input type="text" class="form-control" name="Username" ng-model="username" placeholder="Username" required="" autofocus="" /><br>
+			  <input type="password" class="form-control" name="Password" ng-model="password" placeholder="Password" required=""/>     		  
+			 
+			  <button class="btn btn-lg btn-primary btn-block" ng-click="admin()" name="Submit" value="Login" type="Submit">Login</button>  			
+		</form>			
+	</div>
+</div>
+</body>
+</html>

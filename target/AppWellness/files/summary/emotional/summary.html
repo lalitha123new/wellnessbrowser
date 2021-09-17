@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My summary</title>
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+
+<!-- Custom css -->
+<link rel="stylesheet" href="summary.css">
+
+<!--Javscript-->
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Angular-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+<script src="../../../angular/ui-bootstrap-tpls.js"></script>
+
+<!--ui-bootstrap-->
+<script src="../../../js/ui-bootstrap.js"></script>
+
+<script src="../../../js/highcharts.js"></script>
+<script src="../../../js/data.js"></script>
+<script src="../../../js/drilldown.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../js/jquery.jqGauges.css.css" />
+<script src="../../../js/jquery.jqGauges.min.js" type="text/javascript"></script>
+
+<!--controller-->
+<script src="summaryCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+
+</head>
+
+<body style="background-color: white" ng-controller="summaryController">
+	<br>
+
+	<div>
+		<div id="mynav">
+			<div class="container headerClass">
+				<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+				<button type="button" ng-click="mypage()" class="btn btn-primary">My
+					page</button>
+				<button type="button" data-toggle="modal" data-target="#logoutModal"
+					class="btn btn-danger">Logout</button>
+			</div>
+			<p class="headerFont">Emotional Well Being</p>
+
+
+		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="negative"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{negativeperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container2"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="positive"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{positiveperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div ng-show="ratioshow" class="container"
+			style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="ratio"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+				<div style="color: white;">
+					<h5
+						style="font-size: 20px; margin-top: 50%; font-weight: bold; margin-left: 26px;">Frequency
+						of emotions</h5>
+					<h5 style="font-size: 17px;">Positive emotion : Negative
+						emotion</h5>
+				</div>
+				<div
+					style="border: 2px solid white; width: 100px; margin-left: 84px; height: 50px;">
+
+					<h3 style="color: white; padding-left: 12px;">{{totalratio}} :
+						1</h3>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positive Emotions</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="phigh">Your
+					scores for positive emotions fall on the higher side, which means
+					that in the last few weeks, you experienced positive emotions more
+					often than most other people. This might reflect a desirable state,
+					especially if your scores on other indicators of well being
+					(psychological & social) are also on the higher side.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="paverage">Your
+					scores for positive emotions fall within the average range, which
+					means that in the last few weeks, you experienced positive emotions
+					as often as most other people. These include both high arousal
+					positive emotions (e.g. excitement, enthusiasm) as well as low
+					arousal positive emotions (e.g. peaceful, content).</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="plow">Your
+					scores for positive emotions fall on the lower side, which means
+					that in the last few weeks, you experienced positive emotions less
+					often than most other people. This might be either due to a
+					particularly difficult life-phase you are going through, or it
+					might reflect a longer term pattern that may be partly related to
+					one’s temperament and mental habits. Repeating this assessment over
+					time may give a clearer idea if this is a longer term pattern.
+					Experience of positive emotions can be enhanced through shifts in
+					one’s mental approach and regular practices that generate and
+					maintain such positive states. Look up the resource- section for a
+					few such tips.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Negative Emotions</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="nhigh">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br>Your scores for
+					negative emotions fall on the higher side, which means that in the
+					last few weeks, you have experienced negative emotions more often
+					than most other people. This might be either due to a particularly
+					difficult phase, or it might reflect a long term need for emotion
+					management skills.<br>Repeating this assessment over time may
+					give a clearer idea if this is a longer term pattern.<br>
+					Negative emotions are inevitable part of life and even serve a
+					useful purpose in some ways in many contexts. For example, an
+					optimum amount of anxiety pushes us to get prepared for dealing
+					with a challenge/threat, sadness may help us reflect/introspect on
+					what is going wrong and anger may provide the push to stand up and
+					deal with injustice/unfairness. However, when these emotions are
+					too frequently experienced or expressed in an
+					in-appropriated/uncontrolled fashion, these become a source of
+					distress and also result in other negative consequences on oneself
+					and others.<br>The frequency of experience of such emotions,
+					their intensity and the length of time for which these last (slow
+					vs. faster recovery from negative emotional states) can be altered
+					through shifts in one’s mental approach and regular practices that
+					help manage such emotions effectively. Look up the resource-
+					section for a few such tips.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="naverage">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br> Your scores for
+					negative emotions fall on the average side, which means that in the
+					last few weeks, you experienced negative emotions as often as most
+					other people. You might want to strengthen skills at managing
+					negative emotions and thereby enhance your overall experience of
+					wellbeing, if you think this reflects your longer term pattern.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="nlow">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br> Negative emotions
+					are inevitable part of life and even serve a useful purpose in some
+					ways in many contexts. For example, an optimum amount of anxiety
+					pushes us to get prepared for dealing with a challenge/threat,
+					sadness may help us reflect/introspect on what is going wrong and
+					anger may provide the push to stand up and deal with
+					injustice/unfairness. However, when these emotions are too
+					frequently experienced or expressed in an
+					in-appropriated/uncontrolled fashion, these become a source of
+					distress and also result in other negative consequences on oneself
+					and others.<br>Your scores on negative emotions fall on the
+					lower side, which means that you experienced negative emotions less
+					often than most other people in the last few weeks. This generally
+					reflects a desirable state and higher wellbeing.
+				</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positivity Ratio</h3>
+				<span ng-show="prfshow">
+					<p style="font-size: 18px; text-align: justify;">Not
+						calculated!</p>
+					<p style="font-size: 18px; text-align: justify;">Your
+						positivity ratio will be calculated if you respond to the
+						emotional well being questionnaire at least two times within a
+						span of 3 weeks. Please re-visit after about 7-15 days and answer
+						this questionnaire</p>
+					<p style="font-size: 18px; text-align: justify;">Positivity
+						Ratio is about the balance of positive and negative emotions. To
+						get a reliable picture of the balance you experience, it is best
+						to base it on /average it from multiple readings over a period of
+						time.</p>
+					<p style="font-size: 18px; text-align: justify;">Both positive
+						and negative emotions matter. What exactly would be the optimum
+						balance between positive and negative emotions may vary from one
+						task to another; however in most situations, the dominance of
+						positive emotions over negative ones is considered most helpful (
+						balance tilted in favour of positive emotion</p>
+				</span> <span ng-show="prshow">
+					<p style="font-size: 18px; text-align: justify;" ng-show="prhigh">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions).<br> Your positivity ratio is
+						higher than that experienced by many others. This means that
+						positive emotions outweigh in frequency than the negative emotions
+						for you (during the period for which you have rated them). This is
+						reflective of high emotional well being. There may be a scope to
+						work further on decreasing negative emotions and cultivating
+						positive emotions that aid your mental health and productivity in
+						the long run.
+					</p>
+					<p style="font-size: 18px; text-align: justify;"
+						ng-show="praverage">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions).<br>Your positivity ratio is
+						similar to that experienced by many others.There is certainly a
+						scope to work further on enhancing your positivity ratio. For this
+						you can check out your scores on negative emotions and positive
+						emotions separately to see where you need to invest maximum
+						efforts: decreasing negative emotions or cultivating positive
+						emotions or both. A good balance tilted well in favour of positive
+						emotions experienced over a long period of time can build your
+						physical, mental and psychological resources , help you bounce
+						back quickly form stress and aid your mental health and
+						productivity.
+					</p>
+					<p style="font-size: 18px; text-align: justify;" ng-show="prlow">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions) .<br>Your positivity ratio is
+						lower than that experienced by many others. It seems that you have
+						experienced negative emotions much more frequently than the
+						positive ones (during the period for which you have rated them).<br>
+						There is certainly a scope to work further on enhancing your
+						positivity ratio. For this you can check out your scores on
+						negative emotions and positive emotions separately to see where
+						you need to invest maximum efforts: decreasing negative emotions
+						or cultivating positive emotions or both. A good balance tilted
+						well in favour of positive emotions experienced over a long period
+						of time can build your physical, mental and psychological
+						resources; help you bounce back quickly form stress and aid your
+						mental health and productivity. It is possible that low positivity
+						ratio is a reflection of the difficult life events or challenges
+						that you are currently experiencing in your life. If it is a
+						chronic/prolonged experience, it may be helpful to consult a
+						professional to figure out what you can do to improve your overall
+						wellbeing. Look up the resource- section for a few tips for
+						enhancing your positivity ratio.
+					</p>
+				</span>
+				<p style="font-size: 18px; text-align: center;color: blue; font-weight: bold;">Please click the NEXT button to get  the feedback on other aspects of well-being.</p>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				<button type="button" class="btn btn-danger" ng-click="backbutton()">
+					<span class="glyphicon glyphicon-arrow-left"></span> Back
+				</button>
+				&nbsp;&nbsp;
+				<button class="btn btn-danger" ng-click="nextbutton()">
+					Next <span class="glyphicon glyphicon-arrow-right">
+				</button>
+			</div>
+		</footer>
+
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

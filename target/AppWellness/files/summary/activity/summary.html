@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My summary</title>
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+	
+<!-- Custom css -->
+<link rel="stylesheet" href="summary.css">
+
+<!--Javscript-->
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!--Angular-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+<script src="../../../angular/ui-bootstrap-tpls.js"></script>
+
+<!--ui-bootstrap-->
+<script
+	src="../../../js/ui-bootstrap.js"></script>
+
+<script src="../../../js/highcharts.js"></script>
+<script src="../../../js/data.js"></script>
+<script src="../../../js/drilldown.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../js/jquery.jqGauges.css.css" />
+<script src="../../../js/jquery.jqGauges.min.js" type="text/javascript"></script>
+
+<!--controller-->
+<script src="summaryCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+</head>
+
+<body style="background-color: white" ng-controller="summaryController">
+
+	<br>
+
+	<div>
+		<div id="mynav">
+          <div class="container headerClass">
+				<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+				<button type="button" ng-click="mypage()" class="btn btn-primary">My
+					page</button>
+				<button type="button" data-toggle="modal" data-target="#logoutModal"
+					class="btn btn-danger">Logout</button>
+			</div>
+			<p class="headerFont">Your Activity Pattern</p>
+
+
+		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="hedonic"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{hedonicperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">YOUR SCORE <br>({{date1}})</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container2"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="eudemonic"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{eudemonicperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">YOUR SCORE <br>({{date1}})</h3>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Pleasure-oriented Activities
+					(Hedonic)</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="hhigh">
+					Your scores suggest that in the last one month, you seem to be
+					engaging in pleasure -oriented activities at a higher frequency
+					than most other people. Such activities can give a temporary boost
+					to your well-being, but often this boost is short lasting. This
+					means that one is required to engage in such activities again and
+					again in order to feel good.<br>Although there is nothing
+					abnormal in itself about this, it could be problematic in a few
+					situations:<br> a) When these are often carried out at the
+					cost of/in ways that interfere with your doing other activities
+					that do not give you immediate pleasure but are useful for you in
+					the longer run,<br> b) When these pleasure-oriented activities
+					are harmful for your health <br> c) Sometimes, frequently
+					engaging in such activities can actually be a marker of feeling
+					distressed. There are times when we try to cope with our negative
+					feelings (e.g. sadness, hurt, anxiety or boredom) by seeking out
+					pleasure –oriented activities to get a quick relief/to feel better.
+					This can lift our mood help us to an extent, but we need to
+					simultaneously figure out how to deal with the underlying distress
+					and think of other methods of coping too which have longer term
+					benefits.<br> Therefore we need to balance these with
+					meaning-oriented activities that can enhance our overall
+					well-being.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="haverage">Your scores
+					falls on the average side, which means that in the last one month,
+					you seem to be engaging in pleasure-oriented activities as often as
+					most other people. These can give a temporary boost to your
+					well-being. However, too frequent engagement i such activities can
+					interfere with other kinds of activities that are useful and
+					healthier in the longer run. Therefore it would be good to balance
+					these with investing time in meaning-oriented activities that can
+					enhance our overall well-being.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="hlow">
+					Your scores fall on the lower side, which means that in the last
+					one month, you seem to be engaging in passive pleasure-oriented
+					activities less often than most other people. This may reflect a
+					focus on longer term goals rather than immediate pleasures.<br>Cautionary
+					note: However, we hope that you are carrying out other kinds of
+					active, constructive and personally meaningful activities that can
+					provide the longer lasting fuel to maintain /enhance your
+					wellbeing. In case, your overall level of engagement in any kind of
+					activities has come down recently, it could point to the
+					possibility of depression. Look up the resource- section for
+					checking if you may be depressed.
+				</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Meaning-oriented Activities
+					(Eudemonic)</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ehigh">Your scores
+					fall on the higher side which means that in the last one month, you
+					seem to be engaging in meaning-oriented activities more often than
+					most other people. Investing time and efforts in such activities
+					can help in maintaining wellbeing. These are focused on experience
+					of meaning, living in alignment with one’s deepest values and
+					evolving as a person and are not motivated by the need to
+					experience immediate sense of pleasure or relief. These could
+					include behaviours and actions that provide a sense of deep
+					connection with one’s inner self, with others, and provide us a
+					chance to manifest the best in us.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="eaverage">
+					Your scores fall on the average side which means that in the last
+					one month, you seem to be engaging in such activities as often as
+					most other people. To improve your wellbeing you may want to
+					increase your investment, in terms of time and efforts into such
+					activities. These are focused on experience of meaning, living in
+					alignment with one’s deepest values and evolving as a person and
+					are not motivated by the need to experience immediate sense of
+					pleasure or relief. These could include behaviours and actions that
+					provide a sense of deep connection with one’s inner self, with
+					others, and provide us a chance to manifest the best in us.<br>
+					The exact nature of meaning-oriented activities, of course, varies
+					from person to person depending on people’s temperament,
+					preferences, skills and values. Exploring what kinds of activities
+					may help you express your deepest values and investing time and
+					efforts in such activities can add to your sense of fulfilment in
+					life.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="elow">
+					Your scores on meaning-oriented activities are on the lower side
+					which means that in the last one month, you seem to be engaging in
+					such activities less often than most other people. These activities
+					are focused on experience of meaning, living in alignment with
+					one’s deepest values and evolving as a person and are not motivated
+					by the need to experience immediate sense of pleasure or relief.
+					These could include behaviours and actions that provide a sense of
+					deep connection with one’s inner self, with others, and provide us
+					a chance to manifest the best in us.<br>Your low engagement in
+					such activities might be due to a temporary stressful and busy
+					phase or you may have not explored such life choices. The exact
+					nature of meaning-oriented activities, of course, varies from
+					person to person depending on people’s temperament, preferences,
+					skills and values. Exploring what kinds of activities may help you
+					express your deepest values and investing time and efforts in such
+					activities can add to your sense of fulfilment in life.
+				</p>
+				<p style="font-size: 18px; text-align: center; color: blue; font-weight: bold;">Please click on the NEXT button and take a minute to reflect !</p>
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				<button type="button" class="btn btn-danger" ng-click="backbutton()">
+					<span class="glyphicon glyphicon-arrow-left"></span> Back
+				</button>
+				&nbsp;&nbsp;
+				<button class="btn btn-danger" ng-click="nextbutton()">
+					Next <span class="glyphicon glyphicon-arrow-right">
+				</button>
+			</div>
+		</footer>
+
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

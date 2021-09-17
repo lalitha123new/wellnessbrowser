@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" ng-app="wellness">
+<head>
+<title>Wellness-oveall summary</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+
+<!-- /font files -->
+<!-- css files -->
+<link href="tablepage.css" rel='stylesheet' type='text/css' media="all" />
+<!-- Latest compiled and minified CSS -->
+
+
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+<!--Javscript-->
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!--Angular-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+
+<script src="tablepageCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+
+</head>
+
+
+<body ng-controller="tablepageController">
+
+	<div id="mynav">
+
+		<div class="container headerClass">
+			<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+			<button type="button" ng-click="mypage()" class="btn btn-primary">My
+				page</button>
+
+		</div>
+
+		<h2 style="color: white;">Overall Summary</h2>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="center-container">
+		<div class="content-top">
+			<table class="score_table">
+			
+				<thead class="tablehead">
+				<col width="30">
+                <col width="26">
+                <col width="26">
+                <col width="26"> 
+				
+					<tr>
+					
+					<th class="header">Aspects of Wellbeing</th>
+					<th class="header" colspan = "3">Recommendation based on Your  Current Status<br>( as filled last)</th>
+					
+					</tr>
+				
+					<tr>
+						<th class="header"></th>
+						<th class="header heade_sub">Needs your attention<br> and efforts</th>
+						<th class="header heade_sub"> You are doing Ok<br>(can work on improving this)</th>
+						<th class="header heade_sub">Good Going!<br> Keep it up.</th>
+					</tr>
+					
+					
+				</thead>
+				
+				<tbody>
+				
+					
+				
+					<tr>
+						<td class="boldclass">Psychological well being (Overall)</td>
+						<td id ="row1_col1">{{overall_low}}</td>
+						<td id = "row1_col2">{{overall_avg}}</td>
+						<td id ="row1_col3">{{overall_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Components of<br> Psychological Well-being:</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Sense of mastery and competence</td>
+						<td id ="row3_col1">{{mc_low}}</td>
+						<td id ="row3_col2">{{mc_avg}}</td>
+						<td  id ="row3_col3">{{mc_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Sense of positive relations</td>
+						<td id ="row4_col1">{{pr_low}}</td>
+						<td id ="row4_col2">{{pr_avg}}</td>
+						<td id ="row4_col3">{{pr_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Sense of self-acceptance</td>
+						<td id ="row5_col1">{{sa_low}}</td>
+						<td id ="ro5_col2">{{sa_avg}}</td>
+						<td id = "row5_col3">{{sa_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Sense of engagement and growth</td>
+						<td id ="row6_col1">{{eg_low}}</td>
+						<td id ="row6_col2">{{eg_avg}}</td>
+						<td id ="row6_col3">{{eg_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Positive Affect</td>
+						<td id ="row7_col1">{{pa_low}}</td>
+						<td id ="row7_col2">{{pa_avg}}</td>
+						<td id ="row7_col3">{{pa_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Negative Affect</td>
+						
+						
+						<td id ="row8_col1">{{na_high}}</td>
+						<td id ="row8_col2">{{na_avg}}</td>
+						<td id ="row8_col3">{{na_low}}</td>
+					</tr>
+
+
+					<tr>
+						<td class="boldclass">Positivity Ratio</td>
+						<td></td>
+						<td id ="row9_col2">{{ratio_avg}}</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Social Well-being</td>
+						<td id ="row10_col1">{{social_low}}</td>
+						<td id ="row10_col2">{{social_avg}}</td>
+						<td id ="row10_col3">{{social_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Distress</td>
+						<td id ="row11_col1">{{distress_low}}</td>
+						<td id ="row11_col2">{{distress_avg}}</td>
+						<td id ="row11_col3">{{distress_high}}</td>
+					</tr>
+
+					<tr>
+						<td>Activity Patterns: Frequency of engaging in pleasure-oriented activities</td>
+						<td id ="row12_col1">{{hedonic_low}}</td>
+						<!-- <td id ="row12_col2">{{hedonic_avg}}</td> -->
+						<td id="row12_col2">(Check if  you are balancing  this with frequent engagement in meaning-oriented activities)</td>
+						<td id ="row12_col3">{{hedonic_high}}</td>
+					</tr>
+
+					<tr>
+						<td class="boldclass">Activity Patterns: Frequency of engaging in meaning-oriented activities</td>
+						<td id ="row13_col1">{{eudemonic_low}}</td>
+						<td id ="row13_col2">{{eudemonic_avg}}</td>
+						<td id ="row13_col3">{{eudemonic_high}}</td>
+					</tr>
+
+					<tr>
+					
+					<td class="boldclass" colspan="4" style="text-align: center;">Click	on the link below to visit the Resource Section for reading about
+							strategies to enhance wellbeing<br><br>
+	
+					<a href="../../resources/resources.html"><span style="color: blue; text-decoration-color: black;">Resource Section Here</span></a><br>
+					
+					<a href="../../links/link.html"><span style="color: blue; text-decoration-color: black;">Click Here to go to References and external links</span></a><br>
+					
+					<a href="../../summary/psychological/summary.html"><span style="color: blue; text-decoration-color: black;">Click here to go back and view your detailed results</span></a><br>
+
+					</td>
+
+					</tr>
+
+				</tbody>
+				
+			</table>
+			
+			<div class="container_new" style="background-color:#9e6d6f;">
+			
+			<div class="heading">
+			
+					<h3 style="text-align:center;color:white;padding-top:8px;background-color:#9e6d6f;">Thank you</h3>
+			
+			</div>
+			
+			<div class="paragraph_thanks" style="background-color:#9e6d6f;">
+			
+							<p class="paragraph_thanks_content">Our sincere thanks to you for participating in the pilot
+								phase of the Wellness Check Survey. Your participation has
+								helped the ongoing research on the use of well being tools.</p>
+								
+							<p class="paragraph_thanks_content">This feedback may be treated as a rough index rather than
+								a rigid/precise categorization- as further research is ongoing.</p>
+								
+							<p class="paragraph_thanks_content">Different measures of well being assess somewhat different
+								dimensions of well being and they also have different time
+								frames ( e.g. psychological well being taps more general and
+								longer term aspects of psychological functioning while distress
+								scale used taps current levels of distress in the last one month
+								period).Hence it is not expected that the different dimensions
+								correlate very highly. In fact that is the very reason;
+								different measures are used- in order to get a broader picture.</p>
+								
+							<p class="paragraph_thanks_content">It would be good to hear from you about your experience of
+								participating in this survey.</p>
+								
+							<br>
+							<p class="paragraph_thanks_content">Please remember well-being levels are changeable -with
+								intentional acts in your journey of growth.</p>
+								
+							<br>
+							<div class="quote_class">
+							<h3 style="font-weight: bold;" class="quote_class">Here is some food for
+								thought:</h3>
+							<br>
+
+							<blockquote style="quotes: none;" class="quote_class">
+							
+								<p class="quote_class">&quot;
+									<i style="font-size:20px;">Be like a tree. Stay grounded. Connect with your roots. Turn
+									over a new leaf.</i><br>
+									<i style="font-size:20px;">Bend before you break. Enjoy your unique
+									beauty.Keep growing.</i>  &quot;</p>
+									
+								<footer class="quote_class">Joanne Raptis</footer>
+							</blockquote>
+							</div>
+							
+							</div>
+			</div>
+			
+			</div>
+			</div>
+
+
+
+	<!-- <footer>
+			<div class = "footer_class">
+			<a href="../../links/link.html"><span style="color:white;text-decoration : none;">Click here to go to the References and Links Section</span></a>
+			<br>
+			<a href="../../resources/resources.html"><span style="color:white;">Click here to go to the Resources Section</span></a>
+			</div></footer>-->
+
+</body>
+</html>

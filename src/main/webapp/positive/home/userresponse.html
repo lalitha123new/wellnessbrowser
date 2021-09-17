@@ -1,0 +1,1558 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="wellness">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Wellness admin</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- Plugin CSS -->
+<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Custom styles for this template -->
+<link href="css/sb-admin.css" rel="stylesheet">
+
+
+
+<script src="../../EXTERNAL/jquery.min.js"></script>
+<script src="../../js/jquery.jqGauges.min.js" type="text/javascript"></script>
+
+
+<!--Angular-->
+<script src="../../angular/angular.min.js"></script>
+<script src="../../angular/angular-cookies.js"></script>
+<script src="../../../angular/ui-bootstrap-tpls.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../js/jquery.jqGauges.css.css" />
+
+
+<script src="../../js/ui-bootstrap.js"></script>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/data.js"></script>
+<script src="../../js/drilldown.js"></script>
+
+
+
+<!--Alasql-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.3/xlsx.core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alasql/0.4.2/alasql.min.js"></script>
+
+<!--angular toaster -->
+<script src="../../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+
+<!--controller-->
+<script src="homeCtrl.js"></script>
+<script src="../../config/config.js"></script>
+<!-- summary page view jquery -->
+
+
+<script type="text/javascript">
+function showDiv1() {
+   document.getElementById('div1').style.display = "";
+   document.getElementById('div2').style.display = "none";
+   document.getElementById('div3').style.display = "none";
+   document.getElementById('div4').style.display = "none";
+   document.getElementById('div5').style.display = "none";
+}
+function showDiv2() {
+	document.getElementById('div1').style.display = "none";
+	   document.getElementById('div2').style.display = "";
+	   document.getElementById('div3').style.display = "none";
+	   document.getElementById('div4').style.display = "none";
+	   document.getElementById('div5').style.display = "none";
+	}
+function showDiv3() {
+	document.getElementById('div1').style.display = "none";
+	   document.getElementById('div2').style.display = "none";
+	   document.getElementById('div3').style.display = "";
+	   document.getElementById('div4').style.display = "none";
+	   document.getElementById('div5').style.display = "none";
+	}
+function showDiv4() {
+	document.getElementById('div1').style.display = "none";
+	   document.getElementById('div2').style.display = "none";
+	   document.getElementById('div3').style.display = "none";
+	   document.getElementById('div4').style.display = "";
+	   document.getElementById('div5').style.display = "none";
+	}
+function showDiv5() {
+	document.getElementById('div1').style.display = "none";
+	   document.getElementById('div2').style.display = "none";
+	   document.getElementById('div3').style.display = "none";
+	   document.getElementById('div4').style.display = "none";
+	   document.getElementById('div5').style.display = "";
+	}
+ </script>
+<style type="text/css">
+
+
+
+
+/*begin summary page button*/
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    padding-left:45px;
+     padding-right:45px;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+/*end of summary page button*/
+
+/* nav bar search box - drop down menu button */
+
+
+.navbar .navbar-search .dropdown-menu {
+	min-width: 25px;
+}
+
+.dropdown-menu .label-icon {
+	margin-left: 5px;
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: inherit;
+	transition: all .5s;
+}
+
+.table-responsive {
+	overflow-y: scroll;
+	height: 400px;
+}
+</style>
+</head>
+
+<body class="fixed-nav" id="page-top" ng-controller="admincontroller">
+<toaster-container toaster-options="{'time-out': 8000}"></toaster-container>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+		id="mainNav">
+		<a class="navbar-brand" href="#">Wellness-Check</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav navbar-sidenav">
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Dashboard"><a class="nav-link" href="index.html"> <i
+						class="fa fa-fw fa-table"></i> <span class="nav-link-text">
+							User info</span>
+				</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Charts"><a class="nav-link" href="userdemo.html"> <i
+						class="fa fa-fw fa-table"></i> <span class="nav-link-text">
+							User registration info</span>
+				</a></li>
+				<li class="nav-item active" data-toggle="tooltip"
+					data-placement="right" title="Tables"><a class="nav-link"
+					href="userresponse.html"> <i class="fa fa-fw fa-table"></i> <span
+						class="nav-link-text"> User responses</span>
+				</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Tables"><a class="nav-link" href="userfeed.html"> <i
+						class="fa fa-fw fa-table"></i> <span class="nav-link-text">
+							User feedback</span>
+				</a></li>
+				
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Tables"><a class="nav-link" href="usertotalscore.html"> <i
+						class="fa fa-fw fa-table"></i> <span class="nav-link-text">
+							User Totalscore</span>
+				</a></li>
+			</ul>
+			<ul class="navbar-nav sidenav-toggler">
+				<li class="nav-item"><a class="nav-link text-center"
+					id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
+				</a></li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<!--  <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0 mr-lg-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </li> -->
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					data-target="#exampleModal"> <i class="fa fa-fw fa-sign-out"></i>
+						Logout
+				</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+
+	<div class="content-wrapper py-3">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<form class="navbar-form navbar-search" role="search">
+						<div class="input-group">
+
+							<input type="text" placeholder="Search" class="form-control"
+								ng-model="search">
+						</div>
+					</form>
+				</div>
+				
+				
+				<!-- begin summary page user id part-->
+				 <!-- <div class="col-md-4">
+				<form class="form-inline">
+				
+						<div class="form-group">
+							<input type="text" placeholder="Enter user_id" class="form-control" ng-model="userid" id="uid">
+						</div>
+						
+						<button type="submit" ng-click="submit()" class="btn btn-info">
+						<span class="glyphicon glyphicon-off"></span>submit
+	                    </button>
+						
+					</form>
+				</div>-->
+				<!-- end of summary page user id part-->
+				
+			</div>
+			<br>
+			<!-- Example Tables Card -->
+			<div class="card mb-3">
+				<div class="card-header">
+					<i class="fa fa-table"></i> User Responses Info
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-bordered" width="100%">
+							<thead>
+								<tr>
+
+									<th>Sl no</th>
+									<th>User_id</th>
+									<th>Name</th>
+									<!-- <th>Name</th>
+									<th>Sections_id</th>
+									<th>Timestamp</th>-->
+									<th>Timestamp</th>
+									<th>Section_attempt</th>								
+									<th>PWBQ1</th>
+									<th>PWBQ2</th>
+									<th>PWBQ3</th>
+									<th>PWBQ4</th>
+									<th>PWBQ5</th>
+									<th>PWBQ6</th>
+									<th>PWBQ7</th>
+									<th>PWBQ8</th>
+									<th>PWBQ9</th>
+									<th>PWBQ10</th>
+									<th>PWBQ11</th>
+									<th>PWBQ12</th>
+									<th>PWBQ13</th>
+									<th>PWBQ14</th>
+									<th>PWBQ15</th>
+									<th>PWBQ16</th>
+									<th>PWBQ17</th>
+									<th>PWBQ18</th>
+									<th>PWBQ19</th>
+									<th>PWBQ20</th>
+									<th>EWBQ1</th>
+									<th>EWBQ2</th>
+									<th>EWBQ3</th>
+									<th>EWBQ4</th>
+									<th>EWBQ5</th>
+									<th>EWBQ6</th>
+									<th>EWBQ7</th>
+									<th>EWBQ8</th>
+									<th>EWBQ9</th>
+									<th>EWBQ10</th>
+									<th>EWBQ11</th>
+									<th>EWBQ12</th>
+									<th>EWBQ13</th>
+									<th>EWBQ14</th>
+									<th>EWBQ15</th>
+									<th>EWBQ16</th>
+									<th>EWBQ17</th>
+									<th>EWBQ18</th>
+									<th>EWBQ19</th>
+									<th>EWBQ20</th>
+									<th>EWBQ21</th>
+									<th>EWBQ22</th>
+									<th>EWBQ23</th>
+									<th>EWBQ24</th>
+									<th>EWBQ25</th>
+									<th>EWBQ26</th>
+									<th>SWBQ1</th>
+									<th>SWBQ2</th>
+									<th>SWBQ3</th>
+									<th>SWBQ4</th>
+									<th>SWBQ5</th>
+									<th>SWBQ6</th>
+									<th>SWBQ7</th>
+									<th>SWBQ8</th>
+									<th>SWBQ9</th>
+									<th>YDQ1</th>
+									<th>YDQ2</th>
+									<th>YDQ3</th>
+									<th>YDQ4</th>
+									<th>YDQ5</th>
+									<th>YDQ6</th>
+									<th>YDQ7</th>
+									<th>YDQ8</th>
+									<th>YDQ9</th>
+									<th>YDQ10</th>
+								
+									<th>YAPQ1</th>
+									<th>YAPQ2</th>
+									<th>YAPQ3</th>
+									<th>YAPQ4</th>
+									<th>YAPQ5</th>
+									<th>YAPQ6</th>
+									<th>YAPQ7</th>
+									<th>YAPQ8</th>
+									<th>YAPQ9</th>
+									<th>YAPQ10</th>
+									<th>YAPQ11</th>
+									<th>YAPQ12</th>
+									<th>YAPQ13</th>
+									<th>YAPQ14</th>
+									<th>YAPQ15</th>
+									<th>YAPQ16</th>
+									<th>YAPQ17</th>
+									<th>YAPQ18</th>
+									<th>YAPQ19</th>
+									<th>YAPQ20</th>
+									
+									<!--<th>TotalScore</th>
+									 <th>Overall PWB</th>
+									<th>SA</th>
+									<th>MC</th>
+									<th>PR</th>
+									<th>EG</th>
+									<th>PA</th>
+									<th>NA</th>
+									<th>SWB</th>
+									<th>Distress</th>
+									<th>Hedonic</th>
+									<th>Eudemonic</th>-->
+									
+								</tr>
+
+							</thead>
+							<tbody style="overflow: auto;">
+								<tr ng-repeat="u in userresponse | filter : search"
+									class="ng-cloak">
+									<td>{{$index+1}}</td>
+									<!--<td><span ng-click="summary($index)">{{u.user_id}}</span></td>-->
+									<td><a href="#exampleModal1" data-toggle="modal" ng-click="summary(u.user_id)">{{u.user_id}}</a></td>
+									<td>{{u.name}}</td>
+									<!--<td>{{u.name}}</td>
+									<td>{{u.section_id}}</td>
+									<td>{{u.time}}</td>-->
+									<td>{{u.time}}</td>
+									<td>{{u.section_count}}</td>								
+									<td>{{u.s1q1}}</td>
+									<td>{{u.s1q2}}</td>
+									<td>{{u.s1q3}}</td>
+									<td>{{u.s1q4}}</td>
+									<td>{{u.s1q5}}</td>
+									<td>{{u.s1q6}}</td>
+									<td>{{u.s1q7}}</td>
+									<td>{{u.s1q8}}</td>
+									<td>{{u.s1q9}}</td>
+									<td>{{u.s1q10}}</td>
+									<td>{{u.s1q11}}</td>
+									<td>{{u.s1q12}}</td>
+									<td>{{u.s1q13}}</td>
+									<td>{{u.s1q14}}</td>
+									<td>{{u.s1q15}}</td>
+									<td>{{u.s1q16}}</td>
+									<td>{{u.s1q17}}</td>
+									<td>{{u.s1q18}}</td>
+									<td>{{u.s1q19}}</td>
+									<td>{{u.s1q20}}</td>
+									
+									<td>{{u.s2q1}}</td>
+									<td>{{u.s2q2}}</td>
+									<td>{{u.s2q3}}</td>
+									<td>{{u.s2q4}}</td>
+									<td>{{u.s2q5}}</td>
+									<td>{{u.s2q6}}</td>
+									<td>{{u.s2q7}}</td>
+									<td>{{u.s2q8}}</td>
+									<td>{{u.s2q9}}</td>
+									<td>{{u.s2q10}}</td>
+									<td>{{u.s2q11}}</td>
+									<td>{{u.s2q12}}</td>
+									<td>{{u.s2q13}}</td>
+									<td>{{u.s2q14}}</td>
+									<td>{{u.s2q15}}</td>
+									<td>{{u.s2q16}}</td>
+									<td>{{u.s2q17}}</td>
+									<td>{{u.s2q18}}</td>
+									<td>{{u.s2q19}}</td>
+									<td>{{u.s2q20}}</td>
+									<td>{{u.s2q21}}</td>
+									<td>{{u.s2q22}}</td>
+									<td>{{u.s2q23}}</td>
+									<td>{{u.s2q24}}</td>
+									<td>{{u.s2q25}}</td>
+									<td>{{u.s2q26}}</td>
+									
+									<td>{{u.s3q1}}</td>
+									<td>{{u.s3q2}}</td>
+									<td>{{u.s3q3}}</td>
+									<td>{{u.s3q4}}</td>
+									<td>{{u.s3q5}}</td>
+									<td>{{u.s3q6}}</td>
+									<td>{{u.s3q7}}</td>
+									<td>{{u.s3q8}}</td>
+									<td>{{u.s3q9}}</td>
+									
+									<td>{{u.s4q1}}</td>
+									<td>{{u.s4q2}}</td>
+									<td>{{u.s4q3}}</td>
+									<td>{{u.s4q4}}</td>
+									<td>{{u.s4q5}}</td>
+									<td>{{u.s4q6}}</td>
+									<td>{{u.s4q7}}</td>
+									<td>{{u.s4q8}}</td>
+									<td>{{u.s4q9}}</td>
+									<td>{{u.s4q10}}</td>
+									
+									<td>{{u.s5q1}}</td>
+									<td>{{u.s5q2}}</td>
+									<td>{{u.s5q3}}</td>
+									<td>{{u.s5q4}}</td>
+									<td>{{u.s5q5}}</td>
+									<td>{{u.s5q6}}</td>
+									<td>{{u.s5q7}}</td>
+									<td>{{u.s5q8}}</td>
+									<td>{{u.s5q9}}</td>
+									<td>{{u.s5q10}}</td>
+									<td>{{u.s5q11}}</td>
+									<td>{{u.s5q12}}</td>
+									<td>{{u.s5q13}}</td>
+									<td>{{u.s5q14}}</td>
+									<td>{{u.s5q15}}</td>
+									<td>{{u.s5q16}}</td>
+									<td>{{u.s5q17}}</td>
+									<td>{{u.s5q18}}</td>
+									<td>{{u.s5q19}}</td>
+									<td>{{u.s5q20}}</td>
+									
+									<!-- <td>{{u.total}}</td>
+									<td>{{u.overall}}</td>
+									<td>{{u.sa}}</td>
+									<td>{{u.mc}}</td>
+									<td>{{u.pr}}</td>
+									<td>{{u.eg}}</td>
+									<td>{{u.pa}}</td>
+									<td>{{u.na}}</td>
+									<td>{{u.swb}}</td>
+									<td>{{u.distress}}</td>
+									<td>{{u.hedonic}}</td>
+									<td>{{u.eudemonic}}</td>-->
+									
+
+
+
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<br>
+					<div class="col-md-12" style="text-align: right;">
+
+						<button class="btn btn-success" ng-click="exportDat32()">
+							<span class="glyphicon glyphicon-print"></span> Export to csv
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+
+	</div>
+	<!-- /.content-wrapper -->
+
+	<!-- Scroll to Top Button -->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fa fa-angle-up"></i>
+	</a>
+
+	<!-- Logout Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" href="../index.html">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- begin summary page modal-->
+	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Summary page : User_id : {{user_id}} </h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close" onclick="javascript:window.location.reload()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				
+				
+				<!-- begin summary view  -->
+				 <div class="btn-group">
+  <button id = "button1" onclick="showDiv1()" ng-click="summary1()">Psychological
+</button>
+ 
+  <button id = "button2" onclick="showDiv2()" ng-click="summary2()">Emotional</button>
+  <button id = "button3" onclick="showDiv3()" ng-click="summary3()">Social</button>
+  <button id = "button4" onclick="showDiv4()" ng-click="summary4()">Distress</button>
+  <button id = "button5" onclick="showDiv5()" ng-click="summary5()">Activity</button></div> 
+  
+   <div id="div1" style="display:none;">
+   <br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="overall"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{psychologiccal}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container2"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="self"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{selfp}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container3"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="sense"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{sensep}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container4"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="positive"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">{{positivep}}
+						Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container5"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="growth"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">{{growthp}}
+						Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br> <br>
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Overall Psychological Well Being</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ohigh">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br>Your
+					overall scores suggest that compared to many others, you are more
+					likely to experience overall sense of ‘doing well’ /’functioning
+					well’ that may be a result of high functioning in more than one
+					dimension of psychological well being You can look up the pattern
+					of your scores on the 4 dimensions to understand this better.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="oaverage">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br>Your scores
+					suggest that your current experience of ‘doing well’/functioning
+					well’ is similar in degree to most others. Doing things to enhance
+					your psychological well-being can help you to lead a more
+					fulfilling and productive life. Look up the resource- section for a
+					few tips.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="olow">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br> Your
+					scores suggest that compared to many others, you are likely to be
+					experiencing a lower overall sense of ‘doing well’ /’functioning
+					well’. This could be due to lower functioning in one or more
+					dimensions of psychological well being You can look up the pattern
+					of your scores on the 4 dimensions to understand this better.
+				</p>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Self-Acceptance</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="shigh">Your
+					score fall on the higher side, which means that you experience a
+					sense of self acceptance more often than most other people. You are
+					likely to be accepting of yourself as a whole and feel a fair
+					degree of satisfaction about the way your life has shaped up. This
+					does not imply being complacent – a healthy sense of self
+					acceptance can give you the foundation to work on personal growth
+					and doing your best in life.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="saverage">Your
+					score for self acceptance fall on the average side which means that
+					you experience a sense of self acceptance as often as most other
+					people. Though you may accept yourself as a whole to some extent,
+					there could be aspects of self that bother you Understanding these,
+					working on these, coming to terms with these or addressing these
+					aspects may enhance your contentment. However, while you work on
+					improving the aspects that you want to improve, it would help if
+					you avoid judging your worth as a person.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="slow">Your
+					scores fall on the lower side, which means you are experiencing a
+					low sense of self acceptance, than what is often reported by many
+					people. You may be being excessively self-critical and dissatisfied
+					with the way life has shaped up so far. Low self-acceptance makes
+					you vulnerable to distress, and therefore you will benefit from
+					increased self kindness and compassion. Seeking help from your
+					friends/family and/or professionals may also be helpful. Look up
+					the resource- section for a few tips.</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positive Relations</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="phigh">Your
+					scores fall on the higher side which means that compared to most
+					people, you are likely to be feeling content and satisfied on the
+					whole with various relationships in your life. Warm personal
+					relationships, characterized by trust and sharing can be an immense
+					source of positive emotions and well being. Maintaining positive
+					relationships is a skill and a reward in itself, keep doing what
+					you are doing.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="paverage">
+					Your scores fall in the average range which means that your
+					experience of this aspect of well being is similar to most others.
+					Warm personal relationships, characterized by trust and sharing can
+					be an immense source of positive emotions and well being.<br>
+					To improve your wellbeing further, you may want to increase your
+					investment, in terms of time and efforts in cultivating meaningful
+					relationships, making efforts in repairing a relationship if it is
+					feasible and valuable and letting go of a relationship that is
+					beyond repair/that is damaging to your mental health as well as
+					opening up to opportunities to form newer healthy relationships.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="plow">
+					Your scores fall on the lower side which means that you seem to be
+					experiencing a higher sense of loneliness and lack of warm
+					belongingness as compared to many others. This might be either due
+					to a temporary dip in your quality of relationship with someone
+					close to you, or might indicate a long term difficulty.<br>
+					Experience of one or more close trusting relationships herein you
+					feel a sense of belongingness, warmth and trust is not only an aid
+					to your mental well-being; it is also an important resource for
+					bouncing back from stressful life situations. To improve your
+					wellbeing further, you may want to increase your investment, in
+					terms of time and efforts in cultivating meaningful relationships,
+					making efforts in repairing a relationship if it is feasible and
+					valuable and letting go of a relationship that is beyond
+					repair/that is damaging to your mental health as well as opening up
+					to opportunities to form newer healthy relationships. If your
+					self-efforts have not helped beyond a point, you can consider
+					seeking professional help to improve this aspect of your
+					well-being.
+				</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Environmental Mastery And
+					Competence</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ehigh">Your
+					scores fall on the higher side, which means that you have been
+					experiencing a high sense of mastery and control over external
+					challenges in life along with a sense of competence as a person.
+					You are doing well in this area. Although there are aspects in life
+					that we cannot control or change, focusing on aspects that we can
+					work upon, and manage well can help us feel a sense of competence.
+					This is not just about external demands but is also about our own
+					internal state of mind.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="eaverage">Your
+					scores fall in the average range, which means that you have been
+					experiencing a sense of environmental mastery and competence as
+					often as many other people. Although there are aspects in life that
+					we cannot control or change, focusing on aspects that we can work
+					upon, and manage well can help us feel a sense of competence. This
+					is not just about competence about dealing with external demands
+					but is also about our own internal state of mind.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="elow">Your
+					scores fall on the lower side, which means that your experience of
+					lower sense of mastery and competence than what is the case for
+					several others. It could be due to the fact that you are going
+					through a very difficult phase in your life and struggling to
+					maintain a sense of mastery. Or it could sometimes indicate that
+					you have to make more efforts to enhance our skills of problem
+					solving, organizing your life affairs, prioritizing goals and
+					investing energy in doing what matters the most. At times, these
+					low scores on this aspect could also come about when we are
+					constantly brooding about something going wrong in one life domain
+					and tending to ignore other aspects of life. Although there are
+					aspects in life that we cannot control or change, focusing on
+					aspects that we can work upon, and manage well can help us feel a
+					sense of competence. This is not just about competence about
+					dealing with external demands but is also about our own internal
+					state of mind.</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Personal Growth</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ghigh">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall on the higher side as compared to what is typically
+					expressed by several others. This is a valuable state, keep at it.
+					This comes from being actively engaged with one’s environment and
+					constantly using opportunities to learn from one’s experiences and
+					realize one’s potentials.<br>There is always a scope of
+					evolving further as a person. Of course, we need to accept and
+					respect ourselves as a person while enjoying this journey of
+					growing and doing things that make us feel connected to our
+					environment. It can be a fulfilling experience!
+				</p>
+
+				<p style="font-size: 18px; text-align: justify;" ng-show="gaverage">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall in the average range, which means that your experience
+					of a sense of personal growth and engagement in your environment is
+					similar to that of many others. You can increase you time and
+					efforts towards intentional growth to enhanced wellbeing. There is
+					always a scope of evolving further as a person. Of course, we need
+					to accept and respect ourselves as a person while enjoying this
+					journey of growing and doing things that make us feel active and
+					connected to our environment. It can be a fulfilling experience!
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="glow">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall on the lower side, which means that you experience a
+					lower sense of personal growth and engagement than many others.
+					Probably you are preoccupied with managing external demands, or it
+					has been a stressful phase for you. Feeling actively engaged with
+					your environment, doing things that are personally meaningful,
+					setting personal growth goals and working on them can help enhance
+					one’s wellbeing. Look up the resource- section for a few tips. Of
+					course, we need to accept and respect ourselves as a person while
+					enjoying this journey of growing. It can be a fulfilling
+					experience!
+				</p>
+				
+
+			</div>
+		</div>
+		
+   
+   
+   </div>
+   <div id="div2" style="display:none;">
+   
+   <br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container6"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="negative"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{negativeperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container7"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="positive2"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{positiveperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div ng-show="ratioshow" class="container"
+			style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="ratio"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+				<div style="color: white;">
+					<h5
+						style="font-size: 20px; margin-top: 50%; font-weight: bold; margin-left: 26px;">Frequency
+						of emotions</h5>
+					<h5 style="font-size: 17px;">Positive emotion : Negative
+						emotion</h5>
+				</div>
+				<div
+					style="border: 2px solid white; width: 100px; margin-left: 84px; height: 50px;">
+
+					<h3 style="color: white; padding-left: 12px;">{{totalratio}} :
+						1</h3>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positive Emotions</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="phigh">Your
+					scores for positive emotions fall on the higher side, which means
+					that in the last few weeks, you experienced positive emotions more
+					often than most other people. This might reflect a desirable state,
+					especially if your scores on other indicators of well being
+					(psychological & social) are also on the higher side.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="paverage">Your
+					scores for positive emotions fall within the average range, which
+					means that in the last few weeks, you experienced positive emotions
+					as often as most other people. These include both high arousal
+					positive emotions (e.g. excitement, enthusiasm) as well as low
+					arousal positive emotions (e.g. peaceful, content).</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="plow">Your
+					scores for positive emotions fall on the lower side, which means
+					that in the last few weeks, you experienced positive emotions less
+					often than most other people. This might be either due to a
+					particularly difficult life-phase you are going through, or it
+					might reflect a longer term pattern that may be partly related to
+					one’s temperament and mental habits. Repeating this assessment over
+					time may give a clearer idea if this is a longer term pattern.
+					Experience of positive emotions can be enhanced through shifts in
+					one’s mental approach and regular practices that generate and
+					maintain such positive states. Look up the resource- section for a
+					few such tips.</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Negative Emotions</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="nhigh">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br>Your scores for
+					negative emotions fall on the higher side, which means that in the
+					last few weeks, you have experienced negative emotions more often
+					than most other people. This might be either due to a particularly
+					difficult phase, or it might reflect a long term need for emotion
+					management skills.<br>Repeating this assessment over time may
+					give a clearer idea if this is a longer term pattern.<br>
+					Negative emotions are inevitable part of life and even serve a
+					useful purpose in some ways in many contexts. For example, an
+					optimum amount of anxiety pushes us to get prepared for dealing
+					with a challenge/threat, sadness may help us reflect/introspect on
+					what is going wrong and anger may provide the push to stand up and
+					deal with injustice/unfairness. However, when these emotions are
+					too frequently experienced or expressed in an
+					in-appropriated/uncontrolled fashion, these become a source of
+					distress and also result in other negative consequences on oneself
+					and others.<br>The frequency of experience of such emotions,
+					their intensity and the length of time for which these last (slow
+					vs. faster recovery from negative emotional states) can be altered
+					through shifts in one’s mental approach and regular practices that
+					help manage such emotions effectively. Look up the resource-
+					section for a few such tips.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="naverage">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br> Your scores for
+					negative emotions fall on the average side, which means that in the
+					last few weeks, you experienced negative emotions as often as most
+					other people. You might want to strengthen skills at managing
+					negative emotions and thereby enhance your overall experience of
+					wellbeing, if you think this reflects your longer term pattern.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="nlow">
+					Negative emotions are also an important aspect of measuring well
+					being, since its higher frequency indicates lower emotional well
+					being. These emotions can take various forms such as irritation,
+					anger, nervousness, guilt, sadness etc.<br> Negative emotions
+					are inevitable part of life and even serve a useful purpose in some
+					ways in many contexts. For example, an optimum amount of anxiety
+					pushes us to get prepared for dealing with a challenge/threat,
+					sadness may help us reflect/introspect on what is going wrong and
+					anger may provide the push to stand up and deal with
+					injustice/unfairness. However, when these emotions are too
+					frequently experienced or expressed in an
+					in-appropriated/uncontrolled fashion, these become a source of
+					distress and also result in other negative consequences on oneself
+					and others.<br>Your scores on negative emotions fall on the
+					lower side, which means that you experienced negative emotions less
+					often than most other people in the last few weeks. This generally
+					reflects a desirable state and higher wellbeing.
+				</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positivity Ratio</h3>
+				<span ng-show="prfshow">
+					<p style="font-size: 18px; text-align: justify;">Not
+						calculated!</p>
+					<p style="font-size: 18px; text-align: justify;">Your
+						positivity ratio will be calculated if you respond to the
+						emotional well being questionnaire at least two times within a
+						span of 3 weeks. Please re-visit after about 7-15 days and answer
+						this questionnaire</p>
+					<p style="font-size: 18px; text-align: justify;">Positivity
+						Ratio is about the balance of positive and negative emotions. To
+						get a reliable picture of the balance you experience, it is best
+						to base it on /average it from multiple readings over a period of
+						time.</p>
+					<p style="font-size: 18px; text-align: justify;">Both positive
+						and negative emotions matter. What exactly would be the optimum
+						balance between positive and negative emotions may vary from one
+						task to another; however in most situations, the dominance of
+						positive emotions over negative ones is considered most helpful (
+						balance tilted in favour of positive emotion</p>
+				</span> <span ng-show="prshow">
+					<p style="font-size: 18px; text-align: justify;" ng-show="prhigh">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions).<br> Your positivity ratio is
+						higher than that experienced by many others. This means that
+						positive emotions outweigh in frequency than the negative emotions
+						for you (during the period for which you have rated them). This is
+						reflective of high emotional well being. There may be a scope to
+						work further on decreasing negative emotions and cultivating
+						positive emotions that aid your mental health and productivity in
+						the long run.
+					</p>
+					<p style="font-size: 18px; text-align: justify;"
+						ng-show="praverage">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions).<br>Your positivity ratio is
+						similar to that experienced by many others.There is certainly a
+						scope to work further on enhancing your positivity ratio. For this
+						you can check out your scores on negative emotions and positive
+						emotions separately to see where you need to invest maximum
+						efforts: decreasing negative emotions or cultivating positive
+						emotions or both. A good balance tilted well in favour of positive
+						emotions experienced over a long period of time can build your
+						physical, mental and psychological resources , help you bounce
+						back quickly form stress and aid your mental health and
+						productivity.
+					</p>
+					<p style="font-size: 18px; text-align: justify;" ng-show="prlow">
+						Positivity Ratio is about the balance of positive and negative
+						emotions. To get a reliable picture of the balance you experience,
+						it is best to base it on /average it from multiple readings over a
+						period of time.<br>Both positive and negative emotions
+						matter. What exactly would be the optimum balance between positive
+						and negative emotions may vary from one task to another; however
+						in most situations, the dominance of positive emotions over
+						negative ones is considered most helpful ( balance tilted in
+						favour of positive emotions) .<br>Your positivity ratio is
+						lower than that experienced by many others. It seems that you have
+						experienced negative emotions much more frequently than the
+						positive ones (during the period for which you have rated them).<br>
+						There is certainly a scope to work further on enhancing your
+						positivity ratio. For this you can check out your scores on
+						negative emotions and positive emotions separately to see where
+						you need to invest maximum efforts: decreasing negative emotions
+						or cultivating positive emotions or both. A good balance tilted
+						well in favour of positive emotions experienced over a long period
+						of time can build your physical, mental and psychological
+						resources; help you bounce back quickly form stress and aid your
+						mental health and productivity. It is possible that low positivity
+						ratio is a reflection of the difficult life events or challenges
+						that you are currently experiencing in your life. If it is a
+						chronic/prolonged experience, it may be helpful to consult a
+						professional to figure out what you can do to improve your overall
+						wellbeing. Look up the resource- section for a few tips for
+						enhancing your positivity ratio.
+					</p>
+				</span>
+				
+			</div>
+		</div>
+
+		</div>
+		<div id="div3"  style="display:none;">
+		
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container8"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="social"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{percentile}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Social well being</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="shigh">Your
+					scores on this aspect of wellbeing fall on the higher side as
+					compared to many others. This suggests that by and large you tend
+					to hold positive attitudes towards people in general and feel a
+					sense of belongingness with the society. You may also believe that
+					society has a potential of improving and that you can contribute in
+					some way or another to the society.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="saverage">Your
+					scores on this aspect of wellbeing fall in the average range and
+					your experience of social well being is similar to many others. You
+					are likely to be accepting of people and feel connected to the
+					society to some extent. You may in addition feel that there is a
+					scope of improvement in society to an extent and experience that
+					you are contributing to others in some way. However, you may not
+					find yourself to be high on all these aspects of social well-being.
+					Social wellbeing is a somewhat neglected aspect of well being but
+					it is linked to leading a productive and harmonious life, marked by
+					doing one’s best to shape one’s environment.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="slow">Your
+					scores on this aspect of wellbeing fall in the lower range as
+					compared to several others. The low scores on this measure may come
+					about from having had experiences that decrease your sense of trust
+					in others, give rise to a sense of not-belonging, being
+					marginalized or not well accepted by others. It could also come
+					from a state wherein you feel pessimistic about societal
+					development and about your own potential contribution to others’
+					life. This state of low social wellbeing could be related to one or
+					more of the following factors: living in a highly
+					challenging/difficult social environment with low stability, low
+					emotional and psychological well being, high distress, or a pattern
+					of life choices focused mostly on one’s own self. You may not find
+					yourself to be low on one or more aspects of social well-being as
+					mentioned above. Social wellbeing is a somewhat neglected aspect of
+					well being but it is linked to leading a productive and harmonious
+					life, marked by doing one’s best to shape one’s environment. It
+					would help to think about the factors that relate to your low
+					social well being and reflecting on what you could do to enhance
+					this aspect of well being.</p>
+					
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				
+				&nbsp;&nbsp;
+				
+			</div>
+		</footer>
+		
+		</div>
+		
+		<div id="div4" style="display:none;">
+		
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container9"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="distress"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{percentile}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Distress</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="dhigh">
+					Your scores for psychological distress fall on the higher side,
+					which means that in the last one month, you seemed to have
+					experienced significant levels of overall distress. This may
+					include feelings of sadness and anxiety, general mental discomfort
+					etc.<br>High scores on distress might be due to an ongoing
+					stress in your life and may reflect a need to seek some kind of
+					help from your friends/family and/or even professional help,
+					depending on the need.<br>When we are distressed, it becomes
+					important to use all our internal and external/social resources to
+					help ourselves. Seeking help that we need does not mean that we are
+					weak. In fact it means we are taking our side, standing up for our
+					self and being our best friend. Take time to take care of your
+					emotional needs.<br>Look up the resource- section for a few
+					strategies to break the mental barriers to reach out for help.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="daverage">Your
+					scores for psychological distress fall on the average side, which
+					means that in the last one month, you seemed to have some distress
+					, though it is not exceedingly high and may be manageable at the
+					moment; it would be useful to introspect if we are doing enough to
+					manage /enhance our emotional well-being.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="dlow">Your
+					scores for psychological distress fall on the lower side, which
+					means that in the last one month, you seemed to have low levels of
+					distress. Of course, it does not necessarily mean that you are
+					experiencing high well being on the whole. It would be useful to
+					look at other aspects of well being to understand the whole
+					picture.</p>
+				
+			</div>
+		</div>
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				
+			</div>
+		</footer>
+		</div>
+		
+		<div id="div5" style="display:none;">
+		
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container10"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="hedonic"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{hedonicperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">YOUR SCORE <br>({{date1}})</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container11"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="eudemonic"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{eudemonicperv}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">YOUR SCORE <br>({{date1}})</h3>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Pleasure-oriented Activities
+					(Hedonic)</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="hhigh">
+					Your scores suggest that in the last one month, you seem to be
+					engaging in pleasure -oriented activities at a higher frequency
+					than most other people. Such activities can give a temporary boost
+					to your well-being, but often this boost is short lasting. This
+					means that one is required to engage in such activities again and
+					again in order to feel good.<br>Although there is nothing
+					abnormal in itself about this, it could be problematic in a few
+					situations:<br> a) When these are often carried out at the
+					cost of/in ways that interfere with your doing other activities
+					that do not give you immediate pleasure but are useful for you in
+					the longer run,<br> b) When these pleasure-oriented activities
+					are harmful for your health <br> c) Sometimes, frequently
+					engaging in such activities can actually be a marker of feeling
+					distressed. There are times when we try to cope with our negative
+					feelings (e.g. sadness, hurt, anxiety or boredom) by seeking out
+					pleasure –oriented activities to get a quick relief/to feel better.
+					This can lift our mood help us to an extent, but we need to
+					simultaneously figure out how to deal with the underlying distress
+					and think of other methods of coping too which have longer term
+					benefits.<br> Therefore we need to balance these with
+					meaning-oriented activities that can enhance our overall
+					well-being.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="haverage">Your scores
+					falls on the average side, which means that in the last one month,
+					you seem to be engaging in pleasure-oriented activities as often as
+					most other people. These can give a temporary boost to your
+					well-being. However, too frequent engagement i such activities can
+					interfere with other kinds of activities that are useful and
+					healthier in the longer run. Therefore it would be good to balance
+					these with investing time in meaning-oriented activities that can
+					enhance our overall well-being.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="hlow">
+					Your scores fall on the lower side, which means that in the last
+					one month, you seem to be engaging in passive pleasure-oriented
+					activities less often than most other people. This may reflect a
+					focus on longer term goals rather than immediate pleasures.<br>Cautionary
+					note: However, we hope that you are carrying out other kinds of
+					active, constructive and personally meaningful activities that can
+					provide the longer lasting fuel to maintain /enhance your
+					wellbeing. In case, your overall level of engagement in any kind of
+					activities has come down recently, it could point to the
+					possibility of depression. Look up the resource- section for
+					checking if you may be depressed.
+				</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Meaning-oriented Activities
+					(Eudemonic)</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ehigh">Your scores
+					fall on the higher side which means that in the last one month, you
+					seem to be engaging in meaning-oriented activities more often than
+					most other people. Investing time and efforts in such activities
+					can help in maintaining wellbeing. These are focused on experience
+					of meaning, living in alignment with one’s deepest values and
+					evolving as a person and are not motivated by the need to
+					experience immediate sense of pleasure or relief. These could
+					include behaviours and actions that provide a sense of deep
+					connection with one’s inner self, with others, and provide us a
+					chance to manifest the best in us.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="eaverage">
+					Your scores fall on the average side which means that in the last
+					one month, you seem to be engaging in such activities as often as
+					most other people. To improve your wellbeing you may want to
+					increase your investment, in terms of time and efforts into such
+					activities. These are focused on experience of meaning, living in
+					alignment with one’s deepest values and evolving as a person and
+					are not motivated by the need to experience immediate sense of
+					pleasure or relief. These could include behaviours and actions that
+					provide a sense of deep connection with one’s inner self, with
+					others, and provide us a chance to manifest the best in us.<br>
+					The exact nature of meaning-oriented activities, of course, varies
+					from person to person depending on people’s temperament,
+					preferences, skills and values. Exploring what kinds of activities
+					may help you express your deepest values and investing time and
+					efforts in such activities can add to your sense of fulfilment in
+					life.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="elow">
+					Your scores on meaning-oriented activities are on the lower side
+					which means that in the last one month, you seem to be engaging in
+					such activities less often than most other people. These activities
+					are focused on experience of meaning, living in alignment with
+					one’s deepest values and evolving as a person and are not motivated
+					by the need to experience immediate sense of pleasure or relief.
+					These could include behaviours and actions that provide a sense of
+					deep connection with one’s inner self, with others, and provide us
+					a chance to manifest the best in us.<br>Your low engagement in
+					such activities might be due to a temporary stressful and busy
+					phase or you may have not explored such life choices. The exact
+					nature of meaning-oriented activities, of course, varies from
+					person to person depending on people’s temperament, preferences,
+					skills and values. Exploring what kinds of activities may help you
+					express your deepest values and investing time and efforts in such
+					activities can add to your sense of fulfilment in life.
+				</p>
+				
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				
+			</div>
+		</footer></div>
+
+				<!-- end summary view  -->
+				
+		
+					
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal" onclick="javascript:window.location.reload()" style="width:40%;margin-left:30%;margin-right:30%;">Cancel</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- end social summary page modal -->
+	
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/popper/popper.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+	<script src="vendor/datatables/jquery.dataTables.js"></script>
+	<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<!-- <script src="js/sb-admin.min.js"></script> -->
+
+</body>
+
+</html>

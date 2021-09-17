@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Psychological Section</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--custom css-->
+<link rel="stylesheet" href="psychological.css">
+
+<!-- Bottstrap CSS -->
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+
+<!--Javscript-->
+<script src="../../inc/jquery/jquery.min.js"></script>
+<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Angular-->
+<script src="../../angular/angular.min.js"></script>
+<script src="../../angular/angular-cookies.js"></script>
+
+<!--angular toaster -->
+<script src="../../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../../angular/loading/loader.js"></script>
+<link rel='stylesheet' href='../../angular/loading/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../angular/loading/loading-bar.min.js'></script>
+
+<!-- Language -->
+<script src="../../angular/language/angular-internationalization.js"></script>
+
+
+<!--controller-->
+<script src="psychologicalCtrl.js"></script>
+<script src="../../config/config.js"></script>
+
+</head>
+
+<body class="body" ng-controller="psychologicalController">
+	<toaster-container toaster-options="{'time-out': 5000}"></toaster-container>
+	<form name="quesForm" novalidate>
+		<div class="container headerClass fixed"
+			style="background-color: #9e6d6f;">
+			
+			
+			<button type="button" ng-click="languages('eng')"
+						class="btn btn-info">English</button>
+						<button type="button" ng-click="languages('hin')"
+						class="btn btn-warning">हिन्दी</button>
+						
+			<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+			<button type="button" ng-click="mypage()" class="btn btn-primary">My
+				page</button>
+			<button type="button" data-toggle="modal" data-target="#logoutModal"
+				class="btn btn-danger">Logout</button>
+		</div>
+
+		<div class="container" style="background-color: #9e6d6f;">
+			<div class="container fixed"
+				style="margin-top: 43px; background-color: #9e6d6f;">
+				<div style="background-color: #9e6d6f;">
+					<p class="emotionfont ng-cloak">{{language.heading}}
+					<p>
+					<p class="count ng-cloak">Question&nbsp;{{count}}&nbsp;out of
+						20</p>
+					<br>
+					<p class="headertile ng-cloak">{{language.set}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container fixed tableClass">
+
+			<table class="table ng-cloak ">
+				<thead>
+					<tr class="active">
+						<td colspan="2" class="tdclo"></td>
+						<th class="headerheading ng-cloak">{{language.strong}}<br>{{language.disagree}}
+						</th>
+						<th class="headerheading ng-cloak">{{language.dis}}<br>{{language.some}}
+						</th>
+						<th class="headerheading ng-cloak">{{language.dis1}}<br>{{language.slight}}
+						</th>
+						<th class="headerheading ng-cloak">{{language.agree}}<br>{{language.slight1}}
+						</th>
+						<th class="headerheading">{{language.agree1}}<br>{{language.some1}}
+						</th>
+						<th class="headerheading ng-cloak">{{language.strong}}<br>{{language.agree2}}
+						</th>
+					</tr>
+				</thead>
+			</table>
+
+		</div>
+
+		<div class="container table2class">
+			<table class="table ng-cloak">
+				<tbody id="scrollArea">
+					<tr class="{{classname1}}"
+						ng-repeat="q in questionss track by $index">
+						<td class="tdwidth">{{$index+1}}</td>
+						<td class="queswidth">{{q}}</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-required="true"
+									ng-model="question" ng-value="1"
+									ng-click="emotionvalue($index,question)" name="{{$index}}"
+									ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-model="question"
+									ng-value="2" ng-click="emotionvalue($index,question)"
+									name="{{$index}}" ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-model="question"
+									ng-value="3" ng-click="emotionvalue($index,question)"
+									name="{{$index}}" ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-model="question"
+									ng-value="4" ng-click="emotionvalue($index,question)"
+									name="{{$index}}" ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-model="question"
+									ng-value="5" ng-click="emotionvalue($index,question)"
+									name="{{$index}}" ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+						<td>
+							<div class="options ng-cloak">
+								<label> <input type="radio" ng-model="question"
+									ng-value="6" ng-click="emotionvalue($index,question)"
+									name="{{$index}}" ng-required="true" /> <img />
+								</label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row ng-cloak" ng-show="psybuttons">
+				<div class="col-md-12 submit" ng-show="countarray">
+					<button type="button"
+						style="background-color: #fffc86; color: black; font-weight: bold;"
+						class="btn btn-success" ng-disabled="pbutton" ng-click="emotionclick('submit')">Submit</button>
+				</div>
+				<div class="col-md-12 submit" ng-hide="countarray">
+					<button type="button"
+						style="background-color: #fffc86; color: black; font-weight: bold;"
+						class="btn btn-success" ng-disabled="pbutton" ng-click="emotionclick('next')">Next</button>
+				</div>
+
+			</div>
+			<br>
+		</div>
+	</form>
+
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<br>
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" ng-click="logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

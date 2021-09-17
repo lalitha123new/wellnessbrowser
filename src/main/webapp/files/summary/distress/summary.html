@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>My summary</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+
+<!-- Custom css -->
+<link rel="stylesheet" href="summary.css">
+
+<!--Javscript-->
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Angular-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+<script src="../../../angular/ui-bootstrap-tpls.js"></script>
+
+<!--ui-bootstrap-->
+<script src="../../../js/ui-bootstrap.js"></script>
+
+<script src="../../../js/highcharts.js"></script>
+<script src="../../../js/data.js"></script>
+<script src="../../../js/drilldown.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../js/jquery.jqGauges.css.css" />
+<script src="../../../js/jquery.jqGauges.min.js" type="text/javascript"></script>
+
+<!--controller-->
+<script src="summaryCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+
+</head>
+
+<body style="background-color: white" ng-controller="summaryController">
+	<br>
+
+	<div>
+		<div id="mynav">
+			<div class="container headerClass">
+				<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+				<button type="button" ng-click="mypage()" class="btn btn-primary">My
+					page</button>
+				<button type="button" data-toggle="modal" data-target="#logoutModal"
+					class="btn btn-danger">Logout</button>
+			</div>
+			<p class="headerFont">Your Distress</p>
+
+
+		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<!-- <div id="distress"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;">{{percentile}} Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>-->
+
+			</div>
+		</div>
+
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Distress</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="dhigh">
+					Your scores for psychological distress fall on the higher side,
+					which means that in the last one month, you seem to have
+					experienced significantly high levels of overall distress. This may
+					include feelings of sadness and anxiety, general mental discomfort
+					etc. High scores on distress might be due to an ongoing stress in
+					your life and often signal a need to seek some kind of help from
+					your friends/family and/or even professional help, as may be
+					required. <br>When we are distressed, it becomes important to
+					use all our internal and external/social resources to help
+					ourselves. Seeking help that we need does not mean that we are
+					weak. In fact it means we are taking our side, standing up for our
+					self and being our best friend. Take time to take care of your
+					emotional needs.<br> You can take this short survey to check
+					if you are depressed-<br> <a
+						href="https://echargementalhealth.nimhans.ac.in/pushd/form.html"><span
+						style="color: blue;">https://echargementalhealth.nimhans.ac.in/pushd/form.html</span></a>
+					<br>Also, you can look up the resource- section for a few
+					strategies to break the mental barriers to reach out for help.</p>
+					
+				<p style="font-size: 18px; text-align: justify;" ng-show="daverage">Your
+					scores for psychological distress indicate that in the last one
+					month, you seem to be experiencing some distress. Though it is mild
+					in severity and may be manageable at the moment; it would help to
+					introspect if you are doing enough to manage /enhance emotional
+					well-being. If you continue to experience this severity of
+					distress/more, it would help to seek professional consultation.</p>
+					
+				<p style="font-size: 18px; text-align: justify;" ng-show="dlow">Your
+					scores for psychological distress fall on the lower side, which
+					means that in the last one month, you seem to have low levels of
+					distress. That is good. Of course, it does not necessarily mean
+					that you are experiencing high well being on the whole! It would be
+					useful to look at other aspects of well being to understand the
+					whole picture.</p>
+				<p
+					style="font-size: 18px; text-align: center; color: blue; font-weight: bold;">Please
+					click the NEXT button to get the feedback on other aspects of
+					well-being.</p>
+			</div>
+		</div>
+		<footer class="footer">
+			<div style="text-align: right; padding-right: 20px;">
+				<button type="button" class="btn btn-danger" ng-click="backbutton()">
+					<span class="glyphicon glyphicon-arrow-left"></span> Back
+				</button>
+				&nbsp;&nbsp;
+				<button class="btn btn-danger" ng-click="nextbutton()">
+					Next <span class="glyphicon glyphicon-arrow-right">
+				</button>
+			</div>
+		</footer>
+
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

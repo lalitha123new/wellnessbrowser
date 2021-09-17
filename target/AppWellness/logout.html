@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Wellness Application</title>
+<meta name="description"
+	content="Unika - Responsive One Page HTML5 Template">
+<meta name="keywords"
+	content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+<meta name="author" content="imransdesign.com">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts  -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>-->
+<link href="EXTERNAL/roboto.css" rel='stylesheet' type='text/css'>
+
+<!-- Body font -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>-->
+<link href=EXTERNAL/lato.css rel='stylesheet' type='text/css'>
+
+<!-- Navbar font -->
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="inc/animations/css/animate.min.css">
+<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">
+<!-- Font Icons -->
+<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
+<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+
+<!--Javscript-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+ <script src="EXTERNAL/jquery.min.js"></script>
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="css/skin/cool-gray.css">
+<link rel="alternate stylesheet" media="screen" title="ice-blue"
+	href="css/skin/ice-blue.css">
+<link rel="alternate stylesheet" media="screen" title="summer-orange"
+	href="css/skin/summer-orange.css">
+<link rel="alternate stylesheet" media="screen" title="fresh-lime"
+	href="css/skin/fresh-lime.css">
+<link rel="alternate stylesheet" media="screen" title="night-purple"
+	href="css/skin/night-purple.css">
+
+<!--angular toaster css-->
+<link rel="stylesheet" href="angular/toaster/toaster.css">
+
+<!--angular js-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>-->
+ <script src="EXTERNAL/angular.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>-->
+<script src="EXTERNAL/angular-cookies.js"></script>
+
+<!--angular toaster js-->
+<script src="angular/toaster/toaster.js"></script>
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="angular/loading/loader.js"></script>
+<link rel='stylesheet' href='angular/loading/loading-bar.min.css'
+	type='text/css' media='all' />
+<script type='text/javascript' src='angular/loading/loading-bar.min.js'></script>
+
+
+
+<!--Controllers-->
+<script src="js/logincontroller.js"></script>
+<script src="config/config.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#myBtn").click(function() {
+			$("#myModal").modal();
+		});
+	});
+	$(document).ready(function() {
+		$("#myBtn1").click(function() {
+			$("#myModal1").modal();
+		});
+	});
+	$(document).ready(function() {
+		$("#myBtn2").click(function() {
+			if ($(window).width() < 500) {
+				window.location.href = "files/sections/googleplay.html";
+			} else
+
+				window.location.href = "files/sections/sections.html";
+		});
+	});
+</script>
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar"
+	ng-controller="loginController" oncontextmenu="return false;">
+	<toaster-container toaster-options="{'time-out': 8000}"></toaster-container>
+	<div class="page-loader"></div>
+	<!-- Display loading image while page loads -->
+	<div class="body">
+
+
+
+
+
+
+		<div class="container">
+			<div class="container" id="new"
+				style="padding-right: 20px; padding-left: 20px; padding-top: 50px; border: 2px solid black; margin-top: 100px;">
+				<p
+					style="font-size: 12px; text-align: justify; margin-bottom: 20px;">
+					<!-- <b>We recommend that you log out now and then log in from inside
+					the Wellness Check app if you are planning to use your mobile for
+					completing Wellness Check.</b>-->
+					We strongly recommend that you download and use the
+					Wellness Check mobile app available on Google Play Store. Please
+					log out of this session first and then login within the app.
+				</p>
+
+
+
+
+				<div class="modal-footer" style="padding-top: 10px;">
+
+					<a class="btn btn-primary" ng-click="logout1()"
+						style="font-size: 16px; margin-left: 40%; margin-right: 40%; background-color: green; color: white; padding-top: 5px; padding-bottom: 5px; padding-right: 5px; padding-left: 5px; text-decoration: none;">Logout</a>
+				</div>
+
+
+				<p
+					style="font-size: 12px; text-align: justify; margin-bottom: 20px; margin-top: 20px;">
+					If you would prefer to continue working with Wellness Check in your
+					mobile browser, please click below:(Please note that this
+						will not be an optimal experience.The web-browser version works
+						best on desktop/laptop)
+				</p>
+
+				<!-- <p style="margin-bottom:20px;"><a href="http://ehrc-dev.iiitb.ac.in/wellness-check/" style="text-decoration:underline;color:blue;font-size:11px;padding-bottom:20px;"><b> http://ehrc-dev.iiitb.ac.in/wellness-check/</b></a></p>-->
+				<!--  <p style="margin-bottom:20px;"><a href="https://echargementalhealth.nimhans.ac.in/wellness-check" style="text-decoration:underline;color:blue;font-size:11px;padding-bottom:20px;"><b> https://echargementalhealth.nimhans.ac.in/wellness-check</b></a></p>-->
+				<!-- <p style="margin-bottom:20px;"><a href="http://localhost:8080/AppWellness/" style="text-decoration:underline;color:blue;font-size:11px;padding-bottom:20px;"><b> http://localhost:8080/AppWellness/</b></a></p>-->
+				<div class="container" style="margin-bottom: 30px;">
+					<a class="page-scroll" href="files/sections/sections.html"
+						style="font-size: 16px;text-align:center;display:block; background-color: green; color: white; padding-top: 5px; padding-bottom: 5px; text-decoration: none;">Continue
+						with browser</a>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- body ends -->
+
+
+
+
+		<!-- Plugins JS -->
+		<script src="inc/jquery/jquery-1.11.1.min.js"></script>
+		<script src="inc/bootstrap/js/bootstrap.min.js"></script>
+		<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
+		<script src="inc/stellar/js/jquery.stellar.min.js"></script>
+		<script src="inc/animations/js/wow.min.js"></script>
+		<script src="inc/waypoints.min.js"></script>
+		<script src="inc/isotope.pkgd.min.js"></script>
+		<script src="inc/classie.js"></script>
+		<script src="inc/jquery.easing.min.js"></script>
+		<script src="inc/jquery.counterup.min.js"></script>
+		<script src="inc/smoothscroll.js"></script>
+		<script src="inc/styleswitch.js"></script>
+
+		<!-- Theme JS -->
+		<script src="js/theme.js"></script>
+
+		<script type="text/javascript">
+			$(function() {
+
+				$(".switcher-btn").on("click", function(e) {
+					e.preventDefault();
+					var div = $(".switcher-wrapper");
+					if (div.css("left") === "-160px") {
+						$(".switcher-wrapper").animate({
+							left : "0px"
+						});
+					} else {
+						$(".switcher-wrapper").animate({
+							left : "-160px"
+						});
+					}
+				});
+
+			});
+		</script>
+</body>
+
+</html>

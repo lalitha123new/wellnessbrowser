@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Social Section</title>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="../../inc/bootstrap/css/bootstrap.min.css">
+
+<!--custom css-->
+<link rel="stylesheet" href="social.css">
+
+<!--Javscript-->
+<script src="../../inc/jquery/jquery.min.js"></script>
+<script src="../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Angular-->
+<script src="../../angular/angular.min.js"></script>
+<script src="../../angular/angular-cookies.js"></script>
+
+<script src="../../angular/ui-bootstrap-tpls.js"></script>
+<script src="../../rzslider/rzslider.js"></script>
+
+<link rel="stylesheet" href="../../rzslider/rzslider.css">
+
+<link rel="stylesheet" href="../../rzslider/rzslider.min.css">
+
+<!--angular toaster -->
+<script src="../../angular/toaster/toaster.js"></script>
+<link rel="stylesheet" href="../../angular/toaster/toaster.css">
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../../angular/loading/loader.js"></script>
+<link rel='stylesheet' href='../../angular/loading/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../angular/loading/loading-bar.min.js'></script>
+
+<!-- Language -->
+<script src="../../angular/language/angular-internationalization.js"></script>
+
+
+<!--controller-->
+<script src="socialCtrl.js"></script>
+<script src="../../config/config.js"></script>
+</head>
+
+<body class="body" ng-controller="socialController">
+	<toaster-container toaster-options="{'time-out': 5000}"></toaster-container>
+	<div class="container headerClass fixed"
+		style="background-color: #945D60;">
+		
+		<button type="button" ng-click="languages('eng')" class="btn btn-info">English</button>
+			<button type="button" ng-click="languages('hin')" class="btn btn-warning"">हिन्दी</button>
+			
+			
+		<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+		<button type="button" ng-click="mypage()" class="btn btn-primary">My
+			page</button>
+		<button type="button" data-toggle="modal" data-target="#logoutModal"
+			class="btn btn-danger">Logout</button>
+	</div>
+
+	<div class="container" style="background-color: #945D60;">
+		<div class="container fixed"
+			style="margin-top: 43px; background-color: #945D60;">
+			<div style="background-color: #945D60;">
+				<p class="emotionfont ng-cloak">{{language.heading}}
+				<p>
+				<p class="headertile ng-cloak">
+					{{language.each}}
+				</p>
+				<p class="headertile ng-cloak">{{language.people}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container ScrollStyle"
+		style="border: 2px solid #FFB74D; background-color: #FFE0B2;">
+		<div class="col-md-12" style="padding-top: 350px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[0]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[0]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[1]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values1.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[1]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[2]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values2.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[2]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[3]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values3.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[3]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[4]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values4.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[4]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[5]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values5.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[5]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[6]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values6.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[6]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[7]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values7.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[7]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+		<hr class="hrline">
+		<div class="col-md-12" style="padding-top: 20px;">
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak">
+								<h5 class="quesFont">{{language.qleft[8]}}</h5>
+							</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-md-4 ng-cloak">
+				<article>
+					<rzslider rz-slider-model="slider_ticks_values8.value"
+						rz-slider-options="slider_ticks_values.options"></rzslider>
+				</article>
+				<br>
+			</div>
+			<div class="col-md-4">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th style="border: 2px solid; text-align: center;"
+								class="ng-cloak"><h5 class="quesFont">{{language.qright[8]}}</h5></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+    
+    <div class="col-md-12 ng-cloak" ng-show="scobutton">
+	<div class="col-md-12" style="text-align: center;" ng-show="countarray">
+		<button
+			style="background-color: #fffc86; color: black; font-weight: bold;"
+			type="button" class="btn btn-primary" ng-disabled="sbutton"
+			ng-click="socialSubmit('submit')">Submit</button>
+	</div>
+	<div class="col-md-12" style="text-align: center;" ng-hide="countarray">
+		<button
+			style="background-color: #fffc86; color: black; font-weight: bold;" ng-disabled="sbutton"
+			type="button" class="btn btn-primary" ng-click="socialSubmit('next')">Next</button>
+	</div>
+	</div>
+	<br>
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<br>
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" ng-click="logout()">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

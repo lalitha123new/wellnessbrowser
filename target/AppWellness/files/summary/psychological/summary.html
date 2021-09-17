@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>My summary</title>
+
+<!-- Libs and Plugins CSS -->
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+	
+<!-- Custom css -->
+<link rel="stylesheet" href="summary.css">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Javscript-->
+<script src="../../../inc/jquery/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Angular-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+<script src="../../../angular/ui-bootstrap-tpls.js"></script>
+
+<!--ui-bootstrap-->
+<script src="../../../js/ui-bootstrap.js"></script>
+
+<script src="../../../js/highcharts.js"></script>
+<script src="../../../js/data.js"></script>
+<script src="../../../js/drilldown.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="../../../js/jquery.jqGauges.css.css" />
+<script src="../../../js/jquery.jqGauges.min.js" type="text/javascript"></script>
+
+<!--controller-->
+<script src="summaryCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+</head>
+
+<body style="background-color: white" ng-controller="summaryController">
+	<br>
+
+	<div>
+		<div id="mynav">
+
+			<div class="container headerClass">
+				<button type="button" ng-click="homeclick()" class="btn btn-success">Home</button>
+				<button type="button" ng-click="mypage()" class="btn btn-primary">My
+					page</button>
+				<button type="button" data-toggle="modal" data-target="#logoutModal"
+					class="btn btn-danger">Logout</button>
+			</div>
+			<p class="headerFont">Psychological Well Being</p>
+
+
+		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="overall"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{psychologiccal}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container2"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="self"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{selfp}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container3"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="sense"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">
+						{{sensep}} Percentile <br>
+					</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container4"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="positive"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">{{positivep}}
+						Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="container" style="background-color: #3C3C3C;">
+
+			<div class="col-md-8">
+				<div id="container5"
+					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-md-4">
+
+				<div id="growth"
+					style="width: 270px; height: 150px; margin-top: 50px;"></div>
+				<div style="color: white;">
+					<h3 style="margin-left: 35px;" class="ng-cloak">{{growthp}}
+						Percentile</h3>
+					<h3 style="margin-left: 60px; text-transform: capitalize;"
+						class="ng-cloak">
+						YOUR SCORE <br>({{date1}})
+					</h3>
+				</div>
+
+			</div>
+		</div>
+		<br> <br>
+		<div class="col-md-12" style="text-align: center;">
+
+			<h2>
+				<b>Feedback ({{date1}})</b>
+			</h2>
+		</div>
+		<br> <br> <br>
+
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Overall Psychological Well Being</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ohigh">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br>Your
+					overall scores suggest that compared to many others, you are more
+					likely to experience overall sense of ‘doing well’ /’functioning
+					well’ that may be a result of high functioning in more than one
+					dimension of psychological well being You can look up the pattern
+					of your scores on the 4 dimensions to understand this better.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="oaverage">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br>Your scores
+					suggest that your current experience of ‘doing well’/functioning
+					well’ is similar in degree to most others. Doing things to enhance
+					your psychological well-being can help you to lead a more
+					fulfilling and productive life. Look up the resource- section for a
+					few tips.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="olow">
+					While emotional wellbeing captures how well we are feeling,
+					psychological Well-being is about how well we are functioning in a
+					psychological sense. It has been assessed in terms of overall
+					psychological wellbeing and its 4 dimensions (sense of mastery and
+					competence, sense of self acceptance, positive relations and sense
+					of engagement and growth). Both emotional and psychological well-
+					being, are important aspects for mental health.<br> Your
+					scores suggest that compared to many others, you are likely to be
+					experiencing a lower overall sense of ‘doing well’ /’functioning
+					well’. This could be due to lower functioning in one or more
+					dimensions of psychological well being You can look up the pattern
+					of your scores on the 4 dimensions to understand this better.
+				</p>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Self-Acceptance</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="shigh">Your
+					score fall on the higher side, which means that you experience a
+					sense of self acceptance more often than most other people. You are
+					likely to be accepting of yourself as a whole and feel a fair
+					degree of satisfaction about the way your life has shaped up. This
+					does not imply being complacent – a healthy sense of self
+					acceptance can give you the foundation to work on personal growth
+					and doing your best in life.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="saverage">Your
+					score for self acceptance fall on the average side which means that
+					you experience a sense of self acceptance as often as most other
+					people. Though you may accept yourself as a whole to some extent,
+					there could be aspects of self that bother you Understanding these,
+					working on these, coming to terms with these or addressing these
+					aspects may enhance your contentment. However, while you work on
+					improving the aspects that you want to improve, it would help if
+					you avoid judging your worth as a person.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="slow">Your
+					scores fall on the lower side, which means you are experiencing a
+					low sense of self acceptance, than what is often reported by many
+					people. You may be being excessively self-critical and dissatisfied
+					with the way life has shaped up so far. Low self-acceptance makes
+					you vulnerable to distress, and therefore you will benefit from
+					increased self kindness and compassion. Seeking help from your
+					friends/family and/or professionals may also be helpful. Look up
+					the resource- section for a few tips.</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Positive Relations</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="phigh">Your
+					scores fall on the higher side which means that compared to most
+					people, you are likely to be feeling content and satisfied on the
+					whole with various relationships in your life. Warm personal
+					relationships, characterized by trust and sharing can be an immense
+					source of positive emotions and well being. Maintaining positive
+					relationships is a skill and a reward in itself, keep doing what
+					you are doing.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="paverage">
+					Your scores fall in the average range which means that your
+					experience of this aspect of well being is similar to most others.
+					Warm personal relationships, characterized by trust and sharing can
+					be an immense source of positive emotions and well being.<br>
+					To improve your wellbeing further, you may want to increase your
+					investment, in terms of time and efforts in cultivating meaningful
+					relationships, making efforts in repairing a relationship if it is
+					feasible and valuable and letting go of a relationship that is
+					beyond repair/that is damaging to your mental health as well as
+					opening up to opportunities to form newer healthy relationships.
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="plow">
+					Your scores fall on the lower side which means that you seem to be
+					experiencing a higher sense of loneliness and lack of warm
+					belongingness as compared to many others. This might be either due
+					to a temporary dip in your quality of relationship with someone
+					close to you, or might indicate a long term difficulty.<br>
+					Experience of one or more close trusting relationships herein you
+					feel a sense of belongingness, warmth and trust is not only an aid
+					to your mental well-being; it is also an important resource for
+					bouncing back from stressful life situations. To improve your
+					wellbeing further, you may want to increase your investment, in
+					terms of time and efforts in cultivating meaningful relationships,
+					making efforts in repairing a relationship if it is feasible and
+					valuable and letting go of a relationship that is beyond
+					repair/that is damaging to your mental health as well as opening up
+					to opportunities to form newer healthy relationships. If your
+					self-efforts have not helped beyond a point, you can consider
+					seeking professional help to improve this aspect of your
+					well-being.
+				</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Environmental Mastery And
+					Competence</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ehigh">Your
+					scores fall on the higher side, which means that you have been
+					experiencing a high sense of mastery and control over external
+					challenges in life along with a sense of competence as a person.
+					You are doing well in this area. Although there are aspects in life
+					that we cannot control or change, focusing on aspects that we can
+					work upon, and manage well can help us feel a sense of competence.
+					This is not just about external demands but is also about our own
+					internal state of mind.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="eaverage">Your
+					scores fall in the average range, which means that you have been
+					experiencing a sense of environmental mastery and competence as
+					often as many other people. Although there are aspects in life that
+					we cannot control or change, focusing on aspects that we can work
+					upon, and manage well can help us feel a sense of competence. This
+					is not just about competence about dealing with external demands
+					but is also about our own internal state of mind.</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="elow">Your
+					scores fall on the lower side, which means that your experience of
+					lower sense of mastery and competence than what is the case for
+					several others. It could be due to the fact that you are going
+					through a very difficult phase in your life and struggling to
+					maintain a sense of mastery. Or it could sometimes indicate that
+					you have to make more efforts to enhance our skills of problem
+					solving, organizing your life affairs, prioritizing goals and
+					investing energy in doing what matters the most. At times, these
+					low scores on this aspect could also come about when we are
+					constantly brooding about something going wrong in one life domain
+					and tending to ignore other aspects of life. Although there are
+					aspects in life that we cannot control or change, focusing on
+					aspects that we can work upon, and manage well can help us feel a
+					sense of competence. This is not just about competence about
+					dealing with external demands but is also about our own internal
+					state of mind.</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="well well-lg">
+				<h3 style="font-size: 25px;">Personal Growth</h3>
+				<p style="font-size: 18px; text-align: justify;" ng-show="ghigh">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall on the higher side as compared to what is typically
+					expressed by several others. This is a valuable state, keep at it.
+					This comes from being actively engaged with one’s environment and
+					constantly using opportunities to learn from one’s experiences and
+					realize one’s potentials.<br>There is always a scope of
+					evolving further as a person. Of course, we need to accept and
+					respect ourselves as a person while enjoying this journey of
+					growing and doing things that make us feel connected to our
+					environment. It can be a fulfilling experience!
+				</p>
+
+				<p style="font-size: 18px; text-align: justify;" ng-show="gaverage">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall in the average range, which means that your experience
+					of a sense of personal growth and engagement in your environment is
+					similar to that of many others. You can increase you time and
+					efforts towards intentional growth to enhanced wellbeing. There is
+					always a scope of evolving further as a person. Of course, we need
+					to accept and respect ourselves as a person while enjoying this
+					journey of growing and doing things that make us feel active and
+					connected to our environment. It can be a fulfilling experience!
+				</p>
+				<p style="font-size: 18px; text-align: justify;" ng-show="glow">
+					It means having a feeling of continued development, being able to
+					see one self as growing and expanding and see improvement in self
+					and behaviour over time, being open to new experiences, having a
+					sense of realizing one’s potential and being able to change oneself
+					in ways that reflect more self-knowledge and effectiveness.<br>Your
+					scores fall on the lower side, which means that you experience a
+					lower sense of personal growth and engagement than many others.
+					Probably you are preoccupied with managing external demands, or it
+					has been a stressful phase for you. Feeling actively engaged with
+					your environment, doing things that are personally meaningful,
+					setting personal growth goals and working on them can help enhance
+					one’s wellbeing. Look up the resource- section for a few tips. Of
+					course, we need to accept and respect ourselves as a person while
+					enjoying this journey of growing. It can be a fulfilling
+					experience!
+				</p>
+				<p style="font-size: 18px; text-align: center;color: blue; font-weight: bold;">Please click the NEXT button to get  the feedback on other aspects of well being.</p>
+
+			</div>
+		</div>
+		<footer class="footer">
+			<div
+				style="text-align: right; padding-right: 20px;">
+				<button class="btn btn-danger" ng-click="nextbutton()">
+					Next <span class="glyphicon glyphicon-arrow-right">
+				</button>
+			</div>
+		</footer>
+
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<br>
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" ng-click="logout()">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

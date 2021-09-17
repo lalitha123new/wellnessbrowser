@@ -1,0 +1,175 @@
+ .body{
+  background-color: #945D60
+ }
+ .tablealign{
+
+   text-align: center;
+   margin-top: 20px;
+ }
+
+ .rzslider .rz-pointer{
+
+  background-color: black !important;
+}
+.rzslider .rz-bar{
+
+  background: black !important;
+}
+.rzslider .rz-tick{
+
+  background: black !important;
+}
+
+#loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 389px!important;
+    left: 50%!important;
+   }
+.rzslider .rz-tick-value{
+
+  font-size: 20px;
+}
+
+.rzslider .rz-tick {
+	top: -6px !important;
+}
+
+th {
+	background-color: #FFFDB9 !important;
+}
+
+@media ( min-width : 1281px) {
+	.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.headerheading {
+		font-size: 19px !important;
+	}
+	.emotionfont {
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+	}
+	.headertile {
+		font-size: 22px;
+		font-family: sans-serif;
+		color: white;
+		font-weight: bold;
+		text-align: justify;
+	}
+	.quesFont{
+	    font-size: 20px;
+	}
+}
+
+@media ( min-width : 1025px) and (max-width: 1280px) {
+	.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.emotionfont {
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+	}
+	.headertile {
+		font-size: 22px;
+		font-family: sans-serif;
+		color: white;
+		font-weight: bold;
+		text-align: justify;
+	}
+	.quesFont{
+	    font-size: 20px;
+	}
+	
+}
+
+@media ( min-width : 768px) and (max-width: 1024px) {
+	.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.emotionfont {
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+	}
+	.headertile {
+		font-size: 16px;
+		font-family: sans-serif;
+		color: white;
+		font-weight: bold;
+		text-align: justify;
+	}
+	.quesFont{
+	    font-size: 20px;
+	}
+	
+}
+
+@media ( min-width : 481px) and (max-width: 767px) {
+	.headerClass {
+		text-align: right;
+		padding-top: 10px;
+	}
+	.emotionfont {
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+	}
+	.headertile {
+		font-size: 15px;
+		font-family: sans-serif;
+		color: white;
+		font-weight: bold;
+		text-align: justify;
+	}
+}
+
+@media ( min-width : 320px) and (max-width: 480px) {
+	.headerClass {
+		text-align: center;
+		padding-top: 10px;
+	}
+	.emotionfont {
+		font-size: 15px;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+	}
+	.headertile {
+		font-size: 12px;
+		font-family: sans-serif;
+		color: white;
+		font-weight: bold;
+		text-align: justify;
+	}
+
+}
+
+.fixed {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+}
+.hrline{
+   border-top: 2px solid #1f1e1e;
+   background-color: blue;
+   font-size: 20px;
+}

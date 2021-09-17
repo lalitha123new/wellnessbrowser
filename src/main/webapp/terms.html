@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en-US" ng-app="wellness">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wellness Application</title>
+	<meta name="description" content="Unika - Responsive One Page HTML5 Template">
+	<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+	<meta name="author" content="imransdesign.com">
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Google Fonts  -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
+
+	<!-- Libs and Plugins CSS -->
+	<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="inc/animations/css/animate.min.css">
+	<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
+	<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
+	<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+
+	<!--Javscript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/mobile.css">
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="css/skin/cool-gray.css">
+	<link rel="alternate stylesheet" media="screen" title="ice-blue" href="css/skin/ice-blue.css"> 
+	<link rel="alternate stylesheet" media="screen" title="summer-orange" href="css/skin/summer-orange.css">
+	<link rel="alternate stylesheet" media="screen" title="fresh-lime" href="css/skin/fresh-lime.css">
+	<link rel="alternate stylesheet" media="screen" title="night-purple" href="css/skin/night-purple.css">
+
+	<!--angular js-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.js"></script>
+
+	<!--Controllers-->
+	<script src="js/logincontroller.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#myBtn").click(function(){
+				$("#myModal").modal();
+			});
+		});
+	</script>
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar" ng-controller="loginController">
+	<div class="page-loader"></div>  <!-- Display loading image while page loads -->
+	<div class="body">
+
+		<!--========== BEGIN HEADER ==========-->
+		<header id="header" class="header-main">
+
+			<!-- Begin Navbar -->
+			<nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+
+				<div class="container">
+
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand page-scroll" href="index.html"></a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+				<!-- 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="page-scroll" href="#text-carousel-intro-section">Home</a></li>
+							<li><a class="page-scroll" href="#about-section">About</a></li>
+							<li><a class="page-scroll" href="#services-section">What</a></li>
+							<li><a class="page-scroll" href="#portfolio-section">Why</a></li>
+							<li><a class="page-scroll" href="#team-section">Tearms and conditions</a></li>                        
+							<li><a class="page-scroll" href="#contact-section">Contact</a></li>
+							<li ng-show="loginlink"><a class="page-scroll" href="#myBtn" id="myBtn">Login</a></li>
+							<li ng-hide = "mypage"><a class="page-scroll" href="wellness_sections.html">Mypage</a></li>
+							<li ng-hide = "mypage"><a class="page-scroll" href="#myBtn" id="myBtn">Logout</a></li>
+						</ul>
+					</div> -->
+				</div>
+			</nav>
+			<!-- End Navbar -->
+
+		</header>
+		<!-- ========= END HEADER =========-->
+			<!-- Begin about section -->
+			<section id="about-section" class="page bg-style1">
+				<!-- Begin page header-->
+				<div class="page-header-wrapper">
+					<div class="container">
+						<div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+							<h2>TERMS OF USE</h2>
+							<div class="devider"></div>
+							<!-- <p class="subtitle">little information</p> -->
+						</div>
+					</div>
+				</div>
+				<!-- End page header-->
+
+				<!-- Begin rotate box-1 -->
+				<div class="rotate-box-1-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12" style="text-align: justify;">
+                             <p><h5>The delimited scope and purpose of the Wellness Check</h5></p>
+                             <p>The Information contained in, or accessed through, this website is for your general information and Self-development use only and is not intended to be used as medical advice and should not be used to diagnose, treat, cure or prevent any medical condition.<br>This website is not designed to diagnose or treat common mental health disorders. It is merely designed to help people to become more self-aware about various aspects of their mental well-being and general levels of psychological distress so that they feel motivated to and can choose to take appropriate actions to  enhance their well-being or reduce their distress by using appropriate methods including utilization of  appropriate help and services Although some information  on maintaining well-being is provided and  people are likely to find the information on self-care to be useful; however this is NOT a substitute for seeking professional consultation and advice. There is no claim made that the material contained on this website is likely to be of help for everyone who uses this website.<br>The diagnosis and treatment of any mental illness requires a detailed evaluation by a medical practitioner or qualified mental health practitioner. People seeking a diagnosis or treatment of depression, anxiety or other mental health disorders should consult a medical practitioner or mental health professional.<br>This website is not designed to diagnose or treat common mental health disorders. It is merely designed to help people to become more self-aware about various aspects of their mental well-being and general levels of psychological distress so that they feel motivated to and can choose to take appropriate actions to  enhance their well-being or reduce their distress by using appropriate methods including utilization of  appropriate help and services Although some information  on maintaining well-being is provided and  people are likely to find the information on self-care to be useful; however this is NOT a substitute for seeking professional consultation and advice. There is no claim made that the material contained on this website is likely to be of help for everyone who uses this website.<br>
+                             If you have a mental health condition or if you are likely to have a diagnosis of mental health condition, you should seek professional consultation from a trained mental health professional or a medical consultant.<br>If at the time of registering for program or at any point of time after registering for this self-care program, you notice that you are getting thoughts about harming yourself or harming another person, you should seek urgent medical advice. If your patterns of responses suggest that you are experiencing significant distress, you will be strongly suggested to immediately seek medical help through a direct/face-to face contact with any trained professional of your choice. If you so desire, the wellness check team will try its best to provide you some information regarding the availability of centers/trained mental health professional in your region , if such information is available to the team.<br>
+                             </p>
+                             <br>
+                             <p><h5>Fees, charges and cancellation</h5></p>
+                             <p>There is no fee or charge for you to register with Wellness Check. However, if you access the Program through the use of a mobile phone or the Internet, your normal phone/Internet charges will apply.There is no minimum contract associated with the use of Wellness Check. You may choose to stop using the Program at any time.</p>
+                             <br>
+                             <p><h5>License to Use</h5></p>
+                             <p>The information and materials on the website unless otherwise stated, are copyrighted by the National Institute for Mental Health and Neuro Sciences (NIMHANS), and may be used by registered users solely for their own personal use. We grant you a limited, personal, non-exclusive, non-transferable license to use our content for your own personal, non-commercial use. Except as otherwise provided, you acknowledge and agree that you have no right to modify, edit, copy, reproduce, create derivative works of, reverse engineer, alter, enhance or in any way exploit any of the content in any manner, except for modifications in filling out the forms for your authorized use. You shall not remove any copyright notice from any page/form.</p>
+                             <br>
+                             <p><h5>Disclaimer of Warranties</h5></p>
+                             <p>You agree to assume total responsibility and risk for your use of the website, the service and the content. We make no express or implied warranties, representations or endorsements whatsoever with respect to the website, the service or the content. We expressly disclaim all warranties, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title and non-infringement with regard to the website, the service, and the content. We do not warrant that the functions performed by the website or the service will be uninterrupted, timely, secure or error-free, free of viruses or other malicious code, or that defects in the website/server or the service will be corrected. We do not warrant the accuracy, currency, or completeness of the content, or that any errors in the content will be corrected. We reserve the right to correct any errors, inaccuracies or omissions and to change or update information at any time without prior notice. We do not, however, guarantee that any errors, inaccuracies or omissions will be corrected. The site, the service and the content are provided on an 'as is' and 'as available' basis. The foregoing does not affect any warranties which cannot be excluded or limited under applicable law.</p>
+                             <br>
+                             <p><h5>Disclaimer of liability</h5></p>
+                             <p>You understand and agree that under no circumstances we will be liable for any damages whatsoever, including, but not limited to direct, indirect, incidental, consequential, or punitive damages arising out of the use of or inability to use the website, the service, or the content. If you are dissatisfied with the website, the service, the content, or the terms of use, your sole and exclusive remedy is to discontinue using the website. You acknowledge, by your use of the website, that your use of the website is at your sole risk. We are not liable to any user or person for any decision made or action taken in reliance upon information or content displayed or provided in this website. It is your responsibility to make your own decisions about the currency, completeness, accuracy, reliability and suitability of information, services, programs and communities of interest contained in (or accessible from) linked websites.</p>
+                             <br>
+                             <p><h5>Security, viruses, errors and availability</h5></p>
+                             <p>The internet is an insecure public network which means there are risks that information sent to or from this website may be intercepted, corrupted or modified by third parties. In addition, files obtained from or through this website may contain computer viruses, disabling codes, worms or other devices or defects. You bear the risks and responsibility for any loss or damage caused, directly or indirectly, by these risks and we accept no liability for any interference with, or damage to, your computer system, software or data occurring in connection with this Website.</p>
+                             <br>
+                             <p><h5>Use of cookies</h5></p>
+                             <p>The website uses transient or session cookies. Cookies are pieces of information that a website transfers to your computer's hard disk when you open the program pages. Cookies by themselves do not identify you or any user but they do identify your browser. Because this website uses 'transient' cookies, your computer does not retain the information delivered in the cookie once you leave the website. When you log out, the transient cookie set up by the website is destroyed, and no personal information is retained which could identify you or your browser next time you log on to the website. Most web browsers are set up to accept cookies, and while you can set your browser to not accept cookies you will not be able to use this website if you do this.<br>The website may impose limits on the size of files uploaded by the users into their workbook. We may also filter, remove or refuse to post files which interfere with the technical operations of the program, including files which threaten to overload or crash a system.</p>
+                             <br>
+                             <p><h5>Privacy</h5></p>
+                             <p>This statement sets out the National Institute for Mental Health and Neuro Sciences policy relating to the collection and use of your personal information in the Wellness Check program. This Notice is in addition to the Terms of Use. Your registration as a Wellness check user constitutes your agreement to terms of the Privacy Notice and the Terms of Use.Please note that this Privacy Notice applies only to the Wellness Check site and not to any other sites that are linked to the Wellness Check site or mentioned on the website.</p>
+                             <br>
+                             <p><h5>Your personal information is important to us</h5></p>
+                             <p>NIMHANS recognizes that your privacy is very important to you and that we are under a legal and ethical obligation to protect the integrity of your personal information. When you register with Wellness Check you will be asked to enter your username. We suggest that you use a pseudonym or a made-up username.</p>
+                             <br>
+                             <p><h5>Why the program collects personal information from you</h5></p>
+                             <p>When you enter the Wellness Check Program you will be asked to complete a number of tests and enter some information, which you may consider to be sensitive, about yourself. The program asks for this information in order to provide you with tailored and specifically relevant feedback. The information is stored in your workbook in the Wellness Check database along with information about the date and time you complete each exercise. Information is also collected in summary form about most frequently visited pages. This is intended to help the designers understand how visitors use the Program. All the information gathered is stored on the NIMHANS server and is subject to stringent security measures.<br>We will not use or disclose any information about you without your consent unless we are required to do so by law;<br>We will never use your personal information to send you unsolicited information or "spam".<br>Like most Internet sites, this website is accessible worldwide. However, not all products or Services are available to all persons or in all geographic locations. Wellness Check reserves the right to limit the provision of its products and Services to any person, geographic area, or jurisdiction. This website is not intended for use outside India and its content may not be most appropriate for those residing outside the country. You agree to comply with all applicable laws and local rules or restrictions relating to this website.</p>
+							</div>
+
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div>
+				<!-- End rotate box-1 -->
+
+				<div class="extra-space-l"></div>
+				<!-- Begin footer -->
+				<footer class="text-off-white">
+
+					<div class="footer">
+						<div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+							<p class="copyright">Copyright &copy; 2017 - Designed By <a href="#" class="theme-author">#######</a> &amp; Developed by <a href="#" class="theme-author">#######</a></p>
+						</div>
+					</div>
+
+				</footer>
+				<!-- End footer -->
+
+				<a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
+
+			</div><!-- body ends -->
+
+
+
+
+			<!-- Plugins JS -->
+			<script src="inc/jquery/jquery-1.11.1.min.js"></script>
+			<script src="inc/bootstrap/js/bootstrap.min.js"></script>
+			<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
+			<script src="inc/stellar/js/jquery.stellar.min.js"></script>
+			<script src="inc/animations/js/wow.min.js"></script>
+			<script src="inc/waypoints.min.js"></script>
+			<script src="inc/isotope.pkgd.min.js"></script>
+			<script src="inc/classie.js"></script>
+			<script src="inc/jquery.easing.min.js"></script>
+			<script src="inc/jquery.counterup.min.js"></script>
+			<script src="inc/smoothscroll.js"></script>
+			<script src="inc/styleswitch.js"></script>
+
+			<!-- Theme JS -->
+			<script src="js/theme.js"></script>
+
+
+
+        <!--================================================================================
+        ///// Begin Stylesheet Switcher /////
+        ================================================================================ -->
+        <div class="switcher-wrapper hidden-sm hidden-xs">
+        	<div class="switcher pull-left">
+        		<p>Color Scheme</p>
+        		<a class="switcher-box default" href="javascript:chooseStyle('none', 60)"></a>
+        		<a class="switcher-box blue" href="javascript:chooseStyle('ice-blue', 60)"></a>
+        		<a class="switcher-box lime" href="javascript:chooseStyle('fresh-lime', 60)"></a>
+        		<a class="switcher-box orange" href="javascript:chooseStyle('summer-orange', 60)"></a>
+        		<a class="switcher-box purple" href="javascript:chooseStyle('night-purple', 60)"></a>
+        	</div>
+        	<div class="switcher-btn pull-right"><i class="fa fa-paint-brush"></i></div>
+        </div>
+
+        <script type="text/javascript">
+        	$(function(){
+
+        		$(".switcher-btn").on("click", function(e) {
+        			e.preventDefault();
+        			var div = $(".switcher-wrapper");
+        			if (div.css("left") === "-160px") {
+        				$(".switcher-wrapper").animate({
+        					left: "0px"
+        				});
+        			} else {
+        				$(".switcher-wrapper").animate({
+        					left: "-160px"
+        				});
+        			}
+        		});
+
+        	});
+        </script>
+        <!--==============================================================================
+        ///// End Stylesheet Switcher /////
+        ============================================================================== -->
+
+    </body> 
+
+    </html>

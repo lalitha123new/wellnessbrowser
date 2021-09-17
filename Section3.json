@@ -1,0 +1,31 @@
+{
+	"questions": [
+		{
+			"qleft": [
+				"I feel I am accepted by other people",
+				"I think the world is becoming a better place to live",
+				"I do not feel connected to the society",
+				"I think society has the potential for positive changes",
+				"I think I am currently  doing many things for the good of others/for society",
+				"I feel a sense of belongingness to society",
+				"I think most people are reliable",
+				"I think I am a helpful person",
+				"I believe that the society can become a better place"
+			]
+		},
+		{
+			"qright": [
+				"I do not feel I am accepted by other people",
+				"I do not think the world is becoming a better place to live",
+				"I feel connected to the society",
+				"I do not think society has potential for positive changes",
+				"Right now I do not think I am able to focus beyond myself",
+				"I do not feel any sense of belongingness to society",
+				"I think most people are unreliable",
+				"I do not see myself as a helpful person",
+				"I do not think the society can become a better place"
+			]
+		}
+	],
+	"ID": "S3"
+}

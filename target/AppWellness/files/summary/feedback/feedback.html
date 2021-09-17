@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en" ng-app="wellness">
+<head>
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Wellness-Feedback</title>
+<link rel="stylesheet"
+	href="../../../inc/bootstrap/css/bootstrap.min.css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- /font files -->
+<!-- css files -->
+<link href="feedback.css" rel='stylesheet' type='text/css' media="all" />
+<!-- Latest compiled and minified CSS -->
+
+<!--Javscript-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../../../inc/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!--angular toaster css-->
+<link rel="stylesheet" href="../../../angular/toaster/toaster.css">
+
+
+<!--angular js-->
+<script src="../../../angular/angular.min.js"></script>
+<script src="../../../angular/angular-cookies.js"></script>
+
+<!--angular toaster js-->
+<script src="../../../angular/toaster/toaster.js"></script>
+
+<!-- Loading Bars-->
+<script type="text/javascript" src="../../../angular/loading/loader.js"></script>
+<link rel='stylesheet'
+	href='../../../angular/loading/loading-bar.min.css' type='text/css'
+	media='all' />
+<script type='text/javascript'
+	src='../../../angular/loading/loading-bar.min.js'></script>
+
+<!--Controller-->
+<script src="feedbackCtrl.js"></script>
+<script src="../../../config/config.js"></script>
+
+
+
+<style type="text/css">
+html {
+	background-color: #9e6d6f;
+}
+
+.label.header {
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+.grid-w3layouts1 ul li, .grid-w3layouts2 ul li {
+	color: #000;
+}
+
+label.rating, label.header {
+	color: #000;
+	text-transform: none;
+	font-weight: bold;
+}
+
+ul li label {
+	padding: 12px 0px 0px 50px;
+}
+
+ul li .check {
+	border: 3px solid #000;
+}
+
+.content-top {
+	background-color: #FFE0B2;
+}
+
+.placeholdercss::-webkit-input-placeholder {
+	color: black !important;
+}
+
+input#name, input#email, input#orgn, textarea#message {
+	background-color: #FFFDB9 !important;
+	color: black !important;
+}
+
+ul li label {
+	text-transform: none;
+}
+
+.input {
+	background-color: #FFFDB9 !important;
+	color: black !important;
+}
+
+.radio {
+	margin: 0.5rem;
+}
+/*.checkbox {
+	margin-left: 2.7rem;
+}*/
+.radio input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+}
+
+.radio input[type="radio"]+.radio-label:before {
+	content: '';
+	background: #f4f4f4;
+	border-radius: 100%;
+	border: 1px solid #b4b4b4;
+	display: inline-block;
+	width: 1.4em;
+	height: 1.4em;
+	position: relative;
+	top: -0.2em;
+	margin-right: 1em;
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
+	transition: all 250ms ease;
+}
+
+/*input[type="checkbox"]{
+border: 1px solid #b4b4b4;
+width:1.2em;
+height:1.2em;
+}*/
+.radio input[type="radio"]:checked+.radio-label:before {
+	background-color: #3197EE;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type="radio"]:focus+.radio-label:before {
+	outline: none;
+	border-color: #3197EE;
+}
+
+.radio input[type="radio"]:disabled+.radio-label:before {
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+	border-color: #b4b4b4;
+	background: #b4b4b4;
+}
+
+.radio input[type="radio"]+.radio-label:empty:before {
+	margin-right: 0;
+}
+
+.radio-pad {
+	padding-top: 2%;
+}
+
+input[type="checkbox"] {
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"]+label:before {
+	border: 1px solid #b4b4b4;
+	background: #f4f4f4;
+	content: '';
+	display: inline-block;
+	font: 16px/1em sans-serif;
+	height: 16px;
+	margin: 0 .25em 0 0;
+	padding: 0;
+	vertical-align: top;
+	width: 16px;
+	margin-right: 1em;
+	
+	
+}
+
+input[type="checkbox"]:checked+label:before {
+	background: #3197EE;
+	color: #333;
+	content: "\2713";
+	text-align: center;
+}
+
+input[type="checkbox"]:checked+label:after {
+	font-weight: bold;
+}
+
+.label-css {
+	font-weight: none;
+	
+}
+
+.check-label {
+ margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.terms-modal-dialog {
+	overflow-y: initial !important
+}
+
+.terms-modal-body {
+	height: 400px;
+	overflow-y: auto;
+}
+
+.modal-header, h4, .close {
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-size: 30px;
+}
+
+p {
+	font-size: 14px;
+	color: black;
+	margin: 0px 0 0px;
+}
+
+h5 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.fa-2x {
+	font-size: 26px;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+	font-weight: bold;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.footer {
+	bottom: 0;
+	text-align: center !important;
+	width: 100% !important;
+	height: 9%;
+	position: fixed;
+	background-color: transparent;
+}
+
+#mynav {
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1030;
+	height: 116px;
+	color: #aaa;
+	background-color: #3C3C3C;
+	text-align: center;
+}
+
+blockquote {
+	padding: 6px 16px;
+	border: none;
+	quotes: "\201C" "\201D";
+	display: inline-block;
+	position: relative;
+}
+
+blockquote:before {
+	content: open-quote;
+	font-weight: bold;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+blockquote:after {
+	content: close-quote;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: blue;
+}
+
+#loading-bar-spinner {
+	display: block;
+	position: fixed;
+	z-index: 10002;
+	top: 389px;
+	left: 50%;
+}
+</style>
+
+</head>
+<body ng-controller="feedbackController">
+	<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+	<form name="feedbackForm" novalidate>
+
+		<div id="mynav">
+			<div
+				style="text-align: right; padding-top: 5px; padding-right: 10px;">
+				<!-- <button type="button" ng-click = "homeclick()"
+			class="btn btn-success">Home</button> -->
+				<button type="button" ng-click="mypage()" class="btn btn-primary">My
+					page</button>
+				<button type="button" data-toggle="modal" data-target="#logoutModal"
+					class="btn btn-danger">Logout</button>
+			</div>
+			<h2 style="color: white;">User Feedback</h2>
+			<h5 style="color: white;">Your feedback is important to us!</h5>
+
+
+		</div>
+		<br> <br> <br> <br>
+
+		<!-- <div data-vide-bg="video/patient"> -->
+		<div class="center-container">
+			<div class="content-top">
+
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">1. Has the wellness-check
+							feedback that you received influenced you in some way? Could you
+							please explain? <span>*</span>
+						</label><br> <br>
+						<div class="form-group">
+							<textarea class="form-control" ng-model="feedback1" rows="5"
+								id="comment" ng-required="true"
+								style="background-color: #FFFDB9 !important;"></textarea>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">2. Would you recommend Wellness
+							check to people in your close circle? <span>*</span>
+						</label>
+						<div class="radio">
+							<input id="radio-3" name="radio1" type="radio"
+								ng-model="feedback2" value="1" ng-required="true"><label
+								for="radio-3" class="radio-label">Very likely</label><br> <input
+								id="radio-4" name="radio1" type="radio" ng-model="feedback2"
+								value="2" ng-required="true"><label for="radio-4"
+								class="radio-label radio-pad">Likely </label> <br> <input
+								id="radio-5" name="radio1" type="radio" ng-model="feedback2"
+								value="3" ng-required="true"><label for="radio-5"
+								class="radio-label radio-pad">Unsure </label> <br> <input
+								id="radio-0" name="radio1" type="radio" ng-model="feedback2"
+								value="4" ng-required="true"><label for="radio-0"
+								class="radio-label radio-pad">Unlikely </label> </label><br> <input
+								id="radio-6" name="radio1" type="radio" ng-model="feedback2"
+								value="5" ng-required="true"><label for="radio-6"
+								class="radio-label radio-pad">Very unlikely </label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">3. How comfortable you are
+							currently with the idea of seeking professional help for <b
+							style="font-weight: bold;">managing your distress or
+								enhancing your well being?</b> <span>*</span>
+						</label>
+						<div class="radio">
+							<input id="radio-7" name="radio2" type="radio"
+								ng-model="feedback3" value="1" ng-required="true"><label
+								for="radio-7" class="radio-label">Very uncomfortable </label><br>
+							<input id="radio-8" name="radio2" type="radio"
+								ng-model="feedback3" value="2" ng-required="true"><label
+								for="radio-8" class="radio-label radio-pad">Uncomfortable
+							</label><br> <input id="radio-9" name="radio2" type="radio"
+								ng-model="feedback3" value="3" ng-required="true"><label
+								for="radio-9" class="radio-label radio-pad">Neither
+								uncomfortable nor comfortable </label><br> <input id="radio-10"
+								name="radio2" type="radio" ng-model="feedback3" value="4"
+								ng-required="true"><label for="radio-10"
+								class="radio-label radio-pad">Comfortable </label> </label> <br> <input
+								id="radio-11" name="radio2" type="radio" ng-model="feedback3"
+								value="5" ng-required="true"><label for="radio-11"
+								class="radio-label radio-pad">Very comfortable </label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">4. How likely it is that you may
+							consult a professional in the next 3 months for <b
+							style="font-weight: bold;">managing your distress/for your
+								mental health concerns/for personal growth?</b> <span>*</span>
+						</label>
+						<div class="radio">
+							<input id="radio-12" name="radio3" type="radio"
+								ng-model="feedback4" value="1" ng-required="true"><label
+								for="radio-12" class="radio-label">Extremely Unlikely </label><br>
+							<input id="radio-13" name="radio3" type="radio"
+								ng-model="feedback4" value="2" ng-required="true"><label
+								for="radio-13" class="radio-label radio-pad">Unlikely </label><br>
+							<input id="radio-14" name="radio3" type="radio"
+								ng-model="feedback4" value="3" ng-required="true"><label
+								for="radio-14" class="radio-label radio-pad">Unsure </label><br>
+							<input id="radio-15" name="radio3" type="radio"
+								ng-model="feedback4" value="4" ng-required="true"><label
+								for="radio-15" class="radio-label radio-pad">Likely </label> </label> <br>
+							<input id="radio-16" name="radio3" type="radio"
+								ng-model="feedback4" value="5" ng-required="true"><label
+								for="radio-16" class="radio-label radio-pad">Extremely
+								Likely </label>
+						</div>
+					</div>
+
+				</div>
+
+				 <!-- <div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">5. How likely it is that you may consult a professional in the
+						next 3 months for <b style="font-weight: bold;">personal growth and enhancing your well being?</b> <span>*</span>
+						</label>
+						<div class="radio">
+							<input id="radio-17" name="radio4" type="radio"
+								ng-model="feedback5" value="1" ng-required="true"><label
+								for="radio-17" class="radio-label">Extremely Unlikely </label><br>
+							<input id="radio-18" name="radio4" type="radio"
+								ng-model="feedback5" value="2" ng-required="true"><label
+								for="radio-18" class="radio-label radio-pad">Unlikely </label><br>
+							<input id="radio-19" name="radio4" type="radio"
+								ng-model="feedback5" value="3" ng-required="true"><label
+								for="radio-19" class="radio-label radio-pad">Unsure </label><br>
+							<input id="radio-20" name="radio4" type="radio"
+								ng-model="feedback5" value="4" ng-required="true"><label
+								for="radio-20" class="radio-label radio-pad">Likely </label> </label> <br>
+							<input id="radio-22" name="radio4" type="radio"
+								ng-model="feedback5" value="5" ng-required="true"><label
+								for="radio-22" class="radio-label radio-pad">Extremely
+								Likely </label>
+						</div>
+					</div>
+
+				</div>-->
+
+
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label class="label-css">5. Please check all the statements
+							that are true for you <span>*</span>
+						</label>
+						<div class="checkbox">
+							<input id="check-1" name="check5" type="checkbox" ng-model="checkboxModel.value1" value="1"><label
+							for="check-1" class="check-label">After wellness Check
+								survey and feedback , I have gained clarity about the areas on
+								which I am doing alright. </label> 
+								
+								
+								<input id="check-2" name="check5" type="checkbox" ng-model="checkboxModel.value2" value="2"><label for="check-2"
+								class="check-label check-pad">Wellness Check and
+								feedback has helped me become self-aware about areas that I need
+								to improve. </label><br>
+								
+								
+								 <input id="check-3" name="check5" type="checkbox" ng-model="checkboxModel.value3" value="3"><label for="check-3"
+								class="check-label check-pad">After receiving wellness
+								check feedback, I feel more motivated to do things to maintain
+								or enhance my well being. </label><br>
+								
+								
+								 <input id="check-4" name="check5" type="checkbox" ng-model="checkboxModel.value4" value="4"><label for="check-4"
+								class="check-label check-pad">Wellness Check feedback
+								has made me realize that I need professional help. </label>  <br>
+								
+								
+								 <input id="check-5" name="check5" type="checkbox" ng-model="checkboxModel.value5" value="5"><label
+								for="check-5" class="check-label check-pad">Wellness
+								Check feedback has decreased my mental block to seeking
+								professional help.</label><br> 
+								
+								
+								<input id="check-6" name="check5" type="checkbox" ng-model="checkboxModel.value6" value="6"><label for="check-6"
+								class="check-label check-pad">I am serious about trying
+								to utilise the wellness feedback and resources on this website.
+							</label><br> 
+							
+							
+							<input id="check-7" name="check5" type="checkbox" ng-model="checkboxModel.value7" value="7"><label
+								for="check-7" class="check-label check-pad">I feel that
+								this tool is not likely to be helpful in any way. </label><br>
+								
+								
+								 <input id="check-8" name="check5" type="checkbox" ng-model="checkboxModel.value8" value="8"><label
+								for="check-8" class="check-label check-pad">I just took
+								this survey for curiosity and I have not gained anything
+								personally relevant out of it. </label><br>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-md-12" style="text-align: center;">
+				<button type="button" class="btn btn-success" data-toggle="modal"
+					ng-disabled="feedbackbutton" ng-click="feedback()">Submit</button>
+			</div>
+			<br>
+			<!-- 
+			<footer class="footer">
+				<div
+					style="margin-top: 20px; text-align: right; padding-right: 20px;">
+					<button type="button" class="btn btn-danger"
+						ng-click="backbutton()">
+						<span class="glyphicon glyphicon-arrow-left"></span> Back
+					</button>
+				</div>
+			</footer>
+ -->
+			<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+				modal="showModal" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<br>
+							<h5 class="modal-title" id="exampleModalLabel">Ready to
+								Leave?</h5>
+						</div>
+						<div class="modal-body">Select "Logout" below if you are
+							ready to end your current session.</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Cancel</button>
+							<a class="btn btn-primary" ng-click="logout()">Logout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="feedModal" tabindex="-1" role="dialog"
+				modal="showModal" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" ng-click="modelclose()">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title">Thank You</h4>
+							<h5 class="modal-title" id="exampleModalLabel"></h5>
+						</div>
+						<div class="modal-body" style="text-align: justify;">
+							<p>Our sincere thanks to you for participating in the pilot
+								phase of the Wellness Check Survey. Your participation has
+								helped the ongoing research on the use of well being tools.</p>
+							<p>This feedback may be treated as a rough index rather than
+								a rigid/precise categorization- as further research is ongoing.</p>
+							<p>Different measures of well being assess somewhat different
+								dimensions of well being and they have also different time
+								frames ( e.g. psychological well being taps more general and
+								longer term aspects of psychological functioning while distress
+								scale used taps current levels of distress in the last one month
+								period).Hence it is not expected that the different dimensions
+								correlate very highly. In fact that is the very reason;
+								different measures are used- in order to get a broader picture.</p>
+							<p>It would be good to hear from you about your experience of
+								participating in this survey.</p>
+							<br>
+							<p>Please remember well-being levels are changeable -with
+								intentional acts in your journey of growth.</p>
+							<br>
+							<h3 style="font-weight: bold;">Here is some food for
+								thought:</h3>
+							</br>
+
+							<blockquote style="quotes: none;">
+								<p style="color: blue; font-size: 18px; font-weight: bold;">&quot;
+									Be like a tree. Stay grounded. Connect with your roots. Turn
+									over a new leaf. Bend before you break. Enjoy your unique
+									beauty.Keep growing. &quot;</p>
+								<footer
+									style="color: blue; text-align: right; font-size: 18px; font-weight: bold;">Joanne
+									Raptis</footer>
+							</blockquote>
+
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" ng-click="modelclose()">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</form>
+</body>
+</html>
