@@ -17,7 +17,11 @@ import com.google.gson.JsonArray;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class HelloAnalytics {
@@ -27,13 +31,14 @@ public class HelloAnalytics {
 	  private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	  
 	  //nimhans server
-	  private static final String KEY_FILE_LOCATION = "D:/OLD PROJECTS/WELLNESS CHECK/WELLNESS-CHECK-2ee03dc895d5.p12";
+	  //private static final String KEY_FILE_LOCATION = "/home/pushd/wellness2/WELLNESS-CHECK-2ee03dc895d5.p12";
 	  
 	  //iiitb server
 	  //private static final String KEY_FILE_LOCATION = "/home/dmhp1/AppWellness/WELLNESS-CHECK-2ee03dc895d5.p12";
 	  
 	  //local server
 	  //private static final String KEY_FILE_LOCATION = "C:/Users/admin/Downloads/WELLNESS-CHECK-2ee03dc895d5.p12";
+	  private static final String KEY_FILE_LOCATION = "D:/OLD PROJECTS/WELLNESS CHECK/WELLNESS-CHECK-2ee03dc895d5.p12";
 	  
 	  
 	 
@@ -65,7 +70,11 @@ public class HelloAnalytics {
 
 		      String profile = getFirstProfileId(analytics);
 //	      System.out.println("First Profile Id: "+ analytics.data().ga().get("ga:" + profile, "7daysAgo", "today", "ga:sessions").execute());
-		      
+		      LocalDate dateBefore = LocalDate.of(2018, Month.JANUARY, 01);
+		        //29-July-2017, change this to your desired End Date
+			LocalDate dateAfter = LocalDate.now();
+			long noOfDaysBetween = ChronoUnit.DAYS.between(dateBefore, dateAfter);
+			//System.out.println("CHECK DATE"+noOfDaysBetween);
 		      Object a = analytics.data().ga()
 		    	        .get("ga:" + profile, "500daysAgo", "today", "ga:users")
 		    	        .execute();
@@ -73,7 +82,7 @@ public class HelloAnalytics {
 		    	        .get("ga:" + profile, "500daysAgo", "today", "ga:sessions")
 		    	        .execute();
 		      Object c = analytics.data().ga()
-		    	        .get("ga:" + profile, "500daysAgo", "today", "ga:pageviews")
+		    	        .get("ga:" + profile, noOfDaysBetween+"daysAgo", "today", "ga:pageviews")
 		    	        .execute();
 		      
 		      List ab = new ArrayList<>();

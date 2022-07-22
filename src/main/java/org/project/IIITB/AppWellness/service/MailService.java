@@ -33,7 +33,8 @@ import sun.rmi.runtime.Log;
 public class MailService extends Database {
 
 	String d_email = "wellnesscheck.reminder.nimhans@gmail.com";
-	String d_password = "useforreminders";
+	//String d_password = "useforreminders";
+	String d_password = "qowijrpbtdvnguso";
 	String d_host = "smtp.gmail.com";
 	String d_port = "465";
 	

@@ -13,7 +13,7 @@ public class Database {
 	/** mysql password **/
 	
 	//nimhans db pw
-	//private static final String password = "pushd@123";
+	//private static final String password = "pushd@123#";
 	
 	//iiit db pw
 	//private static final String password = "1234";

@@ -22,11 +22,11 @@ public class AppGlobals {
 	//ServerPath
 	
 	//nimhans server
-	//public final static String ServerPath = "https://echargementalhealth.nimhans.ac.in/wellness-check/";
+	public final static String ServerPath = "https://echargementalhealth.nimhans.ac.in/wellness-check/";
 	
 	//iiitb server
 	//public final static String ServerPath = "http://ehrc-dev.iiitb.ac.in:8080/wellness-check";
 	
 	//local server
-	public final static String ServerPath = "http://localhost:8080/AppWellness";
+	//public final static String ServerPath = "http://localhost:8080/AppWellness";
 }
